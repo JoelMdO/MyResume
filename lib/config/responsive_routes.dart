@@ -31,13 +31,18 @@ class ResponsiveHomePage extends StatefulWidget {
 
 class ResponsiveHomePageState extends State<ResponsiveHomePage> {
   bool isDesktop = true;
+  bool isTablet = false;
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
         final isDesktop = MediaQuery.of(context).size.width >= 920;
-        final isTablet = MediaQuery.of(context).size.width >= 767;
+        isTablet = MediaQuery.of(context).size.width >= 767 &&
+            MediaQuery.of(context).size.width <= 919;
+        if (MediaQuery.of(context).size.width < 767) {
+          isTablet = false;
+        }
 
         return Navigator(
           key: isDesktop ? desktopNavigatorKey : isTabletNavigatorKey,

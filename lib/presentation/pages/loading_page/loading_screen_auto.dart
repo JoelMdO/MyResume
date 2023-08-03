@@ -23,8 +23,8 @@ class _LoadingScreenAutoPlayState extends State<LoadingScreenAutoPlay> {
 //-Intialize the controller giving
   @override
   void initState() {
-    //_controller = VideoPlayerController.asset(video)
-    _controller = VideoPlayerController.network(video)
+    _controller = VideoPlayerController.asset(video)
+      //_controller = VideoPlayerController.network(video)
       ..initialize().then((_) {
         setState(() {
           //-Volume requires to be mute to be auto play in chrome and edge
