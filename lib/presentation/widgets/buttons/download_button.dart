@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:resume/presentation/widgets/buttons/styles_text_buttons.dart';
 import 'package:resume/utils/constants/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -27,18 +27,18 @@ class DownloadButton extends StatelessWidget {
 
     return StatefulBuilder(builder: (context, setState) {
       return MouseRegion(
-        cursor: SystemMouseCursors.click,
-        onEnter: (event) {
-          setState(() {
-            isHovered = true;
-          });
-        },
-        onExit: (event) {
-          setState(() {
-            isHovered = false;
-          });
-        },
-        child: ElevatedButton(
+          cursor: SystemMouseCursors.click,
+          onEnter: (event) {
+            setState(() {
+              isHovered = true;
+            });
+          },
+          onExit: (event) {
+            setState(() {
+              isHovered = false;
+            });
+          },
+          child: ElevatedButton(
             onPressed: () {
               _launchURL(url);
             },
@@ -54,12 +54,8 @@ class DownloadButton extends StatelessWidget {
                           : Colores.yellow, // Set the border color
                       width: 2.0, // Set the border width
                     ))),
-            child: Text(
-              'Download Resume',
-              style: GoogleFonts.montserrat(
-                  color: Colors.white, fontWeight: FontWeight.bold),
-            )),
-      );
+            child: const Text('Download Resume').downloadButtonTitleTextStyle(),
+          ));
     });
   }
 }

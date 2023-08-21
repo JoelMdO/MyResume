@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:resume/presentation/widgets/bar_menu/bar_button.dart';
 import 'package:resume/presentation/widgets/profile_id_image.dart';
-import 'package:resume/presentation/widgets/bar_menu/bar_career_p1d.dart';
-import 'package:resume/presentation/widgets/bar_menu/bar_education_techstack_p1d.dart';
-import 'package:resume/presentation/widgets/bar_menu/bar_skills_p1d.dart';
 import 'package:resume/presentation/widgets/titles/title_home.dart';
 
 class TopColumnTablet extends StatefulWidget {
@@ -37,7 +35,9 @@ class _TopColumnTabletState extends State<TopColumnTablet> {
               child: SizedBox(
                   width: screenWidth * 0.3,
                   height: screenHeight * 0.3,
-                  child: const SkillsBarP1D()),
+                  child: const BarButton(
+                    type: 'SKILLS &\n STRENGTHS',
+                  )),
             ),
 //Education
             Positioned(
@@ -46,7 +46,9 @@ class _TopColumnTabletState extends State<TopColumnTablet> {
               child: SizedBox(
                   width: screenWidth * 0.3,
                   height: screenHeight * 0.3,
-                  child: const EducationBarP1D()),
+                  child: const BarButton(
+                    type: 'EDUCATION & \n TECH STACK',
+                  )),
             ),
 //Career
             Positioned(
@@ -55,7 +57,9 @@ class _TopColumnTabletState extends State<TopColumnTablet> {
               child: SizedBox(
                   width: screenWidth * 0.3,
                   height: screenHeight * 0.3,
-                  child: const CareerBarP1D()),
+                  child: const BarButton(
+                    type: 'CAREER &\n PROJECTS',
+                  )),
             ),
 //Profile ID
             Align(

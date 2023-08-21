@@ -1,8 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:resume/presentation/widgets/buttons/education_navigation_button.dart';
+import 'package:resume/presentation/widgets/buttons/education_button.dart';
 import 'package:resume/presentation/widgets/graphics_techstack/group_graphic.dart';
-import 'package:resume/presentation/widgets/drawer/drawer_shape.dart';
+import 'package:resume/presentation/widgets/drawer/shape_drawer.dart';
 import 'package:resume/presentation/widgets/buttons/float_button.dart';
 import 'package:resume/presentation/widgets/titles/title_techstack.dart';
 

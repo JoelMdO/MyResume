@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:resume/presentation/widgets/graphics_techstack/text_styles_graphics.dart';
 import 'package:resume/utils/constants/colors.dart';
-import 'package:resume/utils/constants/library.dart';
+import 'package:resume/presentation/widgets/graphics_techstack/text_graphics.dart';
 
 /// Grapich showing the techstack with INTERMEDIATE knowledge.
 /// Techstack has been graded in Basic, Intermediate and Advanced.
@@ -67,13 +67,7 @@ class IntermediateGraphicP2DState extends State<IntermediateGraphicP2D> {
                   children: <Widget>[
                     Positioned(
                         top: 50,
-                        child: Text(
-                          'Intermediate',
-                          style: GoogleFonts.montserrat(
-                            fontSize: 30,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        )),
+                        child: const Text('Intermediate').graphicTitleStyle()),
                     //  Intermediate Bar
                     const Positioned(
                         top: 35,
@@ -87,12 +81,7 @@ class IntermediateGraphicP2DState extends State<IntermediateGraphicP2D> {
                     Positioned(
                         top: 155,
                         left: 155,
-                        child: Text(intermediateText,
-                            style: GoogleFonts.montserrat(
-                              color: Colors.black,
-                              fontSize: 25,
-                              fontWeight: FontWeight.w700,
-                            ))),
+                        child: Text(intermediateText).graphicTextStyle()),
                     // [CircularPresentIndicator] TO CREATE A PERCENT FILL FOR THE LEVELS.
                     // Intermediate Percent
                     Positioned(
@@ -108,11 +97,7 @@ class IntermediateGraphicP2DState extends State<IntermediateGraphicP2D> {
                     Positioned(
                         top: 15,
                         left: 275,
-                        child: Text('$percent2%',
-                            style: GoogleFonts.montserrat(
-                                color: Colors.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600))),
+                        child: Text('$percent2%').graphicPercentTextStyle()),
                   ])),
     );
   }

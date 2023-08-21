@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:resume/presentation/pages/desktop/page_1_home/left%20column/main_left_column_p1d.dart';
 import 'package:resume/presentation/widgets/buttons/download_button.dart';
-import 'package:resume/presentation/widgets/drawer/drawer_shape.dart';
+import 'package:resume/presentation/widgets/drawer/shape_drawer.dart';
 import 'package:resume/presentation/widgets/titles/title_home.dart';
 import 'package:resume/presentation/pages/desktop/page_1_home/right_column/main_right_column_p1d.dart';
 import 'package:resume/presentation/widgets/profile_id_image.dart';
@@ -34,7 +34,7 @@ class _HomePageDesktopState extends State<HomePageDesktop> {
               Align(
                   alignment: Alignment.topCenter,
                   child: SizedBox(
-                    width: screenWidth * 0.60,
+                    width: screenWidth * 0.65,
                     height: screenHeight * 0.30,
                     child: const TituloHome(),
                   )),

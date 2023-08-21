@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:resume/presentation/widgets/graphics_techstack/text_styles_graphics.dart';
 import 'package:resume/utils/constants/colors.dart';
-import 'package:resume/utils/constants/library.dart';
+import 'package:resume/presentation/widgets/graphics_techstack/text_graphics.dart';
 
 /// Grapich showing the  techstack with ADVANCED knowledge.
 /// Techstack has been graded in Basic, Intermediate and Advanced.
@@ -64,15 +64,10 @@ class AdvancedGraphicP2DState extends State<AdvancedGraphicP2D> {
               alignment: AlignmentDirectional.topStart,
               children: <Widget>[
                 Positioned(
-                    top: 50,
-                    left: 80,
-                    child: Text(
-                      'Advanced',
-                      style: GoogleFonts.montserrat(
-                        fontSize: 30,
-                        fontWeight: FontWeight.w800,
-                      ),
-                    )),
+                  top: 50,
+                  left: 80,
+                  child: const Text('Advanced').graphicTitleStyle(),
+                ),
                 //  Advanced Bar
                 const Positioned(
                     top: 40,
@@ -81,15 +76,12 @@ class AdvancedGraphicP2DState extends State<AdvancedGraphicP2D> {
                         height: 525,
                         child: Image(
                             image: AssetImage('assets/images/Tower3.png')))),
+                // Advanced Text
                 Positioned(
-                    top: 175,
-                    left: 135,
-                    child: Text(advancedText,
-                        style: GoogleFonts.montserrat(
-                          color: Colors.black,
-                          fontSize: 25,
-                          fontWeight: FontWeight.w700,
-                        ))),
+                  top: 175,
+                  left: 135,
+                  child: Text(advancedText).graphicTextStyle(),
+                ),
                 // [CircularPresentIndicator] TO CREATE A PERCENT FILL FOR THE LEVELS.
                 // Advanced Percent
                 Positioned(
@@ -103,13 +95,10 @@ class AdvancedGraphicP2DState extends State<AdvancedGraphicP2D> {
                       animationDuration: 1000,
                     )),
                 Positioned(
-                    top: 20,
-                    left: 310,
-                    child: Text('$percent3%',
-                        style: GoogleFonts.montserrat(
-                            color: Colors.black,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600))),
+                  top: 20,
+                  left: 310,
+                  child: Text('$percent3%').graphicPercentTextStyle(),
+                )
               ]),
         ));
   }

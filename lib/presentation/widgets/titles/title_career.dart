@@ -1,5 +1,6 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:resume/presentation/widgets/titles/title_text_styles.dart';
 
 // TITLE CAREER //
 class TituloCareer extends StatelessWidget {
@@ -12,13 +13,7 @@ class TituloCareer extends StatelessWidget {
         FittedBox(
       child: Padding(
         padding: const EdgeInsets.only(top: 120, left: 250),
-        child: Text(
-          'CAREER SUMMARY',
-          style: GoogleFonts.montserrat(
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.bold,
-              fontSize: 40),
-        ),
+        child: const AutoSizeText('CAREER SUMMARY').titleStyle(),
       ),
     );
   }

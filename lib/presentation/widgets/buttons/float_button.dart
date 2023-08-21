@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:resume/presentation/widgets/buttons/styles_text_buttons.dart';
 import 'package:resume/utils/constants/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -19,10 +19,7 @@ class FloatButton extends StatelessWidget {
         SpeedDialChild(
           child: const Icon(Icons.arrow_back),
           label: 'Go Back',
-          labelStyle: GoogleFonts.montserrat(
-            fontWeight: FontWeight.bold,
-            color: Colores.darkblue,
-          ),
+          labelStyle: floatButtonTitleTextStyle(),
           onTap: () {
             Navigator.pop(context);
           },
@@ -30,10 +27,7 @@ class FloatButton extends StatelessWidget {
         SpeedDialChild(
           child: const Icon(Icons.dashboard_customize),
           label: 'Sections',
-          labelStyle: GoogleFonts.montserrat(
-            fontWeight: FontWeight.bold,
-            color: Colores.darkblue,
-          ),
+          labelStyle: floatButtonTitleTextStyle(),
           onTap: () {
             Scaffold.of(context).openDrawer();
           },
@@ -41,10 +35,7 @@ class FloatButton extends StatelessWidget {
         SpeedDialChild(
           child: const Icon(Icons.email),
           label: 'Send Email',
-          labelStyle: GoogleFonts.montserrat(
-            fontWeight: FontWeight.bold,
-            color: Colores.darkblue,
-          ),
+          labelStyle: floatButtonTitleTextStyle(),
           onTap: () {
             _launchEmail();
           },

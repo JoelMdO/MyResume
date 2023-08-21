@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:resume/presentation/pages/loading_page/loading_screen_auto.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:resume/config/responsive_routes.dart';
+import 'package:resume/cubit/routes_cubit.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +14,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Joel Montes de Oca Lopez - Resume',
       theme: ThemeData(
+        textTheme: GoogleFonts.montserratTextTheme(),
         useMaterial3: true,
       ),
-      home: const LoadingScreenAutoPlay(),
+      debugShowCheckedModeBanner: false,
+      home: BlocProvider<NavigationCubit>(
+        create: (context) => NavigationCubit(),
+        child: const ResponsiveHomePage(
+          nameRoute: '/',
+        ),
+      ),
     );
   }
 }

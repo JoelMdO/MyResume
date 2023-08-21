@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:resume/presentation/pages/tablet/page_1_home/bottom_column_p1t/main_bottom_column_p1t.dart';
 import 'package:resume/presentation/pages/tablet/page_1_home/top_column_p1t/main_top_column_p1t.dart';
-import 'package:resume/presentation/widgets/drawer/drawer_shape.dart';
+import 'package:resume/presentation/widgets/drawer/shape_drawer.dart';
 
 class HomePageTablet extends StatefulWidget {
   const HomePageTablet({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:resume/presentation/widgets/drawer/text_styles_drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 //CONTACTOS DRAWER //
@@ -21,11 +21,7 @@ class ContactsDrawer extends StatelessWidget {
                   AssetImage('assets/images/Phone.png'),
                 ),
                 const Padding(padding: EdgeInsets.only(left: 5)),
-                Text(
-                  '+974-5502-1236',
-                  style: GoogleFonts.montserrat(
-                      fontWeight: FontWeight.w600, fontSize: 13),
-                ),
+                const Text('+974-5502-1236').drawerPhoneTextStyle(),
               ])),
           //-- EMAIL /
           MouseRegion(
@@ -50,16 +46,8 @@ class ContactsDrawer extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 5),
-                        child: Text(
-                          ' joelmontesdeoca@proton.me',
-                          style: GoogleFonts.montserrat(
-                              fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black,
-                              fontSize: 12),
-                          softWrap: false,
-                          overflow: TextOverflow.ellipsis,
-                        ),
+                        child: const Text(' joelmontesdeoca@proton.me')
+                            .drawerEmailTextStyle(),
                       ),
                     ])),
               )),
@@ -79,12 +67,8 @@ class ContactsDrawer extends StatelessWidget {
                           color: Colors.black,
                         ),
                         const Padding(padding: EdgeInsets.only(left: 5)),
-                        Text('joel-montesdeoca-lopez',
-                            style: GoogleFonts.montserrat(
-                              fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black,
-                            ))
+                        const Text('joel-montesdeoca-lopez')
+                            .drawerLinksTextStyle(),
                       ])))),
           //-- GITHUB//
 
@@ -102,12 +86,7 @@ class ContactsDrawer extends StatelessWidget {
                           color: Colors.black,
                         ),
                         const Padding(padding: EdgeInsets.only(left: 5)),
-                        Text('github.com/JoelMdO',
-                            style: GoogleFonts.montserrat(
-                              fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black,
-                            ))
+                        const Text('github.com/JoelMdO').drawerLinksTextStyle(),
                       ])))),
         ],
       ),

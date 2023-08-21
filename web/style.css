@@ -86,3 +86,49 @@ img {
     background: #191919;
     border-radius: 50%;
 }
+
+#video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    max-width: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-body {
+    text-align: center;
+    animation: text-animation 1s infinite;
+    font-family: sans-serif;
+    font-size: 22px;
+}
+
+@keyframes text-animation {
+    0% {
+        color: white;
+    }
+
+    25% {
+        color: orange;
+    }
+
+    50% {
+        color: green;
+    }
+
+    75% {
+        color: lightblue;
+    }
+
+    100% {
+        color: white;
+    }
+}

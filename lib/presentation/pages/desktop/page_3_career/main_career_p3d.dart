@@ -1,20 +1,38 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:resume/presentation/widgets/drawer/drawer_shape.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:resume/cubit/expansion_panel_cubit.dart';
+import 'package:resume/presentation/widgets/drawer/shape_drawer.dart';
 import 'package:resume/presentation/widgets/buttons/float_button.dart';
 import 'package:resume/presentation/widgets/buttons/projects_button.dart';
+import 'package:resume/presentation/widgets/pages_text/career/career_text_list.dart';
 import 'package:resume/presentation/widgets/titles/title_career.dart';
-import 'package:resume/presentation/widgets/pages_text/career_text.dart';
+import 'package:resume/presentation/widgets/pages_text/career/career_text.dart';
 
-class CareerPageDesktop extends StatefulWidget {
-  const CareerPageDesktop({super.key});
+// ignore: must_be_immutable
+class CareerPageDesktop extends StatelessWidget {
+  late bool isExpanded;
+  CareerPageDesktop({Key? key, required this.isExpanded}) : super(key: key);
 
   @override
-  State<CareerPageDesktop> createState() => _CareerPageDesktopState();
+  Widget build(BuildContext context) {
+    return BlocProvider<ExpansionPanelCubit>(
+        create: (context) =>
+            ExpansionPanelCubit()..onExpansionChanged(isExpanded),
+        child: CareerPageDesktopView(expandedInput: isExpanded));
+  }
 }
 
-class _CareerPageDesktopState extends State<CareerPageDesktop> {
-  bool isExpanded = false;
+// ignore: must_be_immutable
+class CareerPageDesktopView extends StatefulWidget {
+  bool expandedInput;
+  CareerPageDesktopView({super.key, required this.expandedInput});
 
+  @override
+  State<CareerPageDesktopView> createState() => _CareerPageDesktopViewState();
+}
+
+class _CareerPageDesktopViewState extends State<CareerPageDesktopView> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -22,41 +40,86 @@ class _CareerPageDesktopState extends State<CareerPageDesktop> {
 
     return Scaffold(
       floatingActionButton:
-          Visibility(visible: isExpanded, child: const FloatButton()),
+          BlocBuilder<ExpansionPanelCubit, ExpansionPanelState>(
+        builder: (context, state) {
+          return Visibility(
+              visible: state.expandedInput, child: const FloatButton());
+        },
+      ),
       body: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/images/Background2.png'),
-                fit: BoxFit.fill),
-          ),
-          child: SizedBox(
-            width: screenWidth,
-            height: screenHeight,
-            child: Stack(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/images/Background2.png'),
+              fit: BoxFit.fill),
+        ),
+        child: SizedBox(
+          width: screenWidth,
+          height: screenHeight,
+          child: Stack(
               alignment: AlignmentDirectional.topStart,
               fit: StackFit.loose,
               children: [
-                SingleChildScrollView(
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                      const TituloCareer(),
-                      const Padding(padding: EdgeInsets.only(top: 35)),
-                      CareerText(onExpansionChanged: (expanded) {
-                        setState(() {
-                          isExpanded = expanded;
-                        });
-                      }),
-                      const Padding(padding: EdgeInsets.only(bottom: 25)),
-                      const Align(
-                          alignment: Alignment.center,
-                          child: ProjectsNavigationButton()),
-                      const Padding(padding: EdgeInsets.only(bottom: 10)),
-                    ])),
-              ],
-            ),
-          )),
+                const TituloCareer(),
+                Padding(
+                    padding: const EdgeInsets.only(top: 170),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: SingleChildScrollView(
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                            const Padding(padding: EdgeInsets.only(top: 35)),
+                            SizedBox(
+                              width: screenWidth * 0.8,
+                              height: screenHeight,
+                              child: ListView.builder(
+                                  itemCount:
+                                      CareerTextList.carrerTextInfo.length,
+                                  itemBuilder: (context, index) {
+                                    final careerText =
+                                        CareerTextList.carrerTextInfo[index];
+                                    return CareerText(
+                                      title: careerText.title,
+                                      subtitle: careerText.subtitle,
+                                      value: careerText.value,
+                                      bodytitle: careerText.bodytitle,
+                                      achievementtitle1:
+                                          careerText.achievementtitle1,
+                                      achievementtext1:
+                                          careerText.achievementtext1,
+                                      achivementtitle2:
+                                          careerText.achivementtitle2,
+                                      achievementtext2:
+                                          careerText.achievementtext2,
+                                      achievementtitle3:
+                                          careerText.achievementtitle3,
+                                      achievementtext3:
+                                          careerText.achievementtext3,
+                                      achievementtitle4:
+                                          careerText.achievementtitle4,
+                                      achievementtext4:
+                                          careerText.achievementtext4,
+                                    );
+                                  }),
+                            )
+                          ])),
+                    )),
+                Positioned(
+                    bottom: 20,
+                    left: 70,
+                    child: BounceInRight(
+                        delay: const Duration(seconds: 6),
+                        duration: const Duration(seconds: 1),
+                        child: BlocBuilder<ExpansionPanelCubit,
+                            ExpansionPanelState>(builder: (context, state) {
+                          return Visibility(
+                              visible: state.expandedInput,
+                              child: const ProjectsNavigationButton());
+                        }))),
+              ]),
+        ),
+      ),
       drawer: const DrawerShape(),
     );
   }

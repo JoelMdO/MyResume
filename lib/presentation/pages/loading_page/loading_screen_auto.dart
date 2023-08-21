@@ -1,7 +1,7 @@
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/config/responsive_routes.dart';
-import 'package:resume/presentation/widgets/pages_text/loading_text.dart';
+import 'package:resume/presentation/pages/loading_page/loading_text.dart';
 import 'package:resume/presentation/widgets/profile_id_image.dart';
 import 'package:video_player/video_player.dart';
 
@@ -60,7 +60,9 @@ class _LoadingScreenAutoPlayState extends State<LoadingScreenAutoPlay> {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => const ResponsiveHomePage(),
+        builder: (context) => const ResponsiveHomePage(
+          nameRoute: '',
+        ),
       ),
     );
   }

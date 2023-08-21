@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:resume/presentation/widgets/buttons/button_drawer.dart';
+import 'package:resume/presentation/widgets/buttons/drawer_button.dart';
 
 //--DRAWER INDEX-- //
 class DrawerIndex extends StatefulWidget {
@@ -29,14 +29,13 @@ class DrawerIndexState extends State<DrawerIndex> {
 //[LISTVIEW] Drawer list pages, characteristics of its page is obtained from the button_drawer.dart
 //-file, class called ButtonDrawerMobile
           ListView(children: const <Widget>[
-            Padding(padding: EdgeInsets.only(top: 10)),
-            ButtonDrawer(page: 1, pagename: 'HOME'),
-            ButtonDrawer(page: 2, pagename: 'EDUCATION & TECH STACK'),
-            ButtonDrawer(page: 3, pagename: 'CAREER SUMMARY'),
-            ButtonDrawer(page: 4, pagename: 'PROJECTS'),
+            MyDrawerButton(page: 1, pagename: 'HOME'),
+            MyDrawerButton(page: 2, pagename: 'EDUCATION & TECH STACK'),
+            MyDrawerButton(page: 3, pagename: 'CAREER SUMMARY'),
+            MyDrawerButton(page: 4, pagename: 'PROJECTS'),
             Padding(
                 padding: EdgeInsets.only(left: 12),
-                child: ButtonDrawer(page: 5, pagename: 'CONTACT ME')),
+                child: MyDrawerButton(page: 5, pagename: 'CONTACT ME')),
           ]),
         ]);
   }

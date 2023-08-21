@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:resume/presentation/pages/mobile/page_1_home/figure_contacts_p1m.dart';
-import 'package:resume/presentation/widgets/bar_menu/bar_career_p1d.dart';
-import 'package:resume/presentation/widgets/bar_menu/bar_education_techstack_p1d.dart';
-import 'package:resume/presentation/widgets/bar_menu/bar_skills_p1d.dart';
+import 'package:resume/presentation/widgets/bar_menu/bar_button.dart';
 import 'package:resume/presentation/widgets/buttons/download_button.dart';
 import 'package:resume/presentation/widgets/drawer/contacts_drawer.dart';
 import 'package:resume/presentation/widgets/profile_id_image.dart';
@@ -50,7 +48,9 @@ class _HomePageMobileState extends State<HomePageMobile> {
                     child: SizedBox(
                         width: screenWidth * 0.4,
                         height: screenHeight * 0.4,
-                        child: const SkillsBarP1D()),
+                        child: const BarButton(
+                          type: 'SKILLS &\n STRENGTHS',
+                        )),
                   ),
 //Education
                   Positioned(
@@ -59,7 +59,9 @@ class _HomePageMobileState extends State<HomePageMobile> {
                     child: SizedBox(
                         width: screenWidth * 0.4,
                         height: screenHeight * 0.4,
-                        child: const EducationBarP1D()),
+                        child: const BarButton(
+                          type: 'EDUCATION & \n TECH STACK',
+                        )),
                   ),
 //Career
                   Positioned(
@@ -68,7 +70,9 @@ class _HomePageMobileState extends State<HomePageMobile> {
                     child: SizedBox(
                         width: screenWidth * 0.4,
                         height: screenHeight * 0.4,
-                        child: const CareerBarP1D()),
+                        child: const BarButton(
+                          type: 'CAREER &\n PROJECTS',
+                        )),
                   ),
 //Profile ID
                   Align(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:resume/cubit/routes_cubit.dart';
 import 'package:resume/presentation/pages/desktop/page_1_home/main_home_p1d.dart';
 import 'package:resume/presentation/pages/desktop/page_2_techstack/main_techstack_p2d.dart';
 import 'package:resume/presentation/pages/desktop/page_3_career/main_career_p3d.dart';
@@ -12,88 +14,115 @@ import 'package:resume/presentation/pages/tablet/page_2_techstack/main_techstack
 import 'package:resume/presentation/pages/tablet/page_3_career/main_career_p3t.dart';
 import 'package:resume/presentation/pages/tablet/page_4_projects/main_projects_p4t.dart';
 
-// Define the global keys
-final GlobalKey<NavigatorState> desktopNavigatorKey =
-    GlobalKey<NavigatorState>();
-final GlobalKey<NavigatorState> isTabletNavigatorKey =
-    GlobalKey<NavigatorState>();
-
-class ResponsiveHomePage extends StatefulWidget {
-  const ResponsiveHomePage({super.key});
+// ignore: must_be_immutable
+class ResponsiveHomePage extends StatelessWidget {
+  final String nameRoute;
+  const ResponsiveHomePage({Key? key, required this.nameRoute})
+      : super(key: key);
 
   @override
-  ResponsiveHomePageState createState() => ResponsiveHomePageState();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+        create: (context) => NavigationCubit()..navigateTo(nameRoute),
+        child: ResponsiveHomePageView(route: nameRoute));
+  }
+}
+
+// ignore: must_be_immutable
+class ResponsiveHomePageView extends StatefulWidget {
+  final String route;
+  const ResponsiveHomePageView({super.key, required this.route});
+
+  @override
+  ResponsiveHomePageViewState createState() => ResponsiveHomePageViewState();
 }
 
 /// My Resume has 3 breakpoints one for desktop with a size width of 920,
 /// Tablet for size width of 767 and rest will be mobile.
 /// Each of it has 4 pages (Home, TechStack, Career and Projects)
 
-class ResponsiveHomePageState extends State<ResponsiveHomePage> {
-  bool isDesktop = true;
-  bool isTablet = false;
+class ResponsiveHomePageViewState extends State<ResponsiveHomePageView> {
+  late bool isDesktop;
+  late bool isTablet;
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final isDesktop = MediaQuery.of(context).size.width >= 920;
-        isTablet = MediaQuery.of(context).size.width >= 767 &&
-            MediaQuery.of(context).size.width <= 919;
-        if (MediaQuery.of(context).size.width < 767) {
-          isTablet = false;
-        }
+    final isDesktop = MediaQuery.of(context).size.width >= 920;
+    final isTablet = MediaQuery.of(context).size.width <= 919 &&
+        MediaQuery.of(context).size.width >= 767;
 
+    return BlocBuilder<NavigationCubit, NavigationRouteState>(
+        // return LayoutBuilder(
+        builder: (context, state) {
+      return LayoutBuilder(builder: (context, constraints) {
         return Navigator(
-          key: isDesktop ? desktopNavigatorKey : isTabletNavigatorKey,
-          onGenerateRoute: (RouteSettings settings) {
-            switch (settings.name) {
-              case '/':
-                return MaterialPageRoute(builder: (context) {
-                  if (isDesktop) {
-                    return const HomePageDesktop();
-                  } else if (isTablet) {
-                    return const HomePageTablet();
-                  } else {
-                    return const HomePageMobile();
-                  }
-                });
-              case '/techstack':
-                return MaterialPageRoute(builder: (context) {
-                  if (isDesktop) {
-                    return const TechStackPageDesktop();
-                  } else if (isTablet) {
-                    return const TechStackPageTablet();
-                  } else {
-                    return const TechStackPageMobile();
-                  }
-                });
-              case '/career':
-                return MaterialPageRoute(builder: (context) {
-                  if (isDesktop) {
-                    return const CareerPageDesktop();
-                  } else if (isTablet) {
-                    return const CareerPageTablet();
-                  } else {
-                    return const CareerPageMobile();
-                  }
-                });
-              case '/projects':
-                return MaterialPageRoute(builder: (context) {
-                  if (isDesktop) {
-                    return const ProjectsPageDesktop();
-                  } else if (isTablet) {
-                    return const ProjectsPageTablet();
-                  } else {
-                    return const ProjectsPageMobile();
-                  }
-                });
-              default:
-                return null;
-            }
-          },
-        );
-      },
-    );
+            key: GlobalKey<NavigatorState>(),
+            onGenerateRoute: (RouteSettings settings) {
+              switch (state.route) {
+                case '/':
+                  return isDesktop
+                      ? MaterialPageRoute(builder: (context) {
+                          return const HomePageDesktop();
+                        })
+                      : isTablet
+                          ? MaterialPageRoute(builder: (context) {
+                              return const HomePageTablet();
+                            })
+                          : MaterialPageRoute(builder: (context) {
+                              return const HomePageMobile();
+                            });
+                case '/techstack':
+                  return isDesktop
+                      ? MaterialPageRoute(builder: (context) {
+                          return const TechStackPageDesktop();
+                        })
+                      : isTablet
+                          ? MaterialPageRoute(builder: (context) {
+                              return const TechStackPageTablet();
+                            })
+                          : MaterialPageRoute(builder: (context) {
+                              return const TechStackPageMobile();
+                            });
+                case '/career':
+                  return isDesktop
+                      ? MaterialPageRoute(builder: (context) {
+                          return CareerPageDesktop(
+                            isExpanded: false,
+                          );
+                        })
+                      : isTablet
+                          ? MaterialPageRoute(builder: (context) {
+                              return CareerPageTablet(
+                                isExpanded: false,
+                              );
+                            })
+                          : MaterialPageRoute(builder: (context) {
+                              return CareerPageMobile(
+                                isExpanded: false,
+                              );
+                            });
+                case '/projects':
+                  return isDesktop
+                      ? MaterialPageRoute(builder: (context) {
+                          return ProjectsPageDesktop(
+                            isExpanded: false,
+                          );
+                        })
+                      : isTablet
+                          ? MaterialPageRoute(builder: (context) {
+                              return const ProjectsPageTablet(
+                                isExpanded: false,
+                              );
+                            })
+                          : MaterialPageRoute(builder: (context) {
+                              return ProjectsPageMobile(
+                                isExpanded: false,
+                              );
+                            });
+              }
+              return null;
+            });
+      });
+    });
   }
 }

@@ -5,19 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "resume",
+            "name": "JoelMdO - Resume",
             "request": "launch",
             "type": "dart",
             "program": "lib/app/main.dart"
         },
         {
-            "name": "resume (profile mode)",
+            "name": "JoelMdO - Resume (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "resume (release mode)",
+            "name": "JoelMdO - Resume (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
