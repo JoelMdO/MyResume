@@ -3,6 +3,7 @@ import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 import 'package:resume/cubit/routes_cubit.dart';
 import 'package:resume/presentation/widgets/bar_menu/bar_text_styles.dart';
 import 'package:resume/presentation/widgets/dialogs/opendialog_skills.dart';
@@ -81,19 +82,13 @@ class BarButtonState extends State<BarButton> {
                               if (widget.type == 'SKILLS &\n STRENGTHS') {
                                 OpenDialogSkills.openDS(context);
                               } else if (widget.type == 'CAREER &\n PROJECTS') {
-                                setState(() {
-                                  String route = '/career';
-                                  context
-                                      .read<NavigationCubit>()
-                                      .navigateTo(route);
-                                });
+                                context
+                                    .read<NavigationCubit>()
+                                    .navigateTo('/career');
                               } else {
-                                setState(() {
-                                  String route = '/techstack';
-                                  context
-                                      .read<NavigationCubit>()
-                                      .navigateTo(route);
-                                });
+                                context
+                                    .read<NavigationCubit>()
+                                    .navigateTo('/techstack');
                               }
                             },
                             child: DelayedDisplay(

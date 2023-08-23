@@ -59,7 +59,7 @@ class _ProjectsPageMobileViewState extends State<ProjectsPageMobileView> {
                 children: [
                   const TituloProjects(),
                   Positioned(
-                      top: 180,
+                      top: 220,
                       left: 20,
                       child: SizedBox(
                           width: screenWidth * 0.85,

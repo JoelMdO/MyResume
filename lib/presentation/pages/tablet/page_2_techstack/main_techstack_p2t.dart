@@ -1,5 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:resume/cubit/routes_cubit.dart';
 import 'package:resume/presentation/widgets/buttons/education_button.dart';
 import 'package:resume/presentation/widgets/graphics_techstack/group_graphic.dart';
 import 'package:resume/presentation/widgets/drawer/shape_drawer.dart';

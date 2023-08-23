@@ -28,15 +28,18 @@ class DrawerIndexState extends State<DrawerIndex> {
           ),
 //[LISTVIEW] Drawer list pages, characteristics of its page is obtained from the button_drawer.dart
 //-file, class called ButtonDrawerMobile
-          ListView(children: const <Widget>[
-            MyDrawerButton(page: 1, pagename: 'HOME'),
-            MyDrawerButton(page: 2, pagename: 'EDUCATION & TECH STACK'),
-            MyDrawerButton(page: 3, pagename: 'CAREER SUMMARY'),
-            MyDrawerButton(page: 4, pagename: 'PROJECTS'),
-            Padding(
-                padding: EdgeInsets.only(left: 12),
-                child: MyDrawerButton(page: 5, pagename: 'CONTACT ME')),
-          ]),
+          Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: ListView(children: const <Widget>[
+              MyDrawerButton(page: 1, pagename: 'HOME'),
+              MyDrawerButton(page: 2, pagename: 'EDUCATION & TECH STACK'),
+              MyDrawerButton(page: 3, pagename: 'CAREER SUMMARY'),
+              MyDrawerButton(page: 4, pagename: 'PROJECTS'),
+              Padding(
+                  padding: EdgeInsets.only(left: 12),
+                  child: MyDrawerButton(page: 5, pagename: 'CONTACT ME')),
+            ]),
+          ),
         ]);
   }
 }

@@ -1,14 +1,17 @@
 part of 'routes_cubit.dart';
 
 class NavigationRouteState {
-  late String route;
+  late String currentRoute;
+  late String lastRoute;
 
   NavigationRouteState({
-    this.route = '',
+    this.currentRoute = '',
+    this.lastRoute = '',
   });
-  NavigationRouteState copyWith({required String route}) {
+  NavigationRouteState copyWith({required String currentRoute, lastRoute}) {
     return NavigationRouteState(
-      route: route,
+      currentRoute: currentRoute,
+      lastRoute: lastRoute ?? this.lastRoute,
     );
   }
 }

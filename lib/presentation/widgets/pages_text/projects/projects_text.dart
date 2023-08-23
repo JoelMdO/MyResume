@@ -80,20 +80,22 @@ class _ProjectTextState extends State<ProjectText> {
                           scrollDirection: Axis.horizontal,
                           child: Align(
                               alignment: Alignment.center,
-                              child: Row(children: [
-                                AutoSizeText(
-                                  maxFontSize: 25,
-                                  minFontSize: 12,
-                                  maxLines: 2,
-                                  widget.title,
-                                ).projectsSizeTextTitleStyle(),
-                                const Padding(
-                                    padding: EdgeInsets.only(left: 5)),
-                                Image.asset(widget.image,
-                                    width: isMobile ? 60 : 100,
-                                    height: isMobile ? 60 : 100),
-                                // ),
-                              ])),
+                              child: FittedBox(
+                                child: Row(children: [
+                                  AutoSizeText(
+                                    maxFontSize: 25,
+                                    minFontSize: 12,
+                                    maxLines: 2,
+                                    widget.title,
+                                  ).projectsSizeTextTitleStyle(),
+                                  const Padding(
+                                      padding: EdgeInsets.only(left: 5)),
+                                  Image.asset(widget.image,
+                                      width: isMobile ? 60 : 100,
+                                      height: isMobile ? 60 : 100),
+                                  // ),
+                                ]),
+                              )),
                         ),
                       ),
                     );

@@ -85,14 +85,17 @@ class _HomePageMobileState extends State<HomePageMobile> {
                   Positioned(
                       bottom: 15,
                       right: 35,
-                      child: SizedBox(
-                          width: screenWidth * 0.35,
-                          height: screenHeight * 0.3,
-                          child: const Stack(children: [
-                            FigureContacts(),
-                            Positioned(
-                                bottom: 5, right: 5, child: ContactsDrawer())
-                          ]))),
+                      child: FittedBox(
+                          child: SizedBox(
+                              width: screenWidth * 0.35,
+                              height: screenHeight * 0.3,
+                              child: const Stack(children: [
+                                FigureContacts(),
+                                Positioned(
+                                    bottom: 5,
+                                    right: 5,
+                                    child: ContactsDrawer())
+                              ])))),
 //Download Button
                   const Positioned(
                     bottom: 15,

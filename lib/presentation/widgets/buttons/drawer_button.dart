@@ -11,7 +11,6 @@ import 'package:resume/utils/constants/colors.dart';
 //--DRAWER BUTTON-- //
 class MyDrawerButton extends StatefulWidget {
   final int page;
-  // final String page;
   final String pagename;
 
   const MyDrawerButton({
@@ -25,10 +24,9 @@ class MyDrawerButton extends StatefulWidget {
 }
 
 class MyDrawerButtonState extends State<MyDrawerButton> {
+  bool isHovered = false;
   @override
   Widget build(BuildContext context) {
-    bool isHovered = false;
-
     return Row(children: [
       DelayedDisplay(
           delay: const Duration(seconds: 1),

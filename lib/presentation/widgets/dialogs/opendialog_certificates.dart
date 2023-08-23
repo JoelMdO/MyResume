@@ -42,7 +42,7 @@ class OpenDialogCertificates {
         height: screenHeight * 0.1,
         child: Padding(
           padding: const EdgeInsets.only(top: 5, left: 10),
-          child: const Text('MAIN CERTIFICATES:').openDialogTitleStyle(),
+          child: const Text('CERTIFICATES:').openDialogTitleStyle(),
         ));
   }
 

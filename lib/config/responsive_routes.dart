@@ -58,7 +58,7 @@ class ResponsiveHomePageViewState extends State<ResponsiveHomePageView> {
         return Navigator(
             key: GlobalKey<NavigatorState>(),
             onGenerateRoute: (RouteSettings settings) {
-              switch (state.route) {
+              switch (state.currentRoute) {
                 case '/':
                   return isDesktop
                       ? MaterialPageRoute(builder: (context) {

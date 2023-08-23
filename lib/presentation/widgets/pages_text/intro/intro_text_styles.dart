@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-///INTRO Text TextStle
-extension IntroTextStyle on Text {
-  Text introTextStyle() {
+///INTRO Text TextSytle Desktop
+extension IntroDesktopTextStyle on Text {
+  Text introDesktopTextStyle() {
     return Text(
       data!,
       style:
@@ -12,12 +12,33 @@ extension IntroTextStyle on Text {
   }
 }
 
-///INTRO SubText TextStle
-extension IntroSubTextStyle on Text {
-  Text introSubTextStyle() {
+///INTRO Text TextSytle Mobile
+extension IntroMobileTextStyle on Text {
+  Text introMobileTextStyle() {
+    return Text(
+      data!,
+      style:
+          GoogleFonts.montserrat(fontSize: 15, fontWeight: FontWeight.normal),
+    );
+  }
+}
+
+///INTRO SubText TextStyle Mobile
+extension IntroDesktopSubTextStyle on Text {
+  Text introDesktopSubTextStyle() {
     return Text(
       data!,
       style: GoogleFonts.montserrat(fontSize: 20, fontWeight: FontWeight.bold),
+    );
+  }
+}
+
+///INTRO SubText TextStyle Mobile
+extension IntroMobileSubTextStyle on Text {
+  Text introMobileSubTextStyle() {
+    return Text(
+      data!,
+      style: GoogleFonts.montserrat(fontSize: 15, fontWeight: FontWeight.bold),
     );
   }
 }

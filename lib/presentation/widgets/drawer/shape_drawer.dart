@@ -18,15 +18,20 @@ class DrawerShape extends StatelessWidget {
                   height: 420,
                   decoration: BoxDecoration(boxShadow: [
                     BoxShadow(
-                        color: Colores.darkblue.withOpacity(0.7),
-                        blurRadius: 5.0)
+                        color: Colors.black87.withOpacity(0.7),
+                        spreadRadius: 1,
+                        offset: const Offset(0, 10),
+                        // color: Colores.darkblue,
+                        blurRadius: 15.0)
                   ]))),
           ClipPath(
             clipper: CustomClipPath(),
-            child: const SizedBox(
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colores.darkblue, width: 2.0)),
               width: 300,
               height: 400,
-              child: Drawer(elevation: 5.0, child: DrawerIndex()),
+              child: const Drawer(elevation: 5.0, child: DrawerIndex()),
             ),
           )
         ]);

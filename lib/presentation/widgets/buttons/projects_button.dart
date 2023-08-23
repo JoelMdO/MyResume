@@ -39,11 +39,7 @@ class _ProjectsNavigationButtonState extends State<ProjectsNavigationButton> {
             child: ElevatedButton(
 //[Navigator] to navigate to the route pojects
               onPressed: () {
-                setState(() {
-                  String route = '/projects';
-                  context.read<NavigationCubit>().navigateTo(route);
-                });
-                // Navigator.pushNamed(context, '/projects');
+                context.read<NavigationCubit>().navigateTo('/projects');
               },
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colores.darkblue,

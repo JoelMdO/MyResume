@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:resume/cubit/routes_cubit.dart';
 import 'package:resume/presentation/widgets/buttons/styles_text_buttons.dart';
 import 'package:resume/utils/constants/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+// ignore: mustView_be_immutable
 class FloatButton extends StatelessWidget {
-  const FloatButton({super.key});
+  const FloatButton({
+    super.key,
+    //
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +27,7 @@ class FloatButton extends StatelessWidget {
           label: 'Go Back',
           labelStyle: floatButtonTitleTextStyle(),
           onTap: () {
-            Navigator.pop(context);
+            context.read<NavigationCubit>().goBack();
           },
         ),
         SpeedDialChild(
@@ -43,14 +49,14 @@ class FloatButton extends StatelessWidget {
       ],
     );
   }
+}
 
-  void _launchEmail() async {
-    final url = Uri(scheme: 'mailto', path: 'joelmontesdeoca@proton.me');
-    if (await canLaunchUrl(url)) {
-      launchUrl(url);
-    } else {
-      // ignore: avoid_print
-      print("Can't launch $url");
-    }
+void _launchEmail() async {
+  final url = Uri(scheme: 'mailto', path: 'joelmontesdeoca@proton.me');
+  if (await canLaunchUrl(url)) {
+    launchUrl(url);
+  } else {
+    // ignore: avoid_print
+    print("Can't launch $url");
   }
 }

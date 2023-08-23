@@ -4,7 +4,6 @@ import 'package:resume/utils/constants/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 /// Download Button for resume downloading from Google Drive
-///
 class DownloadButton extends StatelessWidget {
   const DownloadButton({super.key});
 

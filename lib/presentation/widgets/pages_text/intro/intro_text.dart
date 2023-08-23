@@ -14,11 +14,23 @@ class IntroText extends StatefulWidget {
 class _IntroTextState extends State<IntroText> {
   @override
   Widget build(BuildContext context) {
+    bool isMobile = MediaQuery.of(context).size.width <= 766;
+
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Row(children: [
-        Text(widget.text).introTextStyle(),
-        if (widget.subtext != null) Text(widget.subtext!).introSubTextStyle(),
-      ])
+      FittedBox(
+        fit: BoxFit.fill,
+        child: isMobile
+            ? Row(children: [
+                Text(widget.text).introMobileTextStyle(),
+                if (widget.subtext != null)
+                  Text(widget.subtext!).introMobileSubTextStyle(),
+              ])
+            : Row(children: [
+                Text(widget.text).introDesktopTextStyle(),
+                if (widget.subtext != null)
+                  Text(widget.subtext!).introDesktopSubTextStyle(),
+              ]),
+      ),
     ]);
   }
 }

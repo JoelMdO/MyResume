@@ -14,10 +14,12 @@ class TituloHome extends StatelessWidget {
     return
 // Title Text [FittedBox] to maintain size when changing with screen size
         Column(children: [
-      const AutoSizeText(
+      FittedBox(
+          child: const AutoSizeText(
         'Joel Montes de Oca Lopez',
-      ).nameTitleStyle(),
+      ).nameTitleStyle()),
 //[introText] is the text retrieved from utils/library
+      const Padding(padding: EdgeInsets.only(top: 15)),
       Expanded(
         child: ListView.builder(
           shrinkWrap: true,

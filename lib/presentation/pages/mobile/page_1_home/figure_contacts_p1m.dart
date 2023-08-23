@@ -5,56 +5,55 @@ import 'package:resume/utils/constants/colors.dart';
 class FigureContacts extends StatelessWidget {
   const FigureContacts({super.key});
 
-//WIDGET REPRESENTS THE FIGURE TO BE USED IN THE LEFT AND RIGHT COLUMN
+//WIDGET REPRESENTS THE FIGURE TO BE USED IN RIGHT COLUMN
   @override
   Widget build(BuildContext context) {
 //[STACK] FOR EASY PLACE OF THE PARALELLOGRAM STYLE AND TRIANGLES
     return Stack(
-        alignment: AlignmentDirectional.topStart,
-        fit: StackFit.loose,
-        children: [
-//PARALLELOGRAM ITEM
-          ClipPath(
-              clipper: CustomClipPathSquare(),
-              child: SizedBox(
-                  width: 400,
-                  height: 390,
-                  child: Container(
-                      decoration: const BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              colors: [
-                        Colores.grey,
-                        Colores.grey,
-                        Colores.grey,
-                        Colors.white,
-                        Colors.white,
-                      ]))))),
-//SECOND TRIANGLE COLOR YELLOW
-          Align(
-            alignment: AlignmentDirectional.topStart,
-            child: Transform.rotate(
-                angle: math.pi / -65,
-                child: ClipPath(
-                    clipper: CustomClipPathTriangleLeft(),
-                    child: SizedBox(
-                        width: 50,
-                        height: 155,
-                        child: Container(color: Colores.yellow)))),
-          ),
-//FIRST TRIANGLE COLOR BLUE
-          Positioned(
-            child: Transform.rotate(
-                angle: math.pi / -130,
-                child: ClipPath(
-                    clipper: CustomClipPathTriangleLeft(),
-                    child: SizedBox(
-                        width: 45,
-                        height: 150,
-                        child: Container(color: Colores.blue)))),
-          )
-        ]);
+      alignment: AlignmentDirectional.topStart,
+      fit: StackFit.loose,
+      children: [
+        //PARALLELOGRAM ITEM
+        ClipPath(
+            clipper: CustomClipPathSquare(),
+            child: Container(
+                decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Colores.grey,
+                    Colores.grey,
+                    Colores.grey,
+                    Colors.white,
+                    Colors.white,
+                  ]),
+            ))),
+        //SECOND TRIANGLE COLOR YELLOW
+        Align(
+          alignment: AlignmentDirectional.topStart,
+          child: Transform.rotate(
+              angle: math.pi / -65,
+              child: ClipPath(
+                  clipper: CustomClipPathTriangleLeft(),
+                  child: SizedBox(
+                      width: 50,
+                      height: 155,
+                      child: Container(color: Colores.yellow)))),
+        ),
+        //FIRST TRIANGLE COLOR BLUE
+        Positioned(
+          child: Transform.rotate(
+              angle: math.pi / -130,
+              child: ClipPath(
+                  clipper: CustomClipPathTriangleLeft(),
+                  child: SizedBox(
+                      width: 45,
+                      height: 150,
+                      child: Container(color: Colores.blue)))),
+        ),
+      ],
+    );
   }
 }
 
