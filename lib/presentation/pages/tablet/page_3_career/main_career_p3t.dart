@@ -53,66 +53,63 @@ class _CareerPageTabletViewState extends State<CareerPageTabletView> {
                 fit: BoxFit.fill),
           ),
           child: SizedBox(
-            width: screenWidth * 0.95,
-            height: screenHeight * 0.95,
+            width: screenWidth,
+            height: screenHeight,
             child: Stack(
                 alignment: AlignmentDirectional.topStart,
                 fit: StackFit.loose,
                 children: [
-                  const TituloCareer(),
-                  Align(
-                      alignment: Alignment.center,
-                      child: Column(children: <Widget>[
-                        //Career Text
-                        SizedBox(
-                            width: screenWidth * 0.50,
-                            height: screenHeight * 0.8,
-                            child: ListView.builder(
-                                itemCount: CareerTextList.carrerTextInfo.length,
-                                itemBuilder: (context, index) {
-                                  final careerText =
-                                      CareerTextList.carrerTextInfo[index];
-                                  return CareerText(
-                                    title: careerText.title,
-                                    subtitle: careerText.subtitle,
-                                    value: careerText.value,
-                                    bodytitle: careerText.bodytitle,
-                                    achievementtitle1:
-                                        careerText.achievementtitle1,
-                                    achievementtext1:
-                                        careerText.achievementtext1,
-                                    achivementtitle2:
-                                        careerText.achivementtitle2,
-                                    achievementtext2:
-                                        careerText.achievementtext2,
-                                    achievementtitle3:
-                                        careerText.achievementtitle3,
-                                    achievementtext3:
-                                        careerText.achievementtext3,
-                                    achievementtitle4:
-                                        careerText.achievementtitle4,
-                                    achievementtext4:
-                                        careerText.achievementtext4,
-                                  );
-                                }))
-                      ])),
-                  Padding(
-                      padding: const EdgeInsets.only(bottom: 50),
-                      child: Positioned(
-                          bottom: 50,
-                          left: 5,
-                          child: BounceInRight(
-                            delay: const Duration(seconds: 6),
-                            duration: const Duration(seconds: 1),
-                            child: BlocBuilder<ExpansionPanelCubit,
-                                ExpansionPanelState>(
-                              builder: (context, state) {
-                                return Visibility(
-                                    visible: state.expandedInput,
-                                    child: const ProjectsNavigationButton());
-                              },
-                            ),
-                          ))),
+                  Positioned(
+                    left: 20,
+                    child: SizedBox(
+                        width: screenWidth * 0.8,
+                        height: screenHeight * 0.30,
+                        child: const TituloCareer()),
+                  ),
+                  Positioned(
+                      top: 240,
+                      left: 50,
+                      child: SizedBox(
+                          width: screenWidth * 0.80,
+                          height: screenHeight * 0.8,
+                          child: ListView.builder(
+                              itemCount: CareerTextList.carrerTextInfo.length,
+                              itemBuilder: (context, index) {
+                                final careerText =
+                                    CareerTextList.carrerTextInfo[index];
+                                return CareerText(
+                                  title: careerText.title,
+                                  subtitle: careerText.subtitle,
+                                  value: careerText.value,
+                                  bodytitle: careerText.bodytitle,
+                                  achievementtitle1:
+                                      careerText.achievementtitle1,
+                                  achievementtext1: careerText.achievementtext1,
+                                  achivementtitle2: careerText.achivementtitle2,
+                                  achievementtext2: careerText.achievementtext2,
+                                  achievementtitle3:
+                                      careerText.achievementtitle3,
+                                  achievementtext3: careerText.achievementtext3,
+                                  achievementtitle4:
+                                      careerText.achievementtitle4,
+                                  achievementtext4: careerText.achievementtext4,
+                                );
+                              }))),
+                  Positioned(
+                      bottom: 10,
+                      left: 10,
+                      child: BounceInRight(
+                        delay: const Duration(seconds: 6),
+                        duration: const Duration(seconds: 1),
+                        child: BlocBuilder<ExpansionPanelCubit,
+                            ExpansionPanelState>(
+                          builder: (context, state) {
+                            return Visibility(
+                                visible: state.expandedInput,
+                                child: const ProjectsNavigationButton());
+                          },
+                        ),
+                      )),
                 ]),
           ),
         ),

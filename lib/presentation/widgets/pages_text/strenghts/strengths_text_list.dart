@@ -10,7 +10,7 @@ class StrengthsTextList {
 //Texto2
     const StrengthsText(
       text: ' - Innovation and creativity:',
-      subtext: ' to solve problems and enhance processes.\n',
+      subtext: 'To solve problems and enhance processes.\n',
     ),
 //Texto3
     const StrengthsText(

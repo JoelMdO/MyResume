@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:resume/presentation/pages/mobile/page_1_home/figure_contacts_p1m.dart';
 import 'package:resume/presentation/widgets/bar_menu/bar_button.dart';
 import 'package:resume/presentation/widgets/buttons/download_button.dart';
-import 'package:resume/presentation/widgets/drawer/contacts_drawer.dart';
 import 'package:resume/presentation/widgets/profile_id_image.dart';
 import 'package:resume/presentation/widgets/titles/title_home.dart';
 
@@ -75,27 +74,19 @@ class _HomePageMobileState extends State<HomePageMobile> {
                         )),
                   ),
 //Profile ID
-                  Align(
+                  const Align(
                       alignment: Alignment.centerRight,
-                      child: SizedBox(
-                          width: 180,
-                          height: screenHeight * 0.3,
-                          child: const ProfileIDImage())),
+                      child: ProfileIDImage()),
 //Contacts
                   Positioned(
                       bottom: 15,
                       right: 35,
                       child: FittedBox(
                           child: SizedBox(
-                              width: screenWidth * 0.35,
-                              height: screenHeight * 0.3,
-                              child: const Stack(children: [
-                                FigureContacts(),
-                                Positioned(
-                                    bottom: 5,
-                                    right: 5,
-                                    child: ContactsDrawer())
-                              ])))),
+                        width: screenWidth * 0.35,
+                        height: screenHeight * 0.3,
+                        child: const FigureContacts(),
+                      ))),
 //Download Button
                   const Positioned(
                     bottom: 15,

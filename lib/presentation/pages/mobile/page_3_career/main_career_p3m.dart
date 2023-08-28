@@ -2,7 +2,6 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:resume/cubit/expansion_panel_cubit.dart';
-import 'package:resume/cubit/routes_cubit.dart';
 import 'package:resume/presentation/widgets/drawer/shape_drawer.dart';
 import 'package:resume/presentation/widgets/buttons/float_button.dart';
 import 'package:resume/presentation/widgets/buttons/projects_button.dart';
@@ -60,10 +59,15 @@ class _CareerPageMobileViewState extends State<CareerPageMobileView> {
             alignment: AlignmentDirectional.topStart,
             fit: StackFit.loose,
             children: [
-              const Positioned(left: -40, child: TituloCareer()),
+              Positioned(
+                  left: -40,
+                  child: SizedBox(
+                      width: screenWidth * 0.8,
+                      height: screenHeight * 0.30,
+                      child: const TituloCareer())),
               //Career Text
               Positioned(
-                  top: 150,
+                  top: 180,
                   left: 20,
                   child: SizedBox(
                       width: screenWidth * 0.85,

@@ -50,8 +50,8 @@ class OpenDialogStrengths {
   static Widget buildContentStrengthsDialog(
       double screenWidth, double screenHeight) {
     return SizedBox(
-        width: screenWidth * 0.8,
-        height: 300,
+        width: screenWidth,
+        height: screenHeight * 0.9,
         child: DecoratedBox(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),

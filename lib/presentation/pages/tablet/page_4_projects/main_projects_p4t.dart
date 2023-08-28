@@ -34,7 +34,7 @@ class _ProjectsPageTabletViewState extends State<ProjectsPageTabletView> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double screenheight = MediaQuery.of(context).size.height;
+    double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
         floatingActionButton:
@@ -49,32 +49,33 @@ class _ProjectsPageTabletViewState extends State<ProjectsPageTabletView> {
                 image: AssetImage('assets/images/Third%20Background.png'),
                 fit: BoxFit.fill),
           ),
-          child: SizedBox(
-              width: screenWidth,
-              height: screenheight,
-              child: SingleChildScrollView(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    const TituloProjects(),
-                    ListView.builder(
-                        itemCount: ProjectsTextList.projectsTextInfo.length,
-                        itemBuilder: (context, index) {
-                          final projectText =
-                              ProjectsTextList.projectsTextInfo[index];
-                          return ProjectText(
-                            value: projectText.value,
-                            title: projectText.title,
-                            subtitle: projectText.subtitle,
-                            image: projectText.image,
-                            bodytitle: projectText.bodytitle,
-                            bodytext: projectText.bodytext,
-                          );
-                        })
-                  ],
-                ),
-              )),
+          child: Stack(
+            alignment: AlignmentDirectional.topStart,
+            fit: StackFit.loose,
+            children: [
+              const Positioned(left: 20, child: TituloProjects()),
+              Positioned(
+                  top: 220,
+                  left: 50,
+                  child: SizedBox(
+                      width: screenWidth * 0.80,
+                      height: screenHeight,
+                      child: ListView.builder(
+                          itemCount: ProjectsTextList.projectsTextInfo.length,
+                          itemBuilder: (context, index) {
+                            final projectText =
+                                ProjectsTextList.projectsTextInfo[index];
+                            return ProjectText(
+                              value: projectText.value,
+                              title: projectText.title,
+                              subtitle: projectText.subtitle,
+                              image: projectText.image,
+                              bodytitle: projectText.bodytitle,
+                              bodytext: projectText.bodytext,
+                            );
+                          })))
+            ],
+          ),
         ),
         drawer: const DrawerShape());
   }

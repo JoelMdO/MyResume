@@ -42,7 +42,7 @@ extension ProjectsSizeTextBodyText on AutoSizeText {
     return AutoSizeText(
       data!,
       style: GoogleFonts.montserrat(
-          fontWeight: FontWeight.bold, color: Colors.black),
+          fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black),
     );
   }
 }

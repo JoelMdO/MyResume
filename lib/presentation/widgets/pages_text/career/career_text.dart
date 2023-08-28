@@ -54,123 +54,129 @@ class _CareerTextState extends State<CareerText> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    return Align(
-        alignment: Alignment.center,
-        child: ExpansionPanelList.radio(
-            dividerColor: Colores.blue,
-            expandedHeaderPadding: const EdgeInsets.all(10),
-            elevation: 3,
-            expansionCallback: (panelIndex, isExpanded) {
-              setState(() {
-                isLastExpanded = isExpanded;
-                //pass the value to the cubit
-                expandedInput = isExpanded;
-                //Past the value to the callback
-                onExpansionChanged(isLastExpanded);
-                //update the context of the cubit
-                context
-                    .read<ExpansionPanelCubit>()
-                    .onExpansionChanged(expandedInput);
-              });
-            },
-            children: [
-              ExpansionPanelRadio(
-                  value: widget.value,
-                  backgroundColor: Colores.whiteyellow,
-                  canTapOnHeader: true,
-                  headerBuilder: (context, isExpanded) {
-                    return Container(
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: Align(
+          alignment: Alignment.center,
+          child: ExpansionPanelList.radio(
+              dividerColor: Colores.blue,
+              expandedHeaderPadding: const EdgeInsets.all(10),
+              elevation: 3,
+              expansionCallback: (panelIndex, isExpanded) {
+                setState(() {
+                  isLastExpanded = isExpanded;
+                  //pass the value to the cubit
+                  expandedInput = isExpanded;
+                  //Past the value to the callback
+                  onExpansionChanged(isLastExpanded);
+                  //update the context of the cubit
+                  context
+                      .read<ExpansionPanelCubit>()
+                      .onExpansionChanged(expandedInput);
+                });
+              },
+              children: [
+                ExpansionPanelRadio(
+                    value: widget.value,
+                    backgroundColor: Colores.whiteyellow,
+                    canTapOnHeader: true,
+                    headerBuilder: (context, isExpanded) {
+                      return Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            gradient: const LinearGradient(
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                                colors: [
+                                  Colores.blue,
+                                  Colores.lightblue,
+                                ])),
+                        child: ListTile(
+                            title: Align(
+                              alignment: Alignment.center,
+                              child: AutoSizeText(
+                                      maxFontSize: 25,
+                                      minFontSize: 15,
+                                      maxLines: 2,
+                                      widget.title)
+                                  .careerTitleStyle(),
+                            ),
+                            subtitle: Align(
+                                alignment: Alignment.center,
+                                child: AutoSizeText(
+                                        maxFontSize: 16,
+                                        minFontSize: 14,
+                                        maxLines: 2,
+                                        widget.subtitle)
+                                    .careerSubTitleStyle())),
+                      );
+                    },
+                    body: Container(
+                      width: screenWidth,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           gradient: const LinearGradient(
-                              begin: Alignment.centerLeft,
-                              end: Alignment.centerRight,
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
                               colors: [
-                                Colores.blue,
-                                Colores.lightblue,
+                                Colores.whiteblue,
+                                Colores.whiteyellow
                               ])),
-                      child: ListTile(
-                          title: Align(
+                      child: Column(children: [
+                        AutoSizeText(
+                                maxFontSize: 14,
+                                minFontSize: 10,
+                                widget.bodytitle)
+                            .careerBodyTitleStyle(),
+                        Align(
+                          alignment: Alignment.center,
+                          child: Text(widget.achievementtitle1)
+                              .careerBodySubTitleStyle(),
+                        ),
+                        Align(
+                          alignment: Alignment.center,
+                          child: Text(widget.achievementtext1)
+                              .careerBodyTextStyle(),
+                        ),
+                        if (widget.achivementtitle2 != '')
+                          Align(
                             alignment: Alignment.center,
-                            child: AutoSizeText(
-                                    maxFontSize: 25,
-                                    minFontSize: 15,
-                                    maxLines: 2,
-                                    widget.title)
-                                .careerTitleStyle(),
+                            child: Text(widget.achivementtitle2)
+                                .careerBodySubTitleStyle(),
                           ),
-                          subtitle: Align(
-                              alignment: Alignment.center,
-                              child: AutoSizeText(
-                                      maxFontSize: 16,
-                                      minFontSize: 14,
-                                      maxLines: 2,
-                                      widget.subtitle)
-                                  .careerSubTitleStyle())),
-                    );
-                  },
-                  body: Container(
-                    width: screenWidth,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        gradient: const LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            colors: [Colores.whiteblue, Colores.whiteyellow])),
-                    child: Column(children: [
-                      AutoSizeText(
-                              maxFontSize: 14,
-                              minFontSize: 10,
-                              widget.bodytitle)
-                          .careerBodyTitleStyle(),
-                      Align(
-                        alignment: Alignment.center,
-                        child: Text(widget.achievementtitle1)
-                            .careerBodySubTitleStyle(),
-                      ),
-                      Align(
-                        alignment: Alignment.center,
-                        child:
-                            Text(widget.achievementtext1).careerBodyTextStyle(),
-                      ),
-                      if (widget.achivementtitle2 != '')
-                        Align(
-                          alignment: Alignment.center,
-                          child: Text(widget.achivementtitle2)
-                              .careerBodySubTitleStyle(),
-                        ),
-                      if (widget.achievementtext2 != '')
-                        Align(
-                          alignment: Alignment.center,
-                          child: Text(widget.achievementtext2)
-                              .careerBodyTextStyle(),
-                        ),
-                      if (widget.achievementtitle3 != '')
-                        Align(
-                          alignment: Alignment.center,
-                          child: Text(widget.achievementtitle3)
-                              .careerBodySubTitleStyle(),
-                        ),
-                      if (widget.achievementtext3 != '')
-                        Align(
-                          alignment: Alignment.center,
-                          child: Text(widget.achievementtext3)
-                              .careerBodyTextStyle(),
-                        ),
-                      if (widget.achievementtitle4 != '')
-                        Align(
-                          alignment: Alignment.center,
-                          child: Text(widget.achievementtitle4)
-                              .careerBodySubTitleStyle(),
-                        ),
-                      if (widget.achievementtext4 != '')
-                        Align(
-                          alignment: Alignment.center,
-                          child: Text(widget.achievementtext4)
-                              .careerBodyTextStyle(),
-                        ),
-                    ]),
-                  ))
-            ]));
+                        if (widget.achievementtext2 != '')
+                          Align(
+                            alignment: Alignment.center,
+                            child: Text(widget.achievementtext2)
+                                .careerBodyTextStyle(),
+                          ),
+                        if (widget.achievementtitle3 != '')
+                          Align(
+                            alignment: Alignment.center,
+                            child: Text(widget.achievementtitle3)
+                                .careerBodySubTitleStyle(),
+                          ),
+                        if (widget.achievementtext3 != '')
+                          Align(
+                            alignment: Alignment.center,
+                            child: Text(widget.achievementtext3)
+                                .careerBodyTextStyle(),
+                          ),
+                        if (widget.achievementtitle4 != '')
+                          Align(
+                            alignment: Alignment.center,
+                            child: Text(widget.achievementtitle4)
+                                .careerBodySubTitleStyle(),
+                          ),
+                        if (widget.achievementtext4 != '')
+                          Align(
+                            alignment: Alignment.center,
+                            child: Text(widget.achievementtext4)
+                                .careerBodyTextStyle(),
+                          ),
+                      ]),
+                    ))
+              ])),
+    );
   }
 }

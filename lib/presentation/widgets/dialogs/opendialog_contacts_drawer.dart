@@ -38,7 +38,7 @@ class OpenDialogContactsDrawer {
         height: screenHeight * 0.1,
         child: Padding(
           padding: const EdgeInsets.only(top: 5, left: 10),
-          child: const Text('CONTACT ME...').contactsDialogTitleStyle(),
+          child: const Text('LETS CONNECT...').contactsDialogTitleStyle(),
         ));
   }
 

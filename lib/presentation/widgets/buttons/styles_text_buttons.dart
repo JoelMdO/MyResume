@@ -7,7 +7,7 @@ extension ButtonDrawerTitleTextStyle on TypewriterAnimatedText {
   TypewriterAnimatedText typewriterAnimatedText(String data) {
     return TypewriterAnimatedText(data,
         textStyle: GoogleFonts.montserrat(
-            fontSize: 14,
+            fontSize: 13,
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.w800));
   }

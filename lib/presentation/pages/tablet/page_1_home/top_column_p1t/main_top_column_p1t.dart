@@ -27,7 +27,9 @@ class _TopColumnTabletState extends State<TopColumnTablet> {
                 top: 15,
                 right: 15,
                 child: SizedBox(
-                    width: screenWidth * 0.7, child: const TituloHome())),
+                    width: screenWidth * 0.7,
+                    height: screenHeight * 0.4,
+                    child: const TituloHome())),
 //Skills
             Positioned(
               top: 165,
@@ -62,12 +64,7 @@ class _TopColumnTabletState extends State<TopColumnTablet> {
                   )),
             ),
 //Profile ID
-            Align(
-                alignment: Alignment.centerRight,
-                child: SizedBox(
-                    width: 180,
-                    height: screenHeight * 0.3,
-                    child: const ProfileIDImage())),
+            const Positioned(right: 5, top: 250, child: ProfileIDImage()),
           ]),
     );
     // ))

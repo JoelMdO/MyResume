@@ -35,7 +35,7 @@ class _HomePageDesktopState extends State<HomePageDesktop> {
                   alignment: Alignment.topCenter,
                   child: SizedBox(
                     width: screenWidth * 0.65,
-                    height: screenHeight * 0.30,
+                    height: screenHeight * 0.35,
                     child: const TituloHome(),
                   )),
               //Download Button

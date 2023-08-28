@@ -51,19 +51,20 @@ class _ProjectsPageMobileViewState extends State<ProjectsPageMobileView> {
                   fit: BoxFit.fill),
             ),
             child: SizedBox(
-              width: screenWidth * 0.95,
-              height: screenHeight * 0.95,
+              width: screenWidth * 0.90,
+              height: screenHeight,
               child: Stack(
                 alignment: AlignmentDirectional.topStart,
                 fit: StackFit.loose,
                 children: [
-                  const TituloProjects(),
+                  SizedBox(
+                      width: screenWidth * 0.80, child: const TituloProjects()),
                   Positioned(
                       top: 220,
                       left: 20,
                       child: SizedBox(
-                          width: screenWidth * 0.85,
-                          height: screenHeight * 0.70,
+                          width: screenWidth * 0.80,
+                          height: screenHeight,
                           child: ListView.builder(
                               itemCount:
                                   ProjectsTextList.projectsTextInfo.length,

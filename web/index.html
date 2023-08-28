@@ -20,6 +20,7 @@
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="My Resume - Joel Montes de Oca Lopez">
+  <meta name="autoplay-policy" content="no-user-gesture-required">
 
   <!-- SEO meta tags -->
   <meta name="keywords" content="Project Leader, Flutter developer, Senior Flight Dispatcher, Creativity, Efficiency">
@@ -37,7 +38,6 @@
   <title>JoelMdO -Resume</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
-
 </head>
 
 <script>
@@ -57,55 +57,22 @@
       <span></span>
     </div>
     <img src="assets/J code.png" alt="">
-  </div>
-  <div class="card">
-    <video id="video" src="assets/Profile.mp4" type="video/mp4" muted></video>
-    <div class="card-body">
-      <h1 class="card-title h1-sm">Bienvenido</h1>
-      <h2 class="card-title h2-sm">Welcome</h2>
-      <p class="card-text">To My Resume</p>
-    </div>
-  </div>
-
-  <script>
-    // This script adds the video, loader and flutter initialization JS code
-    const video = document.querySelector("video");
-    const texto = document.querySelector(".card-body");
-    const Jimage = document.querySelector("main-content");
-    // Display only the loader (Jimage)
-    video.style.display = "none";
-    texto.style.display = "none";
-    //Once the video is loaded ready to play it will start after 2 seconds
-    //including the Welcome text
-    video.addEventListener('canplay', function () {
-      setTimeout(() => {
-        video.style.display = "block";
-        video.play();
-        texto.style.display = "block";
-      }, 2500);
-    });
-    //Once the video finished it will disappear, including the text
-    video.addEventListener('ended', function () {
-      texto.style.display = 'none';
-      video.style.display = "none";
-    });
-    //loading the fluter web app
-    window.addEventListener('load', function (ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: function (engineInitializer) {
-          engineInitializer.initializeEngine().then(function (appRunner) {
-            setTimeout(() => {
+    <script>
+      //loading the fluter web app
+      window.addEventListener('load', function (ev) {
+        // Download main.dart.js
+        _flutter.loader.loadEntrypoint({
+          serviceWorker: {
+            serviceWorkerVersion: serviceWorkerVersion,
+          },
+          onEntrypointLoaded: function (engineInitializer) {
+            engineInitializer.initializeEngine().then(function (appRunner) {
               appRunner.runApp();
-            }, 3000);
-          });
-        },
+            });
+          },
+        });
       });
-    });
-  </script>
+    </script>
 </body>
 
 </html>

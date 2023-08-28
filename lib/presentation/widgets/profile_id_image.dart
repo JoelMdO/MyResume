@@ -8,10 +8,9 @@ class ProfileIDImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CircleAvatar(
       backgroundColor: Colores.blue,
-      maxRadius: 95,
-      minRadius: 85,
+      radius: 80,
       child: CircleAvatar(
-          radius: 85, child: Image.asset('assets/images/profile.png')),
+          radius: 70, child: Image.asset('assets/images/profile.png')),
     );
   }
 }

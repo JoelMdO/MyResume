@@ -56,6 +56,10 @@ class _TechStackPageMobileState extends State<TechStackPageMobile> {
                     ))
               ]),
         ),
-        drawer: const DrawerShape());
+        drawer: Theme(
+            data: Theme.of(context).copyWith(
+              canvasColor: Colors.transparent,
+            ),
+            child: const DrawerShape()));
   }
 }

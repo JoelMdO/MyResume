@@ -2,7 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/presentation/pages/tablet/page_1_home/bottom_column_p1t/figure_left_bottom_p1t.dart';
 import 'package:resume/presentation/pages/tablet/page_1_home/bottom_column_p1t/figure_right_bottom_p1t.dart';
-import 'package:resume/presentation/pages/tablet/page_1_home/bottom_column_p1t/contacts_right_column.dart';
+import 'package:resume/presentation/widgets/contacts/contacts_right_column.dart';
 import 'package:resume/presentation/widgets/buttons/download_button.dart';
 
 class BottomColumnTablet extends StatefulWidget {

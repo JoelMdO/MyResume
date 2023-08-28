@@ -1,6 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:resume/presentation/pages/tablet/page_1_home/bottom_column_p1t/contacts_right_column.dart';
+import 'package:resume/presentation/widgets/contacts/contacts_right_column.dart';
 
 //---RIGHT COLUMN //
 class RightColumnDesktop extends StatefulWidget {

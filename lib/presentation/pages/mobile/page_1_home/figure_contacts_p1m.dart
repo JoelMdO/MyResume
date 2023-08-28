@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume/presentation/widgets/contacts/contacts_right_column.dart';
 import 'dart:math' as math;
 import 'package:resume/utils/constants/colors.dart';
 
@@ -52,6 +53,11 @@ class FigureContacts extends StatelessWidget {
                       height: 150,
                       child: Container(color: Colores.blue)))),
         ),
+        const Positioned(
+            top: 50,
+            left: 40,
+            child:
+                SizedBox(width: 100, height: 180, child: ContactsRightColumn()))
       ],
     );
   }

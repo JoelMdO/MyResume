@@ -5,7 +5,7 @@ class ProjectsTextList {
 //CHARTER FEASIBILITY TOOL
     const ProjectText(
       value: 1,
-      title: 'Charter Flight Feasibility Tool',
+      title: 'Flight Feasibility Tool',
       subtitle:
           '- Director and developer; results: 50% sales department complaints reduction, the accuracy of the information increased by 95% and reduction of the reply time frame to only 20 minutes.\n',
       image: 'assets/images/CharterTool.png',
@@ -16,7 +16,7 @@ class ProjectsTextList {
 //PERMITS HANDBOOK
     const ProjectText(
       value: 2,
-      title: 'Permits Interactive Handbook',
+      title: 'Permits Handbook',
       subtitle:
           '- Developer to provide clear and concise instructions about the method to obtain flight clearances and reduce the time frame error requests by 50%, interactive for easy use and standardize of the information.\n',
       image: 'assets/images/Permits.png',

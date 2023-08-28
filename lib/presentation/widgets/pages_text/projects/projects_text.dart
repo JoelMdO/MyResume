@@ -40,7 +40,9 @@ class _ProjectTextState extends State<ProjectText> {
     final isMobile = MediaQuery.of(context).size.width <= 550;
     double screenWidth = MediaQuery.of(context).size.width;
 
-    return Align(
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: Align(
         alignment: Alignment.center,
         child: ExpansionPanelList.radio(
             dividerColor: Colores.blue,
@@ -66,39 +68,37 @@ class _ProjectTextState extends State<ProjectText> {
                   canTapOnHeader: true,
                   headerBuilder: (context, isExpanded) {
                     return Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          gradient: const LinearGradient(
-                              begin: Alignment.centerLeft,
-                              end: Alignment.centerRight,
-                              colors: [
-                                Colores.blue,
-                                Colores.lightblue,
-                              ])),
-                      child: ListTile(
-                        title: SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Align(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            gradient: const LinearGradient(
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                                colors: [
+                                  Colores.blue,
+                                  Colores.lightblue,
+                                ])),
+                        child: ListTile(
+                          title: Align(
                               alignment: Alignment.center,
-                              child: FittedBox(
+                              child: SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
                                 child: Row(children: [
                                   AutoSizeText(
                                     maxFontSize: 25,
-                                    minFontSize: 12,
-                                    maxLines: 2,
+                                    minFontSize: 8,
+                                    maxLines: 3,
                                     widget.title,
                                   ).projectsSizeTextTitleStyle(),
                                   const Padding(
                                       padding: EdgeInsets.only(left: 5)),
                                   Image.asset(widget.image,
-                                      width: isMobile ? 60 : 100,
-                                      height: isMobile ? 60 : 100),
+                                      width: isMobile ? 30 : 100,
+                                      height: isMobile ? 30 : 100),
                                   // ),
                                 ]),
                               )),
-                        ),
-                      ),
-                    );
+                          // ),
+                        ));
                   },
                   body: Container(
                     width: screenWidth,
@@ -124,6 +124,8 @@ class _ProjectTextState extends State<ProjectText> {
                           .projectsSizeTextBodyTextStyle(),
                     ]),
                   )),
-            ]));
+            ]),
+      ),
+    );
   }
 }
