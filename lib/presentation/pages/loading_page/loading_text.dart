@@ -8,25 +8,28 @@ class LoadingText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedTextKit(isRepeatingAnimation: false, animatedTexts: [
-      ColorizeAnimatedText(
-        'WELCOME',
-        textStyle:
-            GoogleFonts.montserrat(fontSize: 50, fontWeight: FontWeight.w600),
-        colors: ColoresWelcome.names,
-      ),
-      ColorizeAnimatedText(
-        'TO MY RESUME',
-        textStyle:
-            GoogleFonts.montserrat(fontSize: 50, fontWeight: FontWeight.w600),
-        colors: ColoresWelcome.names,
-      ),
-      ColorizeAnimatedText(
-        'BIENVENIDO',
-        textStyle:
-            GoogleFonts.montserrat(fontSize: 50, fontWeight: FontWeight.w600),
-        colors: ColoresWelcome.names,
-      ),
-    ]);
+    return AnimatedTextKit(
+        isRepeatingAnimation: true,
+        totalRepeatCount: 3,
+        animatedTexts: [
+          ColorizeAnimatedText(
+            'WELCOME',
+            textStyle: GoogleFonts.montserrat(
+                fontSize: 50, fontWeight: FontWeight.w600),
+            colors: ColoresWelcome.names,
+          ),
+          ColorizeAnimatedText(
+            'TO MY RESUME',
+            textStyle: GoogleFonts.montserrat(
+                fontSize: 50, fontWeight: FontWeight.w600),
+            colors: ColoresWelcome.names,
+          ),
+          ColorizeAnimatedText(
+            'BIENVENIDO',
+            textStyle: GoogleFonts.montserrat(
+                fontSize: 50, fontWeight: FontWeight.w600),
+            colors: ColoresWelcome.names,
+          ),
+        ]);
   }
 }

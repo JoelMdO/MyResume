@@ -12,7 +12,7 @@ class TituloCareer extends StatelessWidget {
 // Title Text [FittedBox] to maintain size when changing with screen size
         FittedBox(
       child: Padding(
-        padding: const EdgeInsets.only(top: 120, left: 220),
+        padding: const EdgeInsets.only(top: 50, left: 270),
         child: const AutoSizeText('CAREER SUMMARY').titleStyle(),
       ),
     );

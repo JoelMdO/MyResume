@@ -55,7 +55,7 @@ class _CareerTextState extends State<CareerText> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.symmetric(vertical: 5),
       child: Align(
           alignment: Alignment.center,
           child: ExpansionPanelList.radio(
@@ -122,59 +122,64 @@ class _CareerTextState extends State<CareerText> {
                                 Colores.whiteblue,
                                 Colores.whiteyellow
                               ])),
-                      child: Column(children: [
-                        AutoSizeText(
-                                maxFontSize: 14,
-                                minFontSize: 10,
-                                widget.bodytitle)
-                            .careerBodyTitleStyle(),
-                        Align(
-                          alignment: Alignment.center,
-                          child: Text(widget.achievementtitle1)
-                              .careerBodySubTitleStyle(),
-                        ),
-                        Align(
-                          alignment: Alignment.center,
-                          child: Text(widget.achievementtext1)
-                              .careerBodyTextStyle(),
-                        ),
-                        if (widget.achivementtitle2 != '')
-                          Align(
-                            alignment: Alignment.center,
-                            child: Text(widget.achivementtitle2)
-                                .careerBodySubTitleStyle(),
-                          ),
-                        if (widget.achievementtext2 != '')
-                          Align(
-                            alignment: Alignment.center,
-                            child: Text(widget.achievementtext2)
-                                .careerBodyTextStyle(),
-                          ),
-                        if (widget.achievementtitle3 != '')
-                          Align(
-                            alignment: Alignment.center,
-                            child: Text(widget.achievementtitle3)
-                                .careerBodySubTitleStyle(),
-                          ),
-                        if (widget.achievementtext3 != '')
-                          Align(
-                            alignment: Alignment.center,
-                            child: Text(widget.achievementtext3)
-                                .careerBodyTextStyle(),
-                          ),
-                        if (widget.achievementtitle4 != '')
-                          Align(
-                            alignment: Alignment.center,
-                            child: Text(widget.achievementtitle4)
-                                .careerBodySubTitleStyle(),
-                          ),
-                        if (widget.achievementtext4 != '')
-                          Align(
-                            alignment: Alignment.center,
-                            child: Text(widget.achievementtext4)
-                                .careerBodyTextStyle(),
-                          ),
-                      ]),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Align(
+                              alignment: Alignment.center,
+                              child: AutoSizeText(
+                                      maxFontSize: 14,
+                                      minFontSize: 10,
+                                      widget.bodytitle)
+                                  .careerBodyTitleStyle(),
+                            ),
+                            Align(
+                              alignment: Alignment.center,
+                              child: Text(widget.achievementtitle1)
+                                  .careerBodySubTitleStyle(),
+                            ),
+                            Align(
+                              alignment: Alignment.center,
+                              child: Text(widget.achievementtext1)
+                                  .careerBodyTextStyle(),
+                            ),
+                            if (widget.achivementtitle2 != '')
+                              Align(
+                                alignment: Alignment.center,
+                                child: Text(widget.achivementtitle2)
+                                    .careerBodySubTitleStyle(),
+                              ),
+                            if (widget.achievementtext2 != '')
+                              Align(
+                                alignment: Alignment.center,
+                                child: Text(widget.achievementtext2)
+                                    .careerBodyTextStyle(),
+                              ),
+                            if (widget.achievementtitle3 != '')
+                              Align(
+                                alignment: Alignment.center,
+                                child: Text(widget.achievementtitle3)
+                                    .careerBodySubTitleStyle(),
+                              ),
+                            if (widget.achievementtext3 != '')
+                              Align(
+                                alignment: Alignment.center,
+                                child: Text(widget.achievementtext3)
+                                    .careerBodyTextStyle(),
+                              ),
+                            if (widget.achievementtitle4 != '')
+                              Align(
+                                alignment: Alignment.center,
+                                child: Text(widget.achievementtitle4)
+                                    .careerBodySubTitleStyle(),
+                              ),
+                            if (widget.achievementtext4 != '')
+                              Align(
+                                alignment: Alignment.center,
+                                child: Text(widget.achievementtext4)
+                                    .careerBodyTextStyle(),
+                              ),
+                          ]),
                     ))
               ])),
     );

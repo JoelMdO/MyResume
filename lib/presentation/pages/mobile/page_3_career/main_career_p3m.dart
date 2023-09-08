@@ -52,64 +52,61 @@ class _CareerPageMobileViewState extends State<CareerPageMobileView> {
               image: AssetImage('assets/images/First Background.png'),
               fit: BoxFit.fill),
         ),
-        child: SizedBox(
-          width: screenWidth,
-          height: screenHeight,
-          child: Stack(
-            alignment: AlignmentDirectional.topStart,
-            fit: StackFit.loose,
-            children: [
-              Positioned(
-                  left: -40,
-                  child: SizedBox(
-                      width: screenWidth * 0.8,
-                      height: screenHeight * 0.30,
-                      child: const TituloCareer())),
-              //Career Text
-              Positioned(
-                  top: 180,
-                  left: 20,
-                  child: SizedBox(
-                      width: screenWidth * 0.85,
-                      height: screenHeight * 0.70,
-                      child: ListView.builder(
-                          itemCount: CareerTextList.carrerTextInfo.length,
-                          itemBuilder: (context, index) {
-                            final careerText =
-                                CareerTextList.carrerTextInfo[index];
-                            return CareerText(
-                              title: careerText.title,
-                              subtitle: careerText.subtitle,
-                              value: careerText.value,
-                              bodytitle: careerText.bodytitle,
-                              achievementtitle1: careerText.achievementtitle1,
-                              achievementtext1: careerText.achievementtext1,
-                              achivementtitle2: careerText.achivementtitle2,
-                              achievementtext2: careerText.achievementtext2,
-                              achievementtitle3: careerText.achievementtitle3,
-                              achievementtext3: careerText.achievementtext3,
-                              achievementtitle4: careerText.achievementtitle4,
-                              achievementtext4: careerText.achievementtext4,
-                            );
-                          }))),
-              Positioned(
-                  bottom: 30,
-                  left: 50,
-                  child: BounceInRight(
-                      delay: const Duration(seconds: 6),
-                      duration: const Duration(seconds: 1),
-                      child:
-                          BlocBuilder<ExpansionPanelCubit, ExpansionPanelState>(
-                        builder: (context, state) {
-                          return Visibility(
-                              visible: state.expandedInput,
-                              child: const ProjectsNavigationButton());
-                        },
-                      ))),
-            ],
-          ),
+        child: Stack(
+          alignment: AlignmentDirectional.topStart,
+          fit: StackFit.loose,
+          children: [
+            Positioned(
+                left: -40,
+                child: SizedBox(
+                    width: screenWidth * 0.8,
+                    height: screenHeight * 0.25,
+                    child: const TituloCareer())),
+            //Career Text
+            Positioned(
+                top: 140,
+                left: 20,
+                child: SizedBox(
+                    width: screenWidth * 0.85,
+                    height: screenHeight * 0.70,
+                    child: ListView.builder(
+                        itemCount: CareerTextList.carrerTextInfo.length,
+                        itemBuilder: (context, index) {
+                          final careerText =
+                              CareerTextList.carrerTextInfo[index];
+                          return CareerText(
+                            title: careerText.title,
+                            subtitle: careerText.subtitle,
+                            value: careerText.value,
+                            bodytitle: careerText.bodytitle,
+                            achievementtitle1: careerText.achievementtitle1,
+                            achievementtext1: careerText.achievementtext1,
+                            achivementtitle2: careerText.achivementtitle2,
+                            achievementtext2: careerText.achievementtext2,
+                            achievementtitle3: careerText.achievementtitle3,
+                            achievementtext3: careerText.achievementtext3,
+                            achievementtitle4: careerText.achievementtitle4,
+                            achievementtext4: careerText.achievementtext4,
+                          );
+                        }))),
+            Positioned(
+                bottom: 30,
+                left: 50,
+                child: BounceInRight(
+                    delay: const Duration(seconds: 6),
+                    duration: const Duration(seconds: 1),
+                    child:
+                        BlocBuilder<ExpansionPanelCubit, ExpansionPanelState>(
+                      builder: (context, state) {
+                        return Visibility(
+                            visible: state.expandedInput,
+                            child: const ProjectsNavigationButton());
+                      },
+                    ))),
+          ],
         ),
       ),
+      // ),
       drawer: const DrawerShape(),
     );
   }

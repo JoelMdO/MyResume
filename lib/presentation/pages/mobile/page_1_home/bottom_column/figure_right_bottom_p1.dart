@@ -1,65 +1,56 @@
 import 'package:flutter/material.dart';
 import 'package:resume/presentation/widgets/contacts/contacts_right_column.dart';
 import 'dart:math' as math;
+
 import 'package:resume/utils/constants/colors.dart';
 
-class FigureContacts extends StatelessWidget {
-  const FigureContacts({super.key});
+class FigureBottomColumnRightMobile extends StatelessWidget {
+  const FigureBottomColumnRightMobile({super.key});
 
-//WIDGET REPRESENTS THE FIGURE TO BE USED IN RIGHT COLUMN
+//WIDGET REPRESENTS THE FIGURE TO BE USED IN THE LEFT AND RIGHT COLUMN
   @override
   Widget build(BuildContext context) {
 //[STACK] FOR EASY PLACE OF THE PARALELLOGRAM STYLE AND TRIANGLES
     return Stack(
-      alignment: AlignmentDirectional.topStart,
-      fit: StackFit.loose,
-      children: [
-        //PARALLELOGRAM ITEM
-        ClipPath(
-            clipper: CustomClipPathSquare(),
-            child: Container(
-                decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    Colores.grey,
-                    Colores.grey,
-                    Colores.grey,
-                    Colors.white,
-                    Colors.white,
-                  ]),
-            ))),
-        //SECOND TRIANGLE COLOR YELLOW
-        Align(
-          alignment: AlignmentDirectional.topStart,
-          child: Transform.rotate(
-              angle: math.pi / -65,
-              child: ClipPath(
-                  clipper: CustomClipPathTriangleLeft(),
-                  child: SizedBox(
-                      width: 50,
-                      height: 155,
-                      child: Container(color: Colores.yellow)))),
-        ),
-        //FIRST TRIANGLE COLOR BLUE
-        Positioned(
-          child: Transform.rotate(
-              angle: math.pi / -130,
-              child: ClipPath(
-                  clipper: CustomClipPathTriangleLeft(),
-                  child: SizedBox(
-                      width: 45,
-                      height: 150,
-                      child: Container(color: Colores.blue)))),
-        ),
-        const Positioned(
-            top: 50,
-            left: 40,
-            child:
-                SizedBox(width: 100, height: 180, child: ContactsRightColumn()))
-      ],
-    );
+        fit: StackFit.loose,
+        alignment: AlignmentDirectional.topStart,
+        children: [
+          //FIGURE ROTATED
+          Transform.flip(
+              flipX: true,
+              child: Stack(alignment: AlignmentDirectional.topStart, children: [
+                //PARALLELOGRAM ITEM
+                ClipPath(
+                    clipper: CustomClipPathSquare(),
+                    child: SizedBox(
+                        width: 200,
+                        height: 390,
+                        child: Container(color: Colores.blue))),
+                //SECOND TRIANGLE COLOR YELLOW
+                Padding(
+                  padding: const EdgeInsets.only(top: 50, right: 0),
+                  child: Transform.rotate(
+                      angle: math.pi / -65,
+                      child: ClipPath(
+                          clipper: CustomClipPathTriangleLeft(),
+                          child: SizedBox(
+                              width: 80,
+                              height: 150,
+                              child: Container(color: Colores.yellow)))),
+                ),
+                //FIRST TRIANGLE COLOR GRAY
+                Transform.rotate(
+                    angle: math.pi / -130,
+                    child: ClipPath(
+                        clipper: CustomClipPathTriangleLeft(),
+                        child: SizedBox(
+                            width: 50,
+                            height: 300,
+                            child: Container(color: Colores.grey)))),
+              ])),
+          //CONTACTS.
+          const ContactsRightColumn(),
+        ]);
   }
 }
 

@@ -10,8 +10,8 @@ import 'package:resume/presentation/widgets/pages_text/skills/skills_text.dart';
 class OpenDialogSkills {
   static Future<void> openDS(BuildContext context) async {
     ///MediaQuery
-    double screenWidth = MediaQuery.of(context).size.width / 2;
-    double screenHeight = MediaQuery.of(context).size.height / 2;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height * 0.6;
 
 //SKILLS DIALOG FIRS PART//
     return showDialog<void>(

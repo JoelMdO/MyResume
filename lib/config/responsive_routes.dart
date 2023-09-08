@@ -5,7 +5,7 @@ import 'package:resume/presentation/pages/desktop/page_1_home/main_home_p1d.dart
 import 'package:resume/presentation/pages/desktop/page_2_techstack/main_techstack_p2d.dart';
 import 'package:resume/presentation/pages/desktop/page_3_career/main_career_p3d.dart';
 import 'package:resume/presentation/pages/desktop/page_4_projects/main_projects_p4d.dart';
-import 'package:resume/presentation/pages/mobile/page_1_home/main_home_p1m.dart';
+import 'package:resume/presentation/pages/mobile/page_1_home/main_home_p1.dart';
 import 'package:resume/presentation/pages/mobile/page_2_techstack/main_techstack_p2m.dart';
 import 'package:resume/presentation/pages/mobile/page_3_career/main_career_p3m.dart';
 import 'package:resume/presentation/pages/mobile/page_4_projects/main_projects_p4m.dart';

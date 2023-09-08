@@ -40,47 +40,49 @@ class MyDrawerButtonState extends State<MyDrawerButton> {
                     'assets/images/BlackWing.png',
                   ))))),
       //TEXT TITLE
-      DelayedDisplay(
-          delay: const Duration(milliseconds: 200),
-          //--[GestureDetector] To create a button from the image
-          child: GestureDetector(onTap: () {
-            //PAGE 1  Home //
-            //--[widget.page is a value required to the widget and will be given from the drawer values]
-            if (widget.page == 1) {
-              setState(() {
-                String route = '/';
-                context.read<NavigationCubit>().navigateTo(route);
-              });
-            }
-            //PAGE 2  Techstack//
-            else if (widget.page == 2) {
-              setState(() {
-                String route = '/techstack';
-                context.read<NavigationCubit>().navigateTo(route);
-              });
-            }
-            //PAGE 3  Career //
-            else if (widget.page == 3) {
-              setState(() {
-                String route = '/career';
-                context.read<NavigationCubit>().navigateTo(route);
-              });
-            }
-            //PAGE 4  Projects //
-            else if (widget.page == 4) {
-              setState(() {
-                String route = '/projects';
-                context.read<NavigationCubit>().navigateTo(route);
-              });
-              //PAGE 5  Contacts //
-            } else {
-              OpenDialogContactsDrawer.openDC(context);
-            }
-          },
-              //--[IgnorePointer] To allow the text to get the GestureDetector
-              //--[MouseRegion] To allow the mouse icon to change and advise the user it can be clicked
-              child: StatefulBuilder(builder: (context, setState) {
-            return MouseRegion(
+      FittedBox(
+        fit: BoxFit.fitWidth,
+        child: DelayedDisplay(
+            delay: const Duration(milliseconds: 200),
+            //--[GestureDetector] To create a button from the image
+            child: GestureDetector(onTap: () {
+              //PAGE 1  Home //
+              //--[widget.page is a value required to the widget and will be given from the drawer values]
+              if (widget.page == 1) {
+                setState(() {
+                  String route = '/';
+                  context.read<NavigationCubit>().navigateTo(route);
+                });
+              }
+              //PAGE 2  Techstack//
+              else if (widget.page == 2) {
+                setState(() {
+                  String route = '/techstack';
+                  context.read<NavigationCubit>().navigateTo(route);
+                });
+              }
+              //PAGE 3  Career //
+              else if (widget.page == 3) {
+                setState(() {
+                  String route = '/career';
+                  context.read<NavigationCubit>().navigateTo(route);
+                });
+              }
+              //PAGE 4  Projects //
+              else if (widget.page == 4) {
+                setState(() {
+                  String route = '/projects';
+                  context.read<NavigationCubit>().navigateTo(route);
+                });
+                //PAGE 5  Contacts //
+              } else {
+                OpenDialogContactsDrawer.openDC(context);
+              }
+            },
+                //--[IgnorePointer] To allow the text to get the GestureDetector
+                //--[MouseRegion] To allow the mouse icon to change and advise the user it can be clicked
+                child: StatefulBuilder(builder: (context, setState) {
+              return MouseRegion(
                 cursor: SystemMouseCursors.click,
                 onEnter: (event) {
                   setState(() {
@@ -109,8 +111,10 @@ class MyDrawerButtonState extends State<MyDrawerButton> {
                       ],
                     ),
                   ),
-                ));
-          })))
+                ),
+              );
+            }))),
+      )
     ]);
   }
 }

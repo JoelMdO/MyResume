@@ -16,8 +16,6 @@ class _ContactsLinkedinButtonState extends State<ContactsLinkedinButton> {
   @override
   Widget build(BuildContext context) {
     final isDesktop = MediaQuery.of(context).size.width >= 920;
-    final isTablet = MediaQuery.of(context).size.width <= 919 &&
-        MediaQuery.of(context).size.width >= 767;
 
     return MouseRegion(
         cursor: SystemMouseCursors.click,
@@ -50,26 +48,15 @@ class _ContactsLinkedinButtonState extends State<ContactsLinkedinButton> {
                       const Text('joel-montesdeoca-lopez')
                           .contactsLinkedinTextStylesDesktop(),
                     ]))
-                : isTablet
-                    ?
-//[UI] For Tablet - Github text.
-                    FittedBox(
-                        fit: BoxFit.fitWidth,
-                        child: Row(children: [
-                          ImageIcon(
-                            const AssetImage('assets/images/LinkedIn.png'),
-                            color: isHovered ? Colores.green : Colors.white,
-                          )
-                        ]))
-                    :
-//[UI] For Mobile - Github text.
-                    FittedBox(
-                        fit: BoxFit.fitWidth,
-                        child: Row(children: [
-                          ImageIcon(
-                            const AssetImage('assets/images/LinkedIn.png'),
-                            color: isHovered ? Colores.green : Colors.black,
-                          )
-                        ]))));
+                :
+//[UI] For Tablet/Mobile - Github text.
+                FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Row(children: [
+                      ImageIcon(
+                        const AssetImage('assets/images/LinkedIn.png'),
+                        color: isHovered ? Colores.green : Colors.white,
+                      )
+                    ]))));
   }
 }

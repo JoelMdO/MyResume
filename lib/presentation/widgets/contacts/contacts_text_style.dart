@@ -84,20 +84,8 @@ extension ContactsTitleTextStylesMobile on Text {
         style: GoogleFonts.montserrat(
           fontStyle: FontStyle.normal,
           fontWeight: FontWeight.w600,
-          fontSize: 17,
-          color: Colors.black,
-        ));
-  }
-}
-
-extension ContactsTextStylesMobile on Text {
-  Text contactsTextStylesMobile() {
-    return Text(data!,
-        style: GoogleFonts.montserrat(
-          fontStyle: FontStyle.normal,
-          fontWeight: FontWeight.w600,
-          fontSize: 10,
-          color: Colors.black,
+          fontSize: 14,
+          color: Colors.white,
         ));
   }
 }

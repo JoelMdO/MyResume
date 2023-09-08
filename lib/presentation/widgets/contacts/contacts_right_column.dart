@@ -99,44 +99,32 @@ class ContactsRightColumnState extends State<ContactsRightColumn> {
             :
 
             ///CONTACTS MOBILE UI ///
-            Stack(
-                alignment: AlignmentDirectional.topStart,
-                fit: StackFit.loose,
-                children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: FittedBox(
-                        fit: BoxFit.fitWidth,
-                        child: const Text('Let\'s Connect')
-                            .contactsTextTitleStylesMobile(),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15, top: 25),
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-//-- EMAIL -TABLET /
-                            const ContactsEmailButton(),
-//-- GITHUB -TABLET//
-                            const ContactsGithubButton(),
-//-- LINKEDIN -TABLET //
-                            const ContactsLinkedinButton(),
-//-- PHONE - TABLET //
-                            FittedBox(
-                                fit: BoxFit.fitWidth,
-                                child: Row(children: [
-                                  const ImageIcon(
-                                    AssetImage('assets/images/Phone.png'),
-                                    color: Colors.black,
-                                  ),
-                                  const Padding(
-                                      padding: EdgeInsets.only(left: 5)),
-                                  const Text('+974-5502-1236')
-                                      .contactsTextStylesMobile(),
-                                ])),
-                          ]),
-                    )
-                  ]);
+            FittedBox(
+                fit: BoxFit.fitWidth,
+                child: SizedBox(
+                    width: 170,
+                    height: 170,
+                    child: Stack(
+                        alignment: AlignmentDirectional.topStart,
+                        fit: StackFit.loose,
+                        children: <Widget>[
+                          Positioned(
+                              top: 28,
+                              left: 15,
+                              child: const Text('Let\'s Connect')
+                                  .contactsTextTitleStylesMobile()),
+                          //-- EMAIL -MOBILE /
+                          const Positioned(
+                              top: 42, left: 10, child: ContactsEmailButton()),
+                          //-- GITHUB -MOBILE//
+                          const Positioned(
+                              top: 72, left: 10, child: ContactsGithubButton()),
+                          //-- LINKEDIN -MOBILE //
+                          const Positioned(
+                              top: 102,
+                              left: 10,
+                              child: ContactsLinkedinButton()),
+                        ])));
+    //)
   }
 }

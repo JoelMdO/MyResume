@@ -45,44 +45,44 @@ class _ProjectsPageMobileViewState extends State<ProjectsPageMobileView> {
               visible: state.expandedInput, child: const FloatButton());
         }),
         body: Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/images/First Background.png'),
-                  fit: BoxFit.fill),
-            ),
-            child: SizedBox(
-              width: screenWidth * 0.90,
-              height: screenHeight,
-              child: Stack(
-                alignment: AlignmentDirectional.topStart,
-                fit: StackFit.loose,
-                children: [
-                  SizedBox(
-                      width: screenWidth * 0.80, child: const TituloProjects()),
-                  Positioned(
-                      top: 220,
-                      left: 20,
-                      child: SizedBox(
-                          width: screenWidth * 0.80,
-                          height: screenHeight,
-                          child: ListView.builder(
-                              itemCount:
-                                  ProjectsTextList.projectsTextInfo.length,
-                              itemBuilder: (context, index) {
-                                final projectText =
-                                    ProjectsTextList.projectsTextInfo[index];
-                                return ProjectText(
-                                  value: projectText.value,
-                                  title: projectText.title,
-                                  subtitle: projectText.subtitle,
-                                  image: projectText.image,
-                                  bodytitle: projectText.bodytitle,
-                                  bodytext: projectText.bodytext,
-                                );
-                              })))
-                ],
-              ),
-            )),
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/images/First Background.png'),
+                fit: BoxFit.fill),
+          ),
+          child: Stack(
+            alignment: AlignmentDirectional.topStart,
+            fit: StackFit.loose,
+            children: [
+              Positioned(
+                  left: -40,
+                  child: SizedBox(
+                      width: screenWidth * 0.80,
+                      height: screenHeight * 0.25,
+                      child: const TituloProjects())),
+              Positioned(
+                  top: 220,
+                  left: 20,
+                  child: SizedBox(
+                      width: screenWidth * 0.80,
+                      height: screenHeight * 0.7,
+                      child: ListView.builder(
+                          itemCount: ProjectsTextList.projectsTextInfo.length,
+                          itemBuilder: (context, index) {
+                            final projectText =
+                                ProjectsTextList.projectsTextInfo[index];
+                            return ProjectText(
+                              value: projectText.value,
+                              title: projectText.title,
+                              subtitle: projectText.subtitle,
+                              image: projectText.image,
+                              bodytitle: projectText.bodytitle,
+                              bodytext: projectText.bodytext,
+                            );
+                          })))
+            ],
+          ),
+        ),
         drawer: const DrawerShape());
   }
 }

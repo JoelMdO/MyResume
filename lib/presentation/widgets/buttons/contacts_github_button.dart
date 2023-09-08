@@ -16,8 +16,6 @@ class _ContactsGithubButtonState extends State<ContactsGithubButton> {
   @override
   Widget build(BuildContext context) {
     final isDesktop = MediaQuery.of(context).size.width >= 920;
-    final isTablet = MediaQuery.of(context).size.width <= 919 &&
-        MediaQuery.of(context).size.width >= 767;
 
     return MouseRegion(
         cursor: SystemMouseCursors.click,
@@ -49,27 +47,16 @@ class _ContactsGithubButtonState extends State<ContactsGithubButton> {
                     const Text('github.com/JoelMdO')
                         .contactsGithubTextStylesDesktop(),
                   ]))
-              : isTablet
-                  ?
-//[UI] For Tablet - Github text.
-                  FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Row(children: [
-                        ImageIcon(
-                          const AssetImage('assets/images/GitHub.png'),
-                          color: isHovered ? Colores.green : Colors.white,
-                        ),
-                      ]))
-                  :
-//[UI] For Mobile - Github text.
-                  FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Row(children: [
-                        ImageIcon(
-                          const AssetImage('assets/images/GitHub.png'),
-                          color: isHovered ? Colores.green : Colors.black,
-                        ),
-                      ])),
+              :
+//[UI] For Tablet/Mobile - Github text.
+              FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Row(children: [
+                    ImageIcon(
+                      const AssetImage('assets/images/GitHub.png'),
+                      color: isHovered ? Colores.green : Colors.white,
+                    ),
+                  ])),
         ));
   }
 }

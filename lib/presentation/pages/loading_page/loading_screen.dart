@@ -1,4 +1,3 @@
-import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/config/responsive_routes.dart';
 import 'package:resume/presentation/pages/loading_page/loading_text.dart';
@@ -57,10 +56,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
                     height: screenHeight,
                     child: Image.asset('assets/images/profilegif.gif')),
                 const SizedBox(),
-                const DelayedDisplay(
-                  delay: Duration(milliseconds: 200),
-                  child: LoadingText(),
-                )
+                const LoadingText(),
               ]),
         ]),
       )),

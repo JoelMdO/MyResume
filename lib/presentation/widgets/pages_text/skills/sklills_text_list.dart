@@ -5,17 +5,17 @@ class SkillsTextList {
 //Skill1
     const SkillsText(
       textbold: ' - Multicultural:',
-      text: ' complex integrated collaboration and negotiation.\n',
+      text: ' Complex integrated collaboration and negotiation.\n',
     ),
 //Skill2
     const SkillsText(
       textbold: ' - Project Management:',
-      text: ' by setting a clear direction, following\n',
+      text: ' By setting a clear direction.\n',
     ),
 //Skill3
     const SkillsText(
       textbold: ' - Agile, Shape Up:',
-      text: 'as main methodologies.\n',
+      text: ' As main methodologies.\n',
     ),
 //Skill4
     const SkillsText(
@@ -24,7 +24,7 @@ class SkillsTextList {
     ),
 //Skill5
     const SkillsText(
-      textbold: ' - Business process re-engineering.',
+      textbold: ' - Business process reengineering.',
       text: '',
     ),
 //Skill6

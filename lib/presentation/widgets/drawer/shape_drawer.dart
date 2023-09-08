@@ -32,18 +32,15 @@ class DrawerShape extends StatelessWidget {
             ClipPath(
                 clipper: CustomClipPath(),
                 child: Container(
-                  decoration: const BoxDecoration(
-                    color: Colors.redAccent,
-                    // gradient: const LinearGradient(
-                    //     begin: AlignmentDirectional.topStart,
-                    //     end: AlignmentDirectional.bottomEnd,
-                    //     colors: [
-                    //       // Colores.grey,
-                    //       Colores.green,
-                    //       Colors.yellow,
-                    //     ]),
-                    // border: Border.all(color: Colores.darkblue, width: 5.0)
-                  ),
+                  decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                          begin: AlignmentDirectional.topStart,
+                          end: AlignmentDirectional.bottomEnd,
+                          colors: [
+                            Colores.green,
+                            Colors.yellow,
+                          ]),
+                      border: Border.all(color: Colores.darkblue, width: 5.0)),
                   width: 400,
                   height: 460,
                   child: const Drawer(elevation: 5.0, child: DrawerIndex()),
@@ -79,26 +76,6 @@ class DrawerShape extends StatelessWidget {
     // )
   }
 }
-
-//[CustmClipPath] CLASS WHICH DRAWS THE FIGURE OF THE DRAWER
-// class CustomClipPath extends CustomClipper<Path> {
-//   @override
-//   Path getClip(Size size) {
-//     var path = Path();
-//     path.moveTo(size.width * 0.1567000, size.height * 0.9906500);
-//     path.lineTo(size.width * 0.0022000, size.height * 0.7441500);
-//     path.lineTo(size.width * -0.0022000, size.height * -0.0038500);
-//     path.lineTo(size.width * 0.9779500, size.height * 0.1721000);
-//     path.lineTo(size.width * 0.9500000, size.height * 0.8955500);
-//     path.lineTo(size.width * 0.1567000, size.height * 0.9906500);
-//     path.close();
-
-//     return path;
-//   }
-
-//   @override
-//   bool shouldReclip(CustomClipper<Path> oldClipper) => false;
-// }
 
 //[CustmClipPath] CLASS WHICH DRAWS THE FIGURE OF THE DRAWER
 class CustomClipPath extends CustomClipper<Path> {
