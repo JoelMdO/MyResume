@@ -21,7 +21,7 @@ class LoadingText extends StatelessWidget {
           ColorizeAnimatedText(
             'TO MY RESUME',
             textStyle: GoogleFonts.montserrat(
-                fontSize: 50, fontWeight: FontWeight.w600),
+                fontSize: 40, fontWeight: FontWeight.w600),
             colors: ColoresWelcome.names,
           ),
           ColorizeAnimatedText(

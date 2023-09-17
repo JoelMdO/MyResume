@@ -16,7 +16,7 @@ class _IntroTextState extends State<IntroText> {
   Widget build(BuildContext context) {
     bool isMobile = MediaQuery.of(context).size.width <= 766;
 
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+    return Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
       FittedBox(
         fit: BoxFit.fill,
         child: isMobile

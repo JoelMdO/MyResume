@@ -28,8 +28,7 @@ class ProjectsTextList {
     const ProjectText(
       value: 3,
       title: 'Flutter Web Resume',
-      subtitle:
-          '\u2022 Developer with the objective to have a customize resume.\n',
+      subtitle: '\u2022 Developed to have a customize resume.\n',
       image: 'assets/images/J code.png',
       bodytitle: 'Learned:',
       bodytext: '- Dart/Flutter/Firebase...',

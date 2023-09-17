@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:resume/utils/constants/colors.dart';
@@ -21,9 +22,11 @@ extension ProjectsButtonTitleTextStyle on Text {
   }
 }
 
-extension DownloadButtonTitleTextStyle on Text {
-  Text downloadButtonTitleTextStyle() {
-    return Text(data!,
+extension DownloadButtonTitleTextStyle on AutoSizeText {
+  AutoSizeText downloadButtonTitleTextStyle() {
+    return AutoSizeText(data!,
+        maxFontSize: 20,
+        minFontSize: 8,
         style: GoogleFonts.montserrat(
             color: Colors.white, fontWeight: FontWeight.bold));
   }

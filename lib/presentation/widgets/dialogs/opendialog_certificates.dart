@@ -8,8 +8,8 @@ import 'package:resume/utils/constants/colors.dart';
 class OpenDialogCertificates {
   static Future<void> openCE(BuildContext context) async {
     ///MediaQuery
-    double screenWidth = MediaQuery.of(context).size.width / 2;
-    double screenHeight = MediaQuery.of(context).size.height / 2;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height * 0.6;
 
 //CERTIFICATES DIALOG FIRS PART//
     return showDialog<void>(
@@ -42,7 +42,7 @@ class OpenDialogCertificates {
         height: screenHeight * 0.1,
         child: Padding(
           padding: const EdgeInsets.only(top: 5, left: 10),
-          child: const Text('CERTIFICATES:').openDialogTitleStyle(),
+          child: const Text('CERTIFICATES.').openDialogTitleStyle(),
         ));
   }
 
@@ -50,7 +50,7 @@ class OpenDialogCertificates {
   static Widget buildContentCertificatesDialog(
       double screenWidth, double screenHeight) {
     return SizedBox(
-      width: screenWidth * 0.8,
+      width: screenWidth,
       height: double.maxFinite,
       child: DecoratedBox(
         decoration: BoxDecoration(

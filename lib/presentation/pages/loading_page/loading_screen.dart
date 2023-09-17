@@ -17,7 +17,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
 //-Init state of thecontroller giving
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 8), () {
       navigateToResponsiveHomePage();
     });
     super.initState();
@@ -55,7 +55,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
                     width: screenWidth,
                     height: screenHeight,
                     child: Image.asset('assets/images/profilegif.gif')),
-                const SizedBox(),
+                const Padding(
+                  padding: EdgeInsets.only(top: 20),
+                ),
                 const LoadingText(),
               ]),
         ]),

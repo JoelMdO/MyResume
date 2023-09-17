@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: GoogleFonts.montserratTextTheme(),
         useMaterial3: true,
+        brightness: Brightness.light,
       ),
       debugShowCheckedModeBanner: false,
       home: BlocProvider<NavigationCubit>(

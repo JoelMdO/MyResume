@@ -4,7 +4,7 @@ class IntroTextList {
   static List<IntroText> introTextInfo = [
 //Texto1
     const IntroText(
-      text: '- Passionate Flight Operations World Wide Specialist.',
+      text: '- Passionate.',
     ),
 //Texto2
     const IntroText(
@@ -12,11 +12,11 @@ class IntroTextList {
     ),
 //Texto3
     const IntroText(
-      text: '- Delivering value in order to exceed expectations day-by-day.',
+      text: '- Deliver value to exceed expectations day-by-day.',
     ),
 //Texto4
     const IntroText(
-      text: '- Inclination to learn new skills, methodologies, and high tech.',
+      text: '- Inclination to improve and learn.',
     ),
 //Texto5
     const IntroText(

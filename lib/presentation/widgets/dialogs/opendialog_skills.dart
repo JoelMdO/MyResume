@@ -49,27 +49,30 @@ class OpenDialogSkills {
   ///content:
   static Widget buildContentSkillsDialog(
       double screenWidth, double screenHeight) {
-    return SizedBox(
-        width: screenWidth,
-        height: screenHeight * 0.9,
-        child: DecoratedBox(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                gradient: const LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [Colores.whiteblue, Colores.whiteyellow])),
-            child: Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: ListView.builder(
-                    itemCount: SkillsTextList.skillsTextInfo.length,
-                    itemBuilder: (context, index) {
-                      final skillsText = SkillsTextList.skillsTextInfo[index];
-                      return SkillsText(
-                        textbold: skillsText.textbold,
-                        text: skillsText.text,
-                      );
-                    }))));
+    return FittedBox(
+        fit: BoxFit.fitWidth,
+        child: SizedBox(
+            width: screenWidth,
+            height: screenHeight * 0.9,
+            child: DecoratedBox(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    gradient: const LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [Colores.whiteblue, Colores.whiteyellow])),
+                child: Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: ListView.builder(
+                        itemCount: SkillsTextList.skillsTextInfo.length,
+                        itemBuilder: (context, index) {
+                          final skillsText =
+                              SkillsTextList.skillsTextInfo[index];
+                          return SkillsText(
+                            textbold: skillsText.textbold,
+                            text: skillsText.text,
+                          );
+                        })))));
   }
 
   ///actions:

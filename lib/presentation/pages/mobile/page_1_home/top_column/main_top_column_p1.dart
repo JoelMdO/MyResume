@@ -22,7 +22,7 @@ class _TopColumnState extends State<TopColumn> {
           fit: StackFit.loose,
           alignment: AlignmentDirectional.topStart,
           children: [
-//Titulo
+            //Titulo
             Positioned(
                 top: 15,
                 right: 10,
@@ -30,7 +30,7 @@ class _TopColumnState extends State<TopColumn> {
                     width: screenWidth * 0.84,
                     height: screenHeight * 0.4,
                     child: const TituloHome())),
-//Skills
+            //Skills
             Positioned(
               top: 155,
               left: 10,
@@ -41,10 +41,10 @@ class _TopColumnState extends State<TopColumn> {
                     type: 'SKILLS &\n STRENGTHS',
                   )),
             ),
-//Education
+            //Education
             Positioned(
               top: 245,
-              left: 150,
+              left: 120,
               child: SizedBox(
                   width: screenWidth * 0.4,
                   height: screenHeight * 0.4,
@@ -52,10 +52,10 @@ class _TopColumnState extends State<TopColumn> {
                     type: 'EDUCATION & \n TECH STACK',
                   )),
             ),
-//Career
+            //Career
             Positioned(
               top: 355,
-              left: 300,
+              left: 220,
               child: SizedBox(
                   width: screenWidth * 0.4,
                   height: screenHeight * 0.35,
@@ -63,10 +63,9 @@ class _TopColumnState extends State<TopColumn> {
                     type: 'CAREER &\n PROJECTS',
                   )),
             ),
-//Profile ID
+            //Profile ID
             const Positioned(right: 5, top: 200, child: ProfileIDImage()),
           ]),
     );
-    // ))
   }
 }

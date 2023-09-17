@@ -16,6 +16,8 @@ class _ContactsEmailButtonState extends State<ContactsEmailButton> {
   @override
   Widget build(BuildContext context) {
     final isDesktop = MediaQuery.of(context).size.width >= 920;
+    final isTablet = MediaQuery.of(context).size.width <= 919 &&
+        MediaQuery.of(context).size.width >= 726;
 
     return MouseRegion(
         cursor: SystemMouseCursors.click,

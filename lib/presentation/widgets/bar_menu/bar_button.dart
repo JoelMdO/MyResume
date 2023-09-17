@@ -101,6 +101,8 @@ class BarButtonState extends State<BarButton> {
                                       child: AnimatedTextKit(
                                           repeatForever: false,
                                           animatedTexts: [
+                                            ///[widget.type] TEXT IS RECEIVED FROM THE HOME PAGE MOBILE, DESKTOP OR TABLET
+                                            /// REFER TO THE COLUMNS FOR EXAMPLE MOBILE TOP COLUMN TO SEE THE TEXT
                                             TypewriterAnimatedText(widget.type)
                                                 .typewriterAnimatedText(
                                                     widget.type)

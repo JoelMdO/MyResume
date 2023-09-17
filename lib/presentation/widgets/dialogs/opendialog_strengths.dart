@@ -8,13 +8,13 @@ import 'package:resume/utils/constants/colors.dart';
 class OpenDialogStrengths {
   static Future<void> openST(BuildContext context) async {
     ///MediaQuery
-    double screenWidth = MediaQuery.of(context).size.width / 2;
-    double screenHeight = MediaQuery.of(context).size.height / 2;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height * 0.6;
 
 //STRENGTHS DIALOG FIRS PART//
     return showDialog<void>(
         context: context,
-        builder: (BuildContext _) {
+        builder: (BuildContext context) {
           return AlertDialog(
             title: buildTitleStrengthsDialog(screenWidth, screenHeight),
             content: buildContentStrengthsDialog(screenWidth, screenHeight),
@@ -49,30 +49,33 @@ class OpenDialogStrengths {
   ///content:
   static Widget buildContentStrengthsDialog(
       double screenWidth, double screenHeight) {
-    return SizedBox(
-        width: screenWidth,
-        height: screenHeight * 0.9,
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              gradient: const LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [Colores.whiteblue, Colores.whiteyellow])),
-          child: Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: ListView.builder(
-                itemCount: StrengthsTextList.strengthsTextInfo.length,
-                itemBuilder: (context, index) {
-                  final strengthsText =
-                      StrengthsTextList.strengthsTextInfo[index];
-                  return StrengthsText(
-                    text: strengthsText.text,
-                    subtext: strengthsText.subtext,
-                  );
-                }),
-          ),
-        ));
+    return FittedBox(
+      fit: BoxFit.fitWidth,
+      child: SizedBox(
+          width: screenWidth,
+          height: screenHeight * 0.9,
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                gradient: const LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [Colores.whiteblue, Colores.whiteyellow])),
+            child: Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: ListView.builder(
+                  itemCount: StrengthsTextList.strengthsTextInfo.length,
+                  itemBuilder: (context, index) {
+                    final strengthsText =
+                        StrengthsTextList.strengthsTextInfo[index];
+                    return StrengthsText(
+                      text: strengthsText.text,
+                      subtext: strengthsText.subtext,
+                    );
+                  }),
+            ),
+          )),
+    );
   }
 
   ///actions:

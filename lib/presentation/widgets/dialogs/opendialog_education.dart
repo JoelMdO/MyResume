@@ -9,8 +9,8 @@ import 'package:resume/utils/constants/colors.dart';
 class OpenDialogEducation {
   static Future<void> openED(BuildContext context) async {
     ///MediaQuery
-    double screenWidth = MediaQuery.of(context).size.width / 2;
-    double screenHeight = MediaQuery.of(context).size.height / 2;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height * 0.6;
 
 //EDUCATION DIALOG FIRS PART//
     return showDialog<void>(
@@ -49,26 +49,29 @@ class OpenDialogEducation {
   ///content:
   static Widget buildContentEducationDialog(
       double screenWidth, double screenHeight) {
-    return SizedBox(
-        height: screenHeight * 0.8,
-        width: screenWidth * 0.8,
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              gradient: const LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [Colores.whiteblue, Colores.whiteyellow])),
-          child: ListView.builder(
-              itemCount: EducationTextList.educationInfo.length,
-              itemBuilder: (context, index) {
-                final educationText = EducationTextList.educationInfo[index];
-                return EducationText(
-                  title: educationText.title,
-                  date: educationText.date,
-                );
-              }),
-        ));
+    return FittedBox(
+        fit: BoxFit.fitWidth,
+        child: SizedBox(
+            width: screenWidth,
+            height: screenHeight * 0.9,
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  gradient: const LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [Colores.whiteblue, Colores.whiteyellow])),
+              child: ListView.builder(
+                  itemCount: EducationTextList.educationInfo.length,
+                  itemBuilder: (context, index) {
+                    final educationText =
+                        EducationTextList.educationInfo[index];
+                    return EducationText(
+                      title: educationText.title,
+                      date: educationText.date,
+                    );
+                  }),
+            )));
   }
 
   ///actions:

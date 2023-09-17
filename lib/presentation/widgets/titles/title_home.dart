@@ -25,6 +25,8 @@ class TituloHome extends StatelessWidget {
           shrinkWrap: true,
           itemCount: IntroTextList.introTextInfo.length,
           itemBuilder: (context, index) {
+            /// INTRO TEXT IS OBTAINED FROM THE FOLDER PAGES TEXT
+            /// INTRO
             return IntroText(
               text: IntroTextList.introTextInfo[index].text,
               subtext: IntroTextList.introTextInfo[index].subtext,

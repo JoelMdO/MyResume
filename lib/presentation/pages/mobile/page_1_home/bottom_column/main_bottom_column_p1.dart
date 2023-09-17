@@ -28,15 +28,10 @@ class _BottomColumnState extends State<BottomColumn> {
           width: screenWidth * 0.4,
           height: screenHeight * 0.2,
           child: Align(
-            alignment: AlignmentDirectional.bottomCenter,
+            alignment: Alignment.bottomCenter,
             child: Stack(fit: StackFit.loose, children: [
               Image.asset('assets/images/TriangleAPW.png'),
-              const Positioned(
-                bottom: 0,
-                left: 15,
-                child:
-                    FittedBox(fit: BoxFit.scaleDown, child: DownloadButton()),
-              )
+              const FittedBox(fit: BoxFit.fitWidth, child: DownloadButton()),
             ]),
           )),
       //Right Shape with contacts.
