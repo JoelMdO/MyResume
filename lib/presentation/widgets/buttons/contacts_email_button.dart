@@ -33,43 +33,40 @@ class _ContactsEmailButtonState extends State<ContactsEmailButton> {
         },
 //[uri] function for the launcf of the email app and automatic email address
         child: TextButton(
-            onPressed: () async {
-              final url =
-                  Uri(scheme: 'mailto', path: 'joelmontesdeoca@proton.me');
-              if (await canLaunchUrl(url)) {
-                launchUrl(url);
-              } else {
-                // ignore: avoid_print
-                print("Can't launch $url");
-              }
-            },
+          onPressed: () async {
+            final url =
+                Uri(scheme: 'mailto', path: 'joelmontesdeoca@proton.me');
+            if (await canLaunchUrl(url)) {
+              launchUrl(url);
+            } else {
+              // ignore: avoid_print
+              print("Can't launch $url");
+            }
+          },
 //[UI] For Desktop - email text.
-            child: isDesktop
-                ? FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: Row(children: [
-                      const ImageIcon(
-                        AssetImage('assets/images/Envelope.png'),
-                        color: Colors.black,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5),
-                        child: const Text(
-                          ' joelmontesdeoca@proton.me',
-                          softWrap: false,
-                          overflow: TextOverflow.ellipsis,
-                        ).contactsEmailTextStylesDesktop(),
-                      ),
-                    ]))
-                :
+          child: isDesktop
+              ? FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Row(children: [
+                    const ImageIcon(
+                      AssetImage('assets/images/Envelope.png'),
+                      color: Colors.black,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5),
+                      child: const Text(
+                        ' joelmontesdeoca@proton.me',
+                        softWrap: false,
+                        overflow: TextOverflow.ellipsis,
+                      ).contactsEmailTextStylesDesktop(),
+                    ),
+                  ]))
+              :
 //[UI] For Tablet / Mobile - email text.
-                FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: Row(children: [
-                      ImageIcon(
-                        const AssetImage('assets/images/Envelope.png'),
-                        color: isHovered ? Colores.green : Colors.white,
-                      ),
-                    ]))));
+              ImageIcon(
+                  const AssetImage('assets/images/Envelope.png'),
+                  color: isHovered ? Colores.green : Colors.white,
+                ),
+        ));
   }
 }

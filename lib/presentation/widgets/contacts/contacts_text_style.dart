@@ -57,7 +57,7 @@ extension ContactsLinkedinTextStylesDesktop on Text {
       data!,
       style: GoogleFonts.montserrat(
         fontStyle: FontStyle.normal,
-        fontWeight: FontWeight.w800,
+        fontWeight: FontWeight.w600,
         color: Colors.black,
       ),
     );

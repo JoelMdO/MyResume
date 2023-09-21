@@ -50,13 +50,10 @@ class _ContactsLinkedinButtonState extends State<ContactsLinkedinButton> {
                     ]))
                 :
 //[UI] For Tablet/Mobile - Github text.
-                FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: Row(children: [
-                      ImageIcon(
-                        const AssetImage('assets/images/LinkedIn.png'),
-                        color: isHovered ? Colores.green : Colors.white,
-                      )
-                    ]))));
+
+                ImageIcon(
+                    const AssetImage('assets/images/LinkedIn.png'),
+                    color: isHovered ? Colores.green : Colors.white,
+                  )));
   }
 }

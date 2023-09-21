@@ -18,19 +18,19 @@ class _ContactsGithubButtonState extends State<ContactsGithubButton> {
     final isDesktop = MediaQuery.of(context).size.width >= 920;
 
     return MouseRegion(
-        cursor: SystemMouseCursors.click,
-        onEnter: (event) {
-          setState(() {
-            isHovered = true;
-          });
-        },
-        onExit: (event) {
-          setState(() {
-            isHovered = false;
-          });
-        },
+      cursor: SystemMouseCursors.click,
+      onEnter: (event) {
+        setState(() {
+          isHovered = true;
+        });
+      },
+      onExit: (event) {
+        setState(() {
+          isHovered = false;
+        });
+      },
 //[uri] function for the launch of Github site.
-        child: TextButton(
+      child: TextButton(
           onPressed: () {
             launchUrl(Uri.parse('https://github.com/JoelMdO'));
           },
@@ -49,14 +49,10 @@ class _ContactsGithubButtonState extends State<ContactsGithubButton> {
                   ]))
               :
 //[UI] For Tablet/Mobile - Github text.
-              FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Row(children: [
-                    ImageIcon(
-                      const AssetImage('assets/images/GitHub.png'),
-                      color: isHovered ? Colores.green : Colors.white,
-                    ),
-                  ])),
-        ));
+              ImageIcon(
+                  const AssetImage('assets/images/GitHub.png'),
+                  color: isHovered ? Colores.green : Colors.white,
+                )),
+    );
   }
 }
