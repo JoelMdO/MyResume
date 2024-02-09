@@ -9,7 +9,7 @@ class DownloadButton extends StatelessWidget {
   const DownloadButton({super.key});
 
   final String url =
-      'https://drive.google.com/file/d/1dogw2Kx8sH66A5o79r2m-WegQm4ZKkw4/view?usp=sharing';
+      'https://docs.google.com/document/d/1U5_vsbB0rWGMEmGCdlvhJSJL4o5IOBhx/edit?usp=sharing&ouid=102274378527950370395&rtpof=true&sd=true';
 
   Future<void> _launchURL(String url) async {
     // ignore: deprecated_member_use

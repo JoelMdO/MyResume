@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:resume/presentation/pages/tablet/page_1_home/bottom_column_p1t/figure_right_bottom_p1t.dart';
 import 'package:resume/presentation/widgets/drawer/index_drawer.dart';
 import 'package:resume/utils/constants/colors.dart';
 import 'dart:math' as math;
+
+import '../../pages/page_1_home/tablet/bottom_column_p1t/figure_right_bottom_p1t.dart';
 
 class DrawerShape extends StatelessWidget {
   const DrawerShape({super.key});

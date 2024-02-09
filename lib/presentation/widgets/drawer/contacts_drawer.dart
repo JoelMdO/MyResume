@@ -10,7 +10,7 @@ class ContactsDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 150,
-      height: 150,
+      height: 120,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -82,7 +82,7 @@ class ContactsDrawer extends StatelessWidget {
                       fit: BoxFit.fitWidth,
                       child: Row(children: [
                         const ImageIcon(
-                          AssetImage('assets/images/GitHub.png'),
+                          AssetImage('assets/images/github-logo.png'),
                           color: Colors.black,
                         ),
                         const Padding(padding: EdgeInsets.only(left: 5)),

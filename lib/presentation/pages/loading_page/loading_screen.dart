@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:resume/config/responsive_routes.dart';
 import 'package:resume/presentation/pages/loading_page/loading_text.dart';
+import 'package:resume/utils/constants/screen_size.dart';
 
 class LoadingScreen extends StatefulWidget {
   const LoadingScreen({
@@ -37,8 +38,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width * 0.5;
-    double screenHeight = MediaQuery.of(context).size.height * 0.5;
+    ScreenSize myScreenSize = ScreenSize(context);
 
     return Scaffold(
       body: Center(
@@ -52,8 +52,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 SizedBox(
-                    width: screenWidth,
-                    height: screenHeight,
+                    width: myScreenSize.screenWidth * 0.5,
+                    height: myScreenSize.screenHeight * 0.5,
                     child: Image.asset('assets/images/profilegif.gif')),
                 const Padding(
                   padding: EdgeInsets.only(top: 20),

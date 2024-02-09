@@ -34,3 +34,15 @@ extension ContactsDialogTitleStyle on Text {
             fontSize: 20));
   }
 }
+
+///LETS CONNECT DIALOG title TextStyle
+extension LetsConnectDialogTitleStyle on Text {
+  Text letsConnectDialogTitleStyle() {
+    return Text(data!,
+        style: GoogleFonts.montserrat(
+            fontStyle: FontStyle.italic,
+            fontWeight: FontWeight.w700,
+            color: Colors.black,
+            fontSize: 12));
+  }
+}
