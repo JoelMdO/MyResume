@@ -13,78 +13,82 @@ class SkillsKanban extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenType myScreenType = ScreenType(context);
 
-    return SizedBox(
-      width: myScreenType.isDesktop ? 200 : 450,
-      height: myScreenType.isDesktop ? 550 : 450,
-      child: Stack(
-        children: [
-          Positioned(
-              right: myScreenType.isDesktop
-                  ? 180
-                  : myScreenType.isTablet
-                      ? 40
-                      : 60,
-              top: myScreenType.isDesktop ? 20 : 90,
-              child: const Kanban(type: 'data')),
-          Positioned(
-              left: myScreenType.isDesktop
-                  ? 140
-                  : myScreenType.isTablet
-                      ? 70
-                      : 40,
-              top: myScreenType.isDesktop
-                  ? 65
-                  : myScreenType.isTablet
-                      ? 85
-                      : 95,
-              child: const Kanban(type: 'business')),
-          Positioned(
-              left: myScreenType.isDesktop
-                  ? 360
-                  : myScreenType.isTablet
-                      ? 190
-                      : 160,
-              top: myScreenType.isDesktop ? 35 : 75,
-              child: const Kanban(type: 'multi')),
-          Positioned(
-              right: myScreenType.isDesktop
-                  ? 380
-                  : myScreenType.isTablet
-                      ? 160
-                      : 155,
-              bottom: myScreenType.isDesktop ? 5 : 80,
-              child: const Kanban(type: 'cyber')),
-          Positioned(
-              left: myScreenType.isDesktop ? 160 : 55,
-              bottom: myScreenType.isDesktop ? 15 : 55,
-              child: const Kanban(type: 'pm')),
-          Positioned(
-              right: myScreenType.isDesktop
-                  ? 170
-                  : myScreenType.isTablet
-                      ? 40
-                      : 35,
-              bottom: myScreenType.isDesktop ? 0 : 60,
-              child: const Kanban(type: 'agile')),
-          Positioned(
-              left: myScreenType.isDesktop
-                  ? 190
-                  : myScreenType.isTablet
-                      ? 50
-                      : 45,
-              bottom: myScreenType.isTablet ? 160 : 150,
-              child: const Kanban(type: 'seo')),
-          Positioned(
-              right: myScreenType.isDesktop
-                  ? 160
-                  : myScreenType.isTablet
-                      ? 60
-                      : 50,
-              bottom: 155,
-              child: const Kanban(type: 'ui')),
-          const Align(
-              alignment: Alignment.center, child: Kanban(type: 'problemsolver'))
-        ],
+    return FittedBox(
+      fit: BoxFit.contain,
+      child: SizedBox(
+        width: myScreenType.isDesktop ? 600 : 450,
+        height: myScreenType.isDesktop ? 550 : 450,
+        child: Stack(
+          children: [
+            Positioned(
+                right: myScreenType.isDesktop
+                    ? 0
+                    : myScreenType.isTablet
+                        ? 40
+                        : 60,
+                top: myScreenType.isDesktop ? 20 : 90,
+                child: const Kanban(type: 'data')),
+            Positioned(
+                left: myScreenType.isDesktop
+                    ? 10
+                    : myScreenType.isTablet
+                        ? 70
+                        : 40,
+                top: myScreenType.isDesktop
+                    ? 65
+                    : myScreenType.isTablet
+                        ? 85
+                        : 95,
+                child: const Kanban(type: 'business')),
+            Positioned(
+                left: myScreenType.isDesktop
+                    ? 220
+                    : myScreenType.isTablet
+                        ? 190
+                        : 160,
+                top: myScreenType.isDesktop ? 35 : 75,
+                child: const Kanban(type: 'multi')),
+            Positioned(
+                right: myScreenType.isDesktop
+                    ? 200
+                    : myScreenType.isTablet
+                        ? 160
+                        : 155,
+                bottom: myScreenType.isDesktop ? 5 : 80,
+                child: const Kanban(type: 'cyber')),
+            Positioned(
+                left: myScreenType.isDesktop ? 0 : 55,
+                bottom: myScreenType.isDesktop ? 15 : 55,
+                child: const Kanban(type: 'pm')),
+            Positioned(
+                right: myScreenType.isDesktop
+                    ? 10
+                    : myScreenType.isTablet
+                        ? 40
+                        : 35,
+                bottom: myScreenType.isDesktop ? 0 : 60,
+                child: const Kanban(type: 'agile')),
+            Positioned(
+                left: myScreenType.isDesktop
+                    ? 20
+                    : myScreenType.isTablet
+                        ? 50
+                        : 45,
+                bottom: myScreenType.isTablet ? 160 : 150,
+                child: const Kanban(type: 'seo')),
+            Positioned(
+                right: myScreenType.isDesktop
+                    ? 20
+                    : myScreenType.isTablet
+                        ? 60
+                        : 50,
+                bottom: 155,
+                child: const Kanban(type: 'ui')),
+            const Align(
+                alignment: Alignment.center,
+                child: Kanban(type: 'problemsolver'))
+          ],
+        ),
       ),
     );
   }

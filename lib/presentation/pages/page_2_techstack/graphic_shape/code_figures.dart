@@ -43,37 +43,52 @@ class _CodeFigureState extends State<CodeFigure> {
             : myScreenType.isTablet
                 ? 185
                 : 175;
+        //LEFT VALUE
         leftValue = myScreenType.isDesktop
-            ? 50
+            ? 70
             : myScreenType.isTablet
-                ? 25
-                : 20;
+                ? 95
+                : myScreenType.isMiniMobile
+                    ? 5
+                    : 25;
         imageName = 'images/UX_blue.png';
 
       case 'Code':
         topValue = myScreenType.isDesktop
             ? 230
             : myScreenType.isTablet
-                ? 185
-                : 175;
+                ? 175
+                : myScreenType.isMiniMobile
+                    ? 167
+                    : 175;
+        //LEFT VALUE
         leftValue = myScreenType.isDesktop
             ? 770
             : myScreenType.isTablet
-                ? 560
-                : 470;
+                ? 630
+                : myScreenType.isMobile
+                    ? 375
+                    : myScreenType.isMiniMobile
+                        ? 325
+                        : 355;
         imageName = 'images/code_orange.png';
 
       case 'Data':
         topValue = myScreenType.isDesktop
             ? 455
             : myScreenType.isTablet
-                ? 435
-                : 390;
+                ? 395
+                : myScreenType.isMiniMobile
+                    ? 330
+                    : 390;
+        //LEFT VALUE
         leftValue = myScreenType.isDesktop
             ? 280
             : myScreenType.isTablet
                 ? 230
-                : 180;
+                : myScreenType.isMiniMobile
+                    ? 70
+                    : 120;
         imageName = 'images/data.png';
 
       case 'Other':
@@ -81,8 +96,15 @@ class _CodeFigureState extends State<CodeFigure> {
             ? 505
             : myScreenType.isTablet
                 ? 450
-                : 450;
-        leftValue = myScreenType.isDesktop ? 5 : 25;
+                : myScreenType.isMiniMobile
+                    ? 400
+                    : 450;
+        //LEFT VALUE
+        leftValue = myScreenType.isDesktop
+            ? 5
+            : myScreenType.isMiniMobile
+                ? 15
+                : 25;
         imageName = 'images/other.png';
     }
 

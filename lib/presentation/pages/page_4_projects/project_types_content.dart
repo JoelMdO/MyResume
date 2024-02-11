@@ -105,11 +105,15 @@ class _ProjectTypesContentState extends State<ProjectTypesContent> {
 //Description
                   Positioned(
                       bottom: myScreenType.isDesktop
-                          ? 210
+                          ? 110
                           : myScreenType.isTablet
-                              ? 110
-                              : 95,
-                      left: 15,
+                              ? 140
+                              : 125,
+                      left: myScreenType.isDesktop
+                          ? 15
+                          : myScreenType.isMobile
+                              ? 35
+                              : 35,
                       child: Column(
                         children: [
                           ProjectDescription(

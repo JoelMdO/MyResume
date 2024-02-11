@@ -24,6 +24,7 @@ class _RepoBoxState extends State<ProjectDescription> {
   @override
   Widget build(BuildContext context) {
     ScreenSize myScreenSize = ScreenSize(context);
+    ScreenType myScreenType = ScreenType(context);
     Map<String, Map<int, Map<String, String>>> infoProjectMap =
         MapProjects.projectsMap;
 
@@ -36,7 +37,9 @@ class _RepoBoxState extends State<ProjectDescription> {
     }
 
     return SizedBox(
-      width: myScreenSize.screenWidth,
+      width: myScreenType.isDesktop
+          ? myScreenSize.screenWidth
+          : myScreenSize.screenWidth * 0.8,
       child: Column(children: [
         const Text('Description:').projectsSizeTextSubtitleStyle(),
         AutoSizeText(projectDescription).projectsSizeTextBodyTextStyle(),

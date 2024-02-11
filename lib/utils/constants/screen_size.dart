@@ -12,11 +12,13 @@ class ScreenSize {
 }
 
 class ScreenType {
-  final dynamic isDesktop, isTablet, isMobile;
+  final dynamic isDesktop, isTablet, isMobile, isMiniMobile;
 
   ScreenType(BuildContext context)
       : isDesktop = MediaQuery.of(context).size.width >= 992,
         isTablet = MediaQuery.of(context).size.width <= 991 &&
             MediaQuery.of(context).size.width >= 600,
-        isMobile = MediaQuery.of(context).size.width <= 600;
+        isMobile = MediaQuery.of(context).size.width < 600 &&
+            MediaQuery.of(context).size.width >= 400,
+        isMiniMobile = MediaQuery.of(context).size.width < 400;
 }

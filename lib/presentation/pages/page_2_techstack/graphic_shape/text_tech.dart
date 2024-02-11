@@ -19,7 +19,7 @@ class _TextTechState extends State<TextTech> {
   double leftValue = 0;
   dynamic textStyle;
   late AutoSizeText textTypeOther;
-  late Text textType;
+  late AutoSizeText textType;
 
   @override
   void initState() {
@@ -47,9 +47,16 @@ class _TextTechState extends State<TextTech> {
             ? 275
             : myScreenType.isTablet
                 ? 225
-                : 225;
-        leftValue = myScreenType.isDesktop ? 135 : 85;
-        textType = Text(uxText);
+                : 205;
+        //LEFT VALUE
+        leftValue = myScreenType.isDesktop
+            ? 155
+            : myScreenType.isTablet
+                ? 135
+                : myScreenType.isMiniMobile
+                    ? 65
+                    : 55;
+        textType = AutoSizeText(uxText);
         textStyle = textType.uxTechStackStyle();
 
       case 'Code':
@@ -57,13 +64,16 @@ class _TextTechState extends State<TextTech> {
             ? 275
             : myScreenType.isTablet
                 ? 225
-                : 215;
+                : 205;
+        //LEFT VALUE
         leftValue = myScreenType.isDesktop
             ? 570
             : myScreenType.isTablet
-                ? 350
-                : 340;
-        textType = Text(codeText);
+                ? 450
+                : myScreenType.isMiniMobile
+                    ? 240
+                    : 260;
+        textType = AutoSizeText(codeText);
         textStyle = textType.codeTechStackStyle();
 
       case 'Data':
@@ -71,13 +81,18 @@ class _TextTechState extends State<TextTech> {
             ? 470
             : myScreenType.isTablet
                 ? 400
-                : 400;
+                : myScreenType.isMiniMobile
+                    ? 350
+                    : 400;
+        //LEFT VALUE
         leftValue = myScreenType.isDesktop
             ? 350
             : myScreenType.isTablet
                 ? 260
-                : 210;
-        textType = Text(dataText);
+                : myScreenType.isMiniMobile
+                    ? 100
+                    : 150;
+        textType = AutoSizeText(dataText);
         textStyle = textType.dataTechStackStyle();
 
       case 'Other':
@@ -85,8 +100,17 @@ class _TextTechState extends State<TextTech> {
             ? 525
             : myScreenType.isTablet
                 ? 450
-                : 450;
-        leftValue = myScreenType.isDesktop ? 90 : 70;
+                : myScreenType.isMiniMobile
+                    ? 400
+                    : 450;
+        //LEFT VALUE
+        leftValue = myScreenType.isDesktop
+            ? 90
+            : myScreenType.isTablet
+                ? 70
+                : myScreenType.isMiniMobile
+                    ? 40
+                    : 50;
         textTypeOther = AutoSizeText(othersText);
         textStyle = textTypeOther.otherTechStackStyle();
     }

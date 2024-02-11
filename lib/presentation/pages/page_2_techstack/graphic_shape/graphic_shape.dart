@@ -18,13 +18,14 @@ class _GraphicShapeState extends State<GraphicShape> {
     ScreenSize myScreenSize = ScreenSize(context);
     ScreenType myScreenType = ScreenType(context);
 
-    return Center(
+    return FittedBox(
+      fit: BoxFit.contain,
       child: SizedBox(
         width: myScreenType.isDesktop
-            ? myScreenSize.screenWidth * 0.5
+            ? myScreenSize.screenWidth * 0.65
             : myScreenSize.screenWidth,
         height: myScreenType.isDesktop
-            ? myScreenSize.screenHeight * 0.7
+            ? myScreenSize.screenHeight * 0.85
             : myScreenSize.screenHeight,
         child: Stack(
             alignment: AlignmentDirectional.topStart,
@@ -34,7 +35,7 @@ class _GraphicShapeState extends State<GraphicShape> {
                   ? const Center(child: Hexagon())
                   : myScreenType.isTablet
                       ? const Positioned(top: 165, left: 100, child: Hexagon())
-                      : const Positioned(top: 165, left: 100, child: Hexagon()),
+                      : const Positioned(top: 165, left: 60, child: Hexagon()),
               ColorLine(type: 'blue_line'),
               ColorLine(type: 'orange_line'),
               CodeFigure(type: 'UX'),

@@ -17,6 +17,7 @@ class _TechStackPageState extends State<TechStackPage> {
   @override
   Widget build(BuildContext context) {
     ScreenSize myScreenSize = ScreenSize(context);
+    ScreenType myScreenType = ScreenType(context);
 
     return Scaffold(
         floatingActionButton: const FloatButton(),
@@ -40,7 +41,7 @@ class _TechStackPageState extends State<TechStackPage> {
                 //BUTTON FOR EDUCATION //
                 Positioned(
                     bottom: 50,
-                    left: 50,
+                    left: myScreenType.isMiniMobile ? 10 : 50,
                     child: BounceInRight(
                       delay: const Duration(seconds: 6),
                       duration: const Duration(seconds: 1),

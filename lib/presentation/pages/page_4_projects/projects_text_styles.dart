@@ -43,6 +43,7 @@ extension ProjectsSizeTextBodyTitle on AutoSizeText {
     return AutoSizeText(
       data!,
       softWrap: true,
+      maxLines: 2,
       minFontSize: 14,
       maxFontSize: 16,
       textAlign: TextAlign.center,

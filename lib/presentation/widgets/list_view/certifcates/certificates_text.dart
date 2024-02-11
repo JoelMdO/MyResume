@@ -1,5 +1,7 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/presentation/widgets/list_view/certifcates/certficates_text_styles.dart';
+import 'package:resume/utils/constants/screen_size.dart';
 
 class CertificatesText extends StatefulWidget {
   final String icon, title, school;
@@ -15,14 +17,15 @@ class CertificatesText extends StatefulWidget {
 class _CertificatesTextState extends State<CertificatesText> {
   @override
   Widget build(BuildContext context) {
+    ScreenType myScreenType = ScreenType(context);
     return ListTile(
       leading: Image.asset(
         widget.icon,
-        width: 90,
-        height: 90,
+        width: myScreenType.isMiniMobile ? 50 : 90,
+        height: myScreenType.isMiniMobile ? 50 : 90,
       ),
-      title: Text(widget.title).titleCertificatesStyle(),
-      subtitle: Text(
+      title: AutoSizeText(widget.title).titleCertificatesStyle(),
+      subtitle: AutoSizeText(
         widget.school,
       ).subTitleCertificatesStyle(),
     );

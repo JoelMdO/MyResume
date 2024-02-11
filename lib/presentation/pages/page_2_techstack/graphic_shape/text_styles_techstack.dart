@@ -17,40 +17,40 @@ extension TechStackTitleStyle on Text {
   }
 }
 
-extension UXTechStackStyle on Text {
-  Text uxTechStackStyle() {
-    return Text(
+extension UXTechStackStyle on AutoSizeText {
+  AutoSizeText uxTechStackStyle() {
+    return AutoSizeText(
       data!,
+      maxFontSize: 22,
+      minFontSize: 13,
       style: GoogleFonts.notoSansKhojki(
-          fontSize: 22,
-          fontWeight: FontWeight.w800,
-          color: Colores.blueTechLetter),
+          fontWeight: FontWeight.w800, color: Colores.blueTechLetter),
       textAlign: TextAlign.center,
     );
   }
 }
 
-extension CodeTechStackStyle on Text {
-  Text codeTechStackStyle() {
-    return Text(
+extension CodeTechStackStyle on AutoSizeText {
+  AutoSizeText codeTechStackStyle() {
+    return AutoSizeText(
       data!,
+      maxFontSize: 22,
+      minFontSize: 13,
       style: GoogleFonts.notoSansKhojki(
-          fontSize: 22,
-          fontWeight: FontWeight.w800,
-          color: Colores.orangeTechLetter),
+          fontWeight: FontWeight.w800, color: Colores.orangeTechLetter),
       textAlign: TextAlign.center,
     );
   }
 }
 
-extension DataTechStackStyle on Text {
-  Text dataTechStackStyle() {
-    return Text(
+extension DataTechStackStyle on AutoSizeText {
+  AutoSizeText dataTechStackStyle() {
+    return AutoSizeText(
       data!,
+      maxFontSize: 22,
+      minFontSize: 13,
       style: GoogleFonts.notoSansKhojki(
-          fontSize: 22,
-          fontWeight: FontWeight.w800,
-          color: Colores.greenTechLetter),
+          fontWeight: FontWeight.w800, color: Colores.greenTechLetter),
       textAlign: TextAlign.center,
     );
   }
@@ -61,7 +61,7 @@ extension OtherTechStackStyle on AutoSizeText {
     return AutoSizeText(
       data!,
       maxFontSize: 22,
-      minFontSize: 18,
+      minFontSize: 13,
       style: GoogleFonts.notoSansKhojki(
           fontWeight: FontWeight.w800, color: Colores.blackTechLetter),
       textAlign: TextAlign.left,

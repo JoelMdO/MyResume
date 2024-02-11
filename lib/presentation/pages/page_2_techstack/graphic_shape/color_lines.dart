@@ -46,11 +46,14 @@ class _ColorLineState extends State<ColorLine> {
             : myScreenType.isTablet
                 ? 195
                 : 195;
+        //LEFT VALUE
         leftValue = myScreenType.isDesktop
-            ? 80
+            ? 100
             : myScreenType.isTablet
-                ? 15
-                : 35;
+                ? 105
+                : myScreenType.isMiniMobile
+                    ? 15
+                    : 25;
         imageName = 'images/blue_line.png';
         beginOffset = const Offset(15, 0);
         endOffset = const Offset(0, 0);
@@ -61,11 +64,14 @@ class _ColorLineState extends State<ColorLine> {
             : myScreenType.isTablet
                 ? 195
                 : 195;
+        //LEFT VALUE
         leftValue = myScreenType.isDesktop
             ? 590
             : myScreenType.isTablet
-                ? 420
-                : 350;
+                ? 480
+                : myScreenType.isMiniMobile
+                    ? 230
+                    : 270;
         imageName = 'images/orange_line.png';
         beginOffset = const Offset(-15, 0);
         endOffset = const Offset(0, 0);
