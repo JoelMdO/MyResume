@@ -4,8 +4,8 @@ import 'package:resume/presentation/widgets/buttons/drawer_button.dart';
 //--DRAWER INDEX-- //
 class DrawerIndex extends StatefulWidget {
   const DrawerIndex({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   DrawerIndexState createState() => DrawerIndexState();
@@ -23,8 +23,7 @@ class DrawerIndexState extends State<DrawerIndex> {
       child: ListView(children: const <Widget>[
         MyDrawerButton(page: 1, pagename: 'HOME'),
         MyDrawerButton(page: 2, pagename: 'EDUCATION &\n TECH STACK'),
-        MyDrawerButton(page: 3, pagename: 'CAREER SUMMARY'),
-        MyDrawerButton(page: 4, pagename: 'PROJECTS'),
+        MyDrawerButton(page: 3, pagename: 'PROJECTS'),
         Padding(
             padding: EdgeInsets.only(left: 10),
             child: MyDrawerButton(page: 5, pagename: 'LETS CONNECT')),

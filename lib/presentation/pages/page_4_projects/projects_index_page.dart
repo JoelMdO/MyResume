@@ -1,8 +1,6 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/presentation/pages/page_1_home/text/titles/title_text.dart';
 import 'package:resume/presentation/widgets/carousel/carousel_menu_project/carrousel_menu_projects.dart';
-import 'package:resume/presentation/widgets/buttons/submenu_nav_button.dart';
 import 'package:resume/presentation/widgets/drawer/shape_drawer.dart';
 import 'package:resume/presentation/widgets/buttons/float_button.dart';
 import 'package:resume/utils/constants/colors.dart';
@@ -14,8 +12,8 @@ class ProjectsIndexPage extends StatefulWidget {
   /// [CarouselMenuProjects] for the user to select the one which are interested in
   ///
   const ProjectsIndexPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<ProjectsIndexPage> createState() => _ProjectsIndexPageState();
@@ -25,7 +23,6 @@ class _ProjectsIndexPageState extends State<ProjectsIndexPage> {
   @override
   Widget build(BuildContext context) {
     ScreenSize myScreenSize = ScreenSize(context);
-    ScreenType myscreenType = ScreenType(context);
 
     return Scaffold(
         floatingActionButton: const FloatButton(),
@@ -76,21 +73,6 @@ class _ProjectsIndexPageState extends State<ProjectsIndexPage> {
                   page: '',
                 ),
               ),
-              //BUTTON FOR CAREER //
-              Positioned(
-                  bottom: myscreenType.isDesktop
-                      ? 100
-                      : myscreenType.isTablet
-                          ? 100
-                          : 80,
-                  right: 30,
-                  child: BounceInRight(
-                    delay: const Duration(seconds: 6),
-                    duration: const Duration(seconds: 1),
-                    child: const SubMenuNavigationButton(
-                      type: 'career',
-                    ),
-                  ))
             ],
           ),
         ),

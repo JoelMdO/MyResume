@@ -4,8 +4,7 @@ import 'package:resume/presentation/widgets/list_view/education/education_text_s
 
 class EducationText extends StatefulWidget {
   final String title, date;
-  const EducationText({Key? key, required this.title, required this.date})
-      : super(key: key);
+  const EducationText({super.key, required this.title, required this.date});
 
   @override
   State<EducationText> createState() => _EducationTextState();

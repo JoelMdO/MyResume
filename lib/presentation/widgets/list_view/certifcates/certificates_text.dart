@@ -7,8 +7,10 @@ class CertificatesText extends StatefulWidget {
   final String icon, title, school;
 
   const CertificatesText(
-      {Key? key, required this.icon, required this.title, required this.school})
-      : super(key: key);
+      {super.key,
+      required this.icon,
+      required this.title,
+      required this.school});
 
   @override
   State<CertificatesText> createState() => _CertificatesTextState();

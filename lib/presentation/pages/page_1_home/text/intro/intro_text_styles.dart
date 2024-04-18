@@ -2,43 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 ///INTRO Text TextSytle Desktop
-extension IntroDesktopTextStyle on Text {
-  Text introDesktopTextStyle() {
+extension IntroTextStyle on Text {
+  Text introTextStyle(BuildContext context, String section) {
+    //
+    FontWeight fontWeight = FontWeight.normal;
+    bool isMobile = MediaQuery.of(context).size.width <= 766;
+    //
+    if (section == 'title') {
+      fontWeight = FontWeight.normal;
+    } else {
+      fontWeight = FontWeight.bold;
+    }
     return Text(
       data!,
-      style:
-          GoogleFonts.montserrat(fontSize: 20, fontWeight: FontWeight.normal),
-    );
-  }
-}
-
-///INTRO Text TextSytle Mobile
-extension IntroMobileTextStyle on Text {
-  Text introMobileTextStyle() {
-    return Text(
-      data!,
-      style:
-          GoogleFonts.montserrat(fontSize: 15, fontWeight: FontWeight.normal),
-    );
-  }
-}
-
-///INTRO SubText TextStyle Mobile
-extension IntroDesktopSubTextStyle on Text {
-  Text introDesktopSubTextStyle() {
-    return Text(
-      data!,
-      style: GoogleFonts.montserrat(fontSize: 20, fontWeight: FontWeight.bold),
-    );
-  }
-}
-
-///INTRO SubText TextStyle Mobile
-extension IntroMobileSubTextStyle on Text {
-  Text introMobileSubTextStyle() {
-    return Text(
-      data!,
-      style: GoogleFonts.montserrat(fontSize: 15, fontWeight: FontWeight.bold),
+      style: GoogleFonts.montserrat(
+          fontSize: isMobile ? 15 : 20, fontWeight: fontWeight),
     );
   }
 }

@@ -4,8 +4,7 @@ import 'package:resume/presentation/pages/page_1_home/text/intro/intro_text_styl
 class IntroText extends StatefulWidget {
   final String text;
   final String? subtext;
-  const IntroText({Key? key, required this.text, this.subtext})
-      : super(key: key);
+  const IntroText({super.key, required this.text, this.subtext});
 
   @override
   State<IntroText> createState() => _IntroTextState();
@@ -14,22 +13,14 @@ class IntroText extends StatefulWidget {
 class _IntroTextState extends State<IntroText> {
   @override
   Widget build(BuildContext context) {
-    bool isMobile = MediaQuery.of(context).size.width <= 766;
-
     return Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
       FittedBox(
         fit: BoxFit.fill,
-        child: isMobile
-            ? Row(children: [
-                Text(widget.text).introMobileTextStyle(),
-                if (widget.subtext != null)
-                  Text(widget.subtext!).introMobileSubTextStyle(),
-              ])
-            : Row(children: [
-                Text(widget.text).introDesktopTextStyle(),
-                if (widget.subtext != null)
-                  Text(widget.subtext!).introDesktopSubTextStyle(),
-              ]),
+        child: Row(children: [
+          Text(widget.text).introTextStyle(context, 'title'),
+          if (widget.subtext != null)
+            Text(widget.subtext!).introTextStyle(context, 'subtitle')
+        ]),
       ),
     ]);
   }

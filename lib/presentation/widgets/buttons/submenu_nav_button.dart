@@ -28,10 +28,6 @@ class _SubMenuNavigationButtonState extends State<SubMenuNavigationButton> {
   @override
   Widget build(BuildContext context) {
     switch (widget.type) {
-      case 'career':
-        title = 'Access CAREER Summary';
-        route = '/career';
-        isEducation = false;
       case 'education':
         title = 'Access EDUCATION Summary';
         isEducation = true;

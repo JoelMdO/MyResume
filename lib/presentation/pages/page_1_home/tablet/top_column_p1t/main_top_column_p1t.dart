@@ -49,7 +49,7 @@ class _TopColumnTabletState extends State<TopColumnTablet> {
                   width: myScreenSize.screenWidth * 0.3,
                   height: myScreenSize.screenHeight * 0.3,
                   child: const BarButton(
-                    type: 'EDUCATION & \n TECH STACK',
+                    type: 'TECH STACK & \n EDUCATION',
                   )),
             ),
 //Career
@@ -60,7 +60,7 @@ class _TopColumnTabletState extends State<TopColumnTablet> {
                   width: myScreenSize.screenWidth * 0.3,
                   height: myScreenSize.screenHeight * 0.3,
                   child: const BarButton(
-                    type: 'PROJECTS &\n CAREER',
+                    type: 'PROJECTS',
                   )),
             ),
 //Profile ID

@@ -43,7 +43,7 @@ class _HexagonState extends State<Hexagon> {
             fit: BoxFit.contain,
             child: Stack(
                 fit: StackFit.loose,
-                alignment: AlignmentDirectional.topStart,
+                alignment: AlignmentDirectional.center,
                 children: [
                   AnimatedOpacity(
                       opacity: animationStarted ? 1.0 : 0.2,

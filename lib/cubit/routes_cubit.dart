@@ -1,5 +1,4 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 part 'routes_state.dart';
 
 class NavigationCubit extends Cubit<NavigationRouteState> {
@@ -10,9 +9,14 @@ class NavigationCubit extends Cubit<NavigationRouteState> {
   }
 
   void goBack() {
-    if (state.lastRoute != '/') {
+    if (state.lastRoute == '/projects') {
       emit(state.copyWith(
-        currentRoute: state.lastRoute,
+        currentRoute: '/projects',
+        lastRoute: '/',
+      ));
+    } else {
+      emit(state.copyWith(
+        currentRoute: '/',
         lastRoute: '',
       ));
     }

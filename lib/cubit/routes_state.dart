@@ -11,7 +11,7 @@ class NavigationRouteState {
   NavigationRouteState copyWith({required String currentRoute, lastRoute}) {
     return NavigationRouteState(
       currentRoute: currentRoute,
-      lastRoute: lastRoute ?? this.lastRoute,
+      lastRoute: this.lastRoute,
     );
   }
 }

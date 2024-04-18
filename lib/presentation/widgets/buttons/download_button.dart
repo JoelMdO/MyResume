@@ -2,24 +2,11 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/presentation/widgets/buttons/styles_text_buttons.dart';
 import 'package:resume/utils/constants/colors.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:resume/utils/constants/mixin/buttons_mixin.dart';
 
 /// Download Button for resume downloading from Google Drive
-class DownloadButton extends StatelessWidget {
+class DownloadButton extends StatelessWidget with ButtonsMixin {
   const DownloadButton({super.key});
-
-  final String url =
-      'https://docs.google.com/document/d/1U5_vsbB0rWGMEmGCdlvhJSJL4o5IOBhx/edit?usp=sharing&ouid=102274378527950370395&rtpof=true&sd=true';
-
-  Future<void> _launchURL(String url) async {
-    // ignore: deprecated_member_use
-    if (await canLaunch(url)) {
-      // ignore: deprecated_member_use
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +29,7 @@ class DownloadButton extends StatelessWidget {
               },
               child: ElevatedButton(
                 onPressed: () {
-                  _launchURL(url);
+                  launchToUrl('download');
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colores.darkblue,
