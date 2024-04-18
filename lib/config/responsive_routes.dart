@@ -5,14 +5,12 @@ import 'package:resume/presentation/pages/page_1_home/desktop/main_home_p1d.dart
 import 'package:resume/presentation/pages/page_1_home/mobile/main_home_p1.dart';
 import 'package:resume/presentation/pages/page_1_home/tablet/main_home_p1t.dart';
 import 'package:resume/presentation/pages/page_2_techstack/techstack_page.dart';
-import 'package:resume/presentation/pages/page_3_career/main_career_p3m.dart';
 import 'package:resume/presentation/pages/page_4_projects/projects_index_page.dart';
 import 'package:resume/utils/constants/screen_size.dart';
 
 class ResponsiveHomePage extends StatelessWidget {
   final String nameRoute;
-  const ResponsiveHomePage({Key? key, required this.nameRoute})
-      : super(key: key);
+  const ResponsiveHomePage({super.key, required this.nameRoute});
 
   @override
   Widget build(BuildContext context) {
@@ -62,12 +60,6 @@ class ResponsiveHomePageViewState extends State<ResponsiveHomePageView> {
                 case '/techstack':
                   return MaterialPageRoute(builder: (context) {
                     return const TechStackPage();
-                  });
-                case '/career':
-                  return MaterialPageRoute(builder: (context) {
-                    return CareerPage(
-                      isExpanded: false,
-                    );
                   });
                 case '/projects':
                   return MaterialPageRoute(builder: (context) {

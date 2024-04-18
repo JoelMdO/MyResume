@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:resume/presentation/pages/page_2_techstack/graphic_shape/code_figures.dart';
+import 'package:resume/presentation/pages/page_2_techstack/graphic_shape/code_figures/code_figures.dart';
 import 'package:resume/presentation/pages/page_2_techstack/graphic_shape/color_lines.dart';
 import 'package:resume/presentation/pages/page_2_techstack/graphic_shape/hexagon.dart';
 import 'package:resume/presentation/pages/page_2_techstack/graphic_shape/text_tech.dart';
@@ -17,37 +17,85 @@ class _GraphicShapeState extends State<GraphicShape> {
   Widget build(BuildContext context) {
     ScreenSize myScreenSize = ScreenSize(context);
     ScreenType myScreenType = ScreenType(context);
-
+    double scaleWidth = myScreenSize.screenWidth / 151;
+    double scaleHeight = myScreenSize.screenHeight / 1304;
+    //
     return FittedBox(
-      fit: BoxFit.contain,
-      child: SizedBox(
-        width: myScreenType.isDesktop
-            ? myScreenSize.screenWidth * 0.65
-            : myScreenSize.screenWidth,
-        height: myScreenType.isDesktop
-            ? myScreenSize.screenHeight * 0.85
-            : myScreenSize.screenHeight,
-        child: Stack(
-            alignment: AlignmentDirectional.topStart,
-            fit: StackFit.loose,
-            children: [
-              myScreenType.isDesktop
-                  ? const Center(child: Hexagon())
-                  : myScreenType.isTablet
-                      ? const Positioned(top: 165, left: 100, child: Hexagon())
-                      : const Positioned(top: 165, left: 60, child: Hexagon()),
-              ColorLine(type: 'blue_line'),
-              ColorLine(type: 'orange_line'),
-              CodeFigure(type: 'UX'),
-              CodeFigure(type: 'Code'),
-              CodeFigure(type: 'Data'),
-              CodeFigure(type: 'Other'),
-              TextTech(type: 'UX'),
-              TextTech(type: 'Code'),
-              TextTech(type: 'Data'),
-              TextTech(type: 'Other'),
-            ]),
-      ),
-    );
+        fit: BoxFit.contain,
+        child: SizedBox(
+            width: myScreenType.isDesktop
+                ? myScreenSize.screenWidth * 0.8
+                : myScreenSize.screenWidth,
+            height: myScreenSize.screenHeight * 0.8,
+            child: Stack(
+                alignment: AlignmentDirectional.topStart,
+                fit: StackFit.loose,
+                children: [
+                  const Align(
+                      alignment: AlignmentDirectional.topCenter,
+                      child: Hexagon()),
+                  Positioned(
+                      top: myScreenType.isDesktop
+                          ? 350 * scaleHeight
+                          : 250 * scaleHeight,
+                      left: 10 * scaleWidth,
+                      child: const ColorLine(type: 'blue_line')),
+                  Positioned(
+                      top: myScreenType.isDesktop
+                          ? 350 * scaleHeight
+                          : 270 * scaleHeight,
+                      left: myScreenType.isDesktop
+                          ? 10 * scaleWidth * scaleHeight
+                          : 15 * scaleWidth,
+                      child: const CodeFigure(type: 'UX_figure')),
+                  Positioned(
+                      top: myScreenType.isDesktop
+                          ? 440 * scaleHeight
+                          : 395 * scaleHeight,
+                      left: 20 * scaleWidth,
+                      child: TextTech(type: 'UX_text')),
+                  Positioned(
+                      top: myScreenType.isDesktop
+                          ? 350 * scaleHeight
+                          : 250 * scaleHeight,
+                      right: 10 * scaleWidth,
+                      child: const ColorLine(type: 'orange_line')),
+                  Positioned(
+                      top: myScreenType.isDesktop
+                          ? 350 * scaleHeight
+                          : 250 * scaleHeight,
+                      right: 10 * scaleWidth,
+                      child: const CodeFigure(type: 'Code_figure')),
+                  Positioned(
+                      top: myScreenType.isDesktop
+                          ? 440 * scaleHeight
+                          : 395 * scaleHeight,
+                      right: 20 * scaleWidth,
+                      child: TextTech(type: 'Code_text')),
+                  Positioned(
+                      top: myScreenType.isDesktop
+                          ? 550 * scaleHeight
+                          : 600 * scaleHeight,
+                      left: myScreenType.isDesktop
+                          ? 40 * scaleWidth
+                          : 30 * scaleWidth,
+                      child: Row(children: [
+                        const CodeFigure(type: 'Data_figure'),
+                        TextTech(type: 'Data_text')
+                      ])),
+                  Positioned(
+                      bottom: myScreenType.isDesktop
+                          ? 50 * scaleHeight
+                          : 65 * scaleHeight,
+                      left: myScreenType.isDesktop
+                          ? 20 * scaleWidth
+                          : 2 * scaleWidth,
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const CodeFigure(type: 'Other_figure'),
+                            TextTech(type: 'Other_text'),
+                          ])),
+                ])));
   }
 }

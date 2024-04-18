@@ -6,8 +6,8 @@ import 'package:resume/utils/constants/screen_size.dart';
 //---RIGHT COLUMN //
 class RightColumnDesktop extends StatefulWidget {
   const RightColumnDesktop({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   RightColumnDesktopState createState() => RightColumnDesktopState();

@@ -14,10 +14,9 @@ import 'package:resume/presentation/widgets/buttons/float_button.dart';
 import 'package:resume/utils/constants/colors.dart';
 import 'package:resume/utils/constants/screen_size.dart';
 
-// ignore: must_be_immutable
 class ProjectTypesContent extends StatefulWidget {
-  String type;
-  ProjectTypesContent({Key? key, required this.type}) : super(key: key);
+  final String type;
+  const ProjectTypesContent({super.key, required this.type});
 
   @override
   State<ProjectTypesContent> createState() => _ProjectTypesContentState();
@@ -88,27 +87,29 @@ class _ProjectTypesContentState extends State<ProjectTypesContent> {
                               ),
                             )
                           ])),
-                  Center(
+                  Positioned(
+                      top: myScreenSize.screenHeight * 0.40,
                       child: Container(
                           width: myScreenSize.screenWidth,
                           height: myScreenSize.screenHeight * 0.05,
                           decoration: const BoxDecoration(
                               color: Colores.projectSquareLine))),
 //Carousel By Project
-                  Center(
+                  Positioned(
+                      top: myScreenSize.screenHeight * 0.20,
                       child: SizedBox(
-                    width: myScreenSize.screenWidth,
-                    child: CarouselByProject(
-                      type: widget.type,
-                    ),
-                  )),
+                        width: myScreenSize.screenWidth,
+                        child: CarouselByProject(
+                          type: widget.type,
+                        ),
+                      )),
 //Description
                   Positioned(
                       bottom: myScreenType.isDesktop
-                          ? 110
+                          ? 100
                           : myScreenType.isTablet
-                              ? 140
-                              : 125,
+                              ? 130
+                              : 115,
                       left: myScreenType.isDesktop
                           ? 15
                           : myScreenType.isMobile

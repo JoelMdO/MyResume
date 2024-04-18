@@ -5,8 +5,8 @@ import 'package:resume/utils/constants/screen_size.dart';
 
 class LoadingScreen extends StatefulWidget {
   const LoadingScreen({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<LoadingScreen> createState() => _LoadingScreenState();

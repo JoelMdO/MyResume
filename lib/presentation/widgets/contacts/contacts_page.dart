@@ -7,8 +7,8 @@ import 'package:resume/utils/constants/screen_size.dart';
 
 class ContactsHomePage extends StatefulWidget {
   const ContactsHomePage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   ContactsHomePageState createState() => ContactsHomePageState();

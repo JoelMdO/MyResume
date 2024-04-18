@@ -33,7 +33,7 @@ class _LeftColumnDesktopState extends State<LeftColumnDesktop> {
                   width: 320,
                   height: 320,
                   child: BarButton(
-                    type: 'EDUCATION & \n TECH STACK',
+                    type: 'TECH STACK &\n EDUCATION',
                   ))),
           //Career Bar
           Positioned(
@@ -43,7 +43,7 @@ class _LeftColumnDesktopState extends State<LeftColumnDesktop> {
                   width: 320,
                   height: 320,
                   child: BarButton(
-                    type: 'PROJECTS &\n CAREER',
+                    type: 'PROJECTS',
                   ))),
         ]);
   }

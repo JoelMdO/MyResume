@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:resume/utils/constants/colors.dart';
@@ -17,54 +16,27 @@ extension TechStackTitleStyle on Text {
   }
 }
 
-extension UXTechStackStyle on AutoSizeText {
-  AutoSizeText uxTechStackStyle() {
-    return AutoSizeText(
+extension TechStackSubtitleStyle on Text {
+  Text textStyleSubtitleStyle(String type, bool isDesktop) {
+    Color color = Colors.black;
+    double fontSize = 13;
+    //
+    fontSize = isDesktop ? 30 : 13;
+    switch (type) {
+      case 'ux':
+        color = Colores.blueTechLetter;
+      case 'code':
+        color = Colores.orangeTechLetter;
+      case 'data':
+        color = Colores.greenTechLetter;
+      case 'other':
+        color = Colores.blackTechLetter;
+    }
+    return Text(
       data!,
-      maxFontSize: 22,
-      minFontSize: 13,
       style: GoogleFonts.notoSansKhojki(
-          fontWeight: FontWeight.w800, color: Colores.blueTechLetter),
+          fontSize: fontSize, fontWeight: FontWeight.w800, color: color),
       textAlign: TextAlign.center,
-    );
-  }
-}
-
-extension CodeTechStackStyle on AutoSizeText {
-  AutoSizeText codeTechStackStyle() {
-    return AutoSizeText(
-      data!,
-      maxFontSize: 22,
-      minFontSize: 13,
-      style: GoogleFonts.notoSansKhojki(
-          fontWeight: FontWeight.w800, color: Colores.orangeTechLetter),
-      textAlign: TextAlign.center,
-    );
-  }
-}
-
-extension DataTechStackStyle on AutoSizeText {
-  AutoSizeText dataTechStackStyle() {
-    return AutoSizeText(
-      data!,
-      maxFontSize: 22,
-      minFontSize: 13,
-      style: GoogleFonts.notoSansKhojki(
-          fontWeight: FontWeight.w800, color: Colores.greenTechLetter),
-      textAlign: TextAlign.center,
-    );
-  }
-}
-
-extension OtherTechStackStyle on AutoSizeText {
-  AutoSizeText otherTechStackStyle() {
-    return AutoSizeText(
-      data!,
-      maxFontSize: 22,
-      minFontSize: 13,
-      style: GoogleFonts.notoSansKhojki(
-          fontWeight: FontWeight.w800, color: Colores.blackTechLetter),
-      textAlign: TextAlign.left,
     );
   }
 }

@@ -4,8 +4,7 @@ import 'package:resume/presentation/widgets/strengths_chart/strengths_text_style
 class StrengthsText extends StatefulWidget {
   final String text;
   final String subtext;
-  const StrengthsText({Key? key, required this.text, required this.subtext})
-      : super(key: key);
+  const StrengthsText({super.key, required this.text, required this.subtext});
 
   @override
   State<StrengthsText> createState() => _StrengthsTextState();

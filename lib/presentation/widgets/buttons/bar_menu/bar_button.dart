@@ -2,24 +2,21 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:provider/provider.dart';
-import 'package:resume/cubit/routes_cubit.dart';
 import 'package:resume/presentation/widgets/buttons/bar_menu/bar_text_styles.dart';
-import 'package:resume/presentation/widgets/dialogs/opendialog_cess.dart';
+import 'package:resume/utils/constants/mixin/buttons_mixin.dart';
 
 class BarButton extends StatefulWidget {
   final String type;
   const BarButton({
-    Key? key,
+    super.key,
     required this.type,
-  }) : super(key: key);
+  });
 
   @override
   BarButtonState createState() => BarButtonState();
 }
 
-class BarButtonState extends State<BarButton> {
+class BarButtonState extends State<BarButton> with ButtonsMixin {
   bool isHovered = false;
   final scaleUp = Matrix4.identity()..scale(1.1);
   final scaleNormal = Matrix4.identity();
@@ -40,26 +37,17 @@ class BarButtonState extends State<BarButton> {
                     //   [DelayedDisplay] TO DELAY THE START OF THE WIDGET API DELAYED_DISPLAY
                     child: DelayedDisplay(
                         delay: const Duration(milliseconds: 500),
-                        child: FadeInLeft(
-                            child: Image.asset(
-                          'assets/images/BlueSquare.png',
-                        )))),
+                        child: FadeInLeft(child: imagesShapeButton('blue')))),
                 //YELLOW IMAGE
                 Positioned(
                     top: 65,
                     left: 20,
-                    child: FadeInLeft(
-                        child: Image.asset(
-                      'assets/images/GreySquareYellow.png',
-                    ))),
+                    child: FadeInLeft(child: imagesShapeButton('yellow'))),
                 //WING IMAGE
                 Positioned(
                     top: 115,
                     left: 90,
-                    child: FadeInLeft(
-                        child: Image.asset(
-                      'assets/images/BlackWing.png',
-                    ))),
+                    child: FadeInLeft(child: imagesShapeButton('black'))),
                 //TEXT TITLE
                 Positioned(
                     top: 140,
@@ -79,17 +67,7 @@ class BarButtonState extends State<BarButton> {
                         //     [Inkwell] TO MAKE AS BUTTON THE IMAGE
                         child: InkWell(
                             onTap: () {
-                              if (widget.type == 'SKILLS &\n STRENGTHS') {
-                                OpenDialogCESS.openD(context, 'skills');
-                              } else if (widget.type == 'PROJECTS &\n CAREER') {
-                                context
-                                    .read<NavigationCubit>()
-                                    .navigateTo('/projects');
-                              } else {
-                                context
-                                    .read<NavigationCubit>()
-                                    .navigateTo('/techstack');
-                              }
+                              onTapBarButton(context, widget.type);
                             },
                             child: DelayedDisplay(
                                 delay: const Duration(milliseconds: 1500),

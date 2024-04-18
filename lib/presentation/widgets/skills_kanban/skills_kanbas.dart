@@ -26,16 +26,16 @@ class SkillsKanban extends StatelessWidget {
                     : myScreenType.isTablet
                         ? 40
                         : 60,
-                top: myScreenType.isDesktop ? 20 : 90,
+                top: myScreenType.isDesktop ? 50 : 90,
                 child: const Kanban(type: 'data')),
             Positioned(
                 left: myScreenType.isDesktop
-                    ? 10
+                    ? 30
                     : myScreenType.isTablet
                         ? 70
                         : 40,
                 top: myScreenType.isDesktop
-                    ? 65
+                    ? 85
                     : myScreenType.isTablet
                         ? 85
                         : 95,
@@ -46,7 +46,7 @@ class SkillsKanban extends StatelessWidget {
                     : myScreenType.isTablet
                         ? 190
                         : 160,
-                top: myScreenType.isDesktop ? 35 : 75,
+                top: myScreenType.isDesktop ? 55 : 75,
                 child: const Kanban(type: 'multi')),
             Positioned(
                 right: myScreenType.isDesktop
@@ -54,11 +54,11 @@ class SkillsKanban extends StatelessWidget {
                     : myScreenType.isTablet
                         ? 160
                         : 155,
-                bottom: myScreenType.isDesktop ? 5 : 80,
+                bottom: myScreenType.isDesktop ? 15 : 80,
                 child: const Kanban(type: 'cyber')),
             Positioned(
-                left: myScreenType.isDesktop ? 0 : 55,
-                bottom: myScreenType.isDesktop ? 15 : 55,
+                left: myScreenType.isDesktop ? 20 : 55,
+                bottom: myScreenType.isDesktop ? 5 : 55,
                 child: const Kanban(type: 'pm')),
             Positioned(
                 right: myScreenType.isDesktop
@@ -155,8 +155,8 @@ class Kanban extends StatelessWidget {
     }
 
     return Container(
-      width: myScreenType.isDesktop ? 220 : 120,
-      height: myScreenType.isDesktop ? 190 : 100,
+      width: myScreenType.isDesktop ? 190 : 120,
+      height: myScreenType.isDesktop ? 160 : 100,
       decoration: BoxDecoration(boxShadow: [
         BoxShadow(
           blurRadius: isProblemSolver ? 0.0 : 1.0,

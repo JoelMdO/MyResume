@@ -46,3 +46,14 @@ floatButtonTitleTextStyle() {
     color: Colores.darkblue,
   );
 }
+
+extension ScaffoldTitleTextStyle on Text {
+  Text scaffoldTitleTextStyle() {
+    return Text(data!,
+        style: GoogleFonts.montserrat(
+            color: Colores.blackTechLetter,
+            fontSize: 13,
+            fontStyle: FontStyle.italic,
+            fontWeight: FontWeight.w800));
+  }
+}
