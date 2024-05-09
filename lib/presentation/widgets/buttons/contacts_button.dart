@@ -61,7 +61,11 @@ class _ContactsButtonState extends State<ContactsButton> with ButtonsMixin {
                     data: const IconThemeData(color: null),
                     child: ImageIcon(
                       AssetImage(image(widget.type)),
-                      color: isHovered ? Colores.green : Colors.white,
+                      color: isHovered
+                          ? Colores.green
+                          : myScreenType.isTablet
+                              ? Colors.black
+                              : Colors.white,
                     ),
                   )));
   }

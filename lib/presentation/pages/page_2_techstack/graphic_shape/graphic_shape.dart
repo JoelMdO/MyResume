@@ -36,13 +36,13 @@ class _GraphicShapeState extends State<GraphicShape> {
                       child: Hexagon()),
                   Positioned(
                       top: myScreenType.isDesktop
-                          ? 350 * scaleHeight
+                          ? 330 * scaleHeight
                           : 250 * scaleHeight,
                       left: 10 * scaleWidth,
                       child: const ColorLine(type: 'blue_line')),
                   Positioned(
                       top: myScreenType.isDesktop
-                          ? 350 * scaleHeight
+                          ? 330 * scaleHeight
                           : 270 * scaleHeight,
                       left: myScreenType.isDesktop
                           ? 10 * scaleWidth * scaleHeight
@@ -50,46 +50,50 @@ class _GraphicShapeState extends State<GraphicShape> {
                       child: const CodeFigure(type: 'UX_figure')),
                   Positioned(
                       top: myScreenType.isDesktop
-                          ? 440 * scaleHeight
+                          ? 420 * scaleHeight
                           : 395 * scaleHeight,
                       left: 20 * scaleWidth,
                       child: TextTech(type: 'UX_text')),
                   Positioned(
                       top: myScreenType.isDesktop
-                          ? 350 * scaleHeight
+                          ? 320 * scaleHeight
                           : 250 * scaleHeight,
                       right: 10 * scaleWidth,
                       child: const ColorLine(type: 'orange_line')),
                   Positioned(
                       top: myScreenType.isDesktop
-                          ? 350 * scaleHeight
+                          ? 330 * scaleHeight
                           : 250 * scaleHeight,
                       right: 10 * scaleWidth,
                       child: const CodeFigure(type: 'Code_figure')),
                   Positioned(
                       top: myScreenType.isDesktop
-                          ? 440 * scaleHeight
+                          ? 420 * scaleHeight
                           : 395 * scaleHeight,
                       right: 20 * scaleWidth,
                       child: TextTech(type: 'Code_text')),
                   Positioned(
                       top: myScreenType.isDesktop
-                          ? 550 * scaleHeight
+                          ? 520 * scaleHeight
                           : 600 * scaleHeight,
                       left: myScreenType.isDesktop
                           ? 40 * scaleWidth
-                          : 30 * scaleWidth,
+                          : myScreenType.isTablet
+                              ? 50 * scaleWidth
+                              : 30 * scaleWidth,
                       child: Row(children: [
                         const CodeFigure(type: 'Data_figure'),
                         TextTech(type: 'Data_text')
                       ])),
                   Positioned(
                       bottom: myScreenType.isDesktop
-                          ? 50 * scaleHeight
+                          ? scaleHeight
                           : 65 * scaleHeight,
                       left: myScreenType.isDesktop
                           ? 20 * scaleWidth
-                          : 2 * scaleWidth,
+                          : myScreenType.isTablet
+                              ? 30 * scaleWidth
+                              : 2 * scaleWidth,
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [

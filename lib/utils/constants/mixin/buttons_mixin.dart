@@ -59,6 +59,8 @@ mixin ButtonsMixin {
         return 'assets/images/github-logo.png';
       case 'linkedin':
         return 'assets/images/LinkedIn.png';
+      case 'calendly':
+        return 'assets/images/calendly.png';
     }
     return '';
   }
@@ -72,6 +74,8 @@ mixin ButtonsMixin {
 
       case 'linkedin':
         return 'joel-montesdeoca-lopez';
+      case 'calendly':
+        return 'Book an appointment';
     }
     return '';
   }
@@ -84,6 +88,8 @@ mixin ButtonsMixin {
         return 'https://www.linkedin.com/in/joel-montesdeoca-lopez';
       case 'download':
         return 'https://drive.google.com/file/d/1W0SyAzGU0eUD6IOc2e3_cvOR6XMXTz60/view?usp=sharing';
+      case 'calendly':
+        return 'https://calendly.com/joel-montesdeocalopez/30min';
     }
     return '';
   }
@@ -94,11 +100,7 @@ mixin ButtonsMixin {
     switch (type) {
       case 'email':
         urlFinal = Uri(scheme: 'mailto', path: 'joelmontesdeoca@proton.me');
-      case 'github':
-        urlFinal = Uri.parse(url(type));
-      case 'linkedin':
-        urlFinal = Uri.parse(url(type));
-      case 'download':
+      default:
         urlFinal = Uri.parse(url(type));
     }
     if (await canLaunchUrl(urlFinal)) {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:resume/utils/constants/colors.dart';
+import 'package:resume/utils/constants/screen_size.dart';
 
 ///GRAPHICS TITLE TextStyle
 extension TechStackTitleStyle on Text {
@@ -17,11 +18,16 @@ extension TechStackTitleStyle on Text {
 }
 
 extension TechStackSubtitleStyle on Text {
-  Text textStyleSubtitleStyle(String type, bool isDesktop) {
+  Text textStyleSubtitleStyle(String type, BuildContext context) {
     Color color = Colors.black;
     double fontSize = 13;
+    ScreenType myScreenType = ScreenType(context);
     //
-    fontSize = isDesktop ? 30 : 13;
+    fontSize = myScreenType.isDesktop
+        ? 25
+        : myScreenType.isTablet
+            ? 20
+            : 13;
     switch (type) {
       case 'ux':
         color = Colores.blueTechLetter;

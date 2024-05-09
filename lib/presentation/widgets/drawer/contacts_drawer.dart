@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:resume/presentation/widgets/drawer/text_styles_drawer.dart';
+import 'package:resume/utils/constants/screen_size.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 //CONTACTOS DRAWER //
@@ -8,12 +9,22 @@ class ContactsDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenSize myScreen = ScreenSize(context);
     return SizedBox(
       width: 150,
-      height: 120,
+      height: myScreen.screenHeight * 0.5,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          SizedBox(
+            width: 150,
+            height: 150,
+            child: Image.asset('assets/images/QR Joe.png'),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          //-- PHONE /
           FittedBox(
               fit: BoxFit.fitWidth,
               child: Row(children: [
@@ -51,6 +62,25 @@ class ContactsDrawer extends StatelessWidget {
                       ),
                     ])),
               )),
+          //-- CALENDLY //
+          MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: TextButton(
+                  onPressed: () {
+                    launchUrl(Uri.parse(
+                        'https://calendly.com/joel-montesdeocalopez/30min'));
+                  },
+                  child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Row(children: [
+                        const ImageIcon(
+                          AssetImage('assets/images/calendly.png'),
+                          color: Colors.black,
+                        ),
+                        const Padding(padding: EdgeInsets.only(left: 5)),
+                        const Text('Book an appointment')
+                            .drawerLinksTextStyle(),
+                      ])))),
           //-- LINKEDIN//
           MouseRegion(
               cursor: SystemMouseCursors.click,

@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/presentation/widgets/contacts/contacts_page.dart';
+import 'package:resume/presentation/widgets/contacts/qr_code.dart';
 import 'package:resume/utils/constants/screen_size.dart';
 
 //---RIGHT COLUMN //
@@ -17,6 +18,7 @@ class RightColumnDesktopState extends State<RightColumnDesktop> {
   @override
   Widget build(BuildContext context) {
     ScreenSize myScreenSize = ScreenSize(context);
+    ScreenType myScreenType = ScreenType(context);
 
     return SizedBox(
         width: myScreenSize.screenWidth * 0.3,
@@ -58,6 +60,15 @@ class RightColumnDesktopState extends State<RightColumnDesktop> {
                                   fit: BoxFit.fill,
                                 ),
                                 const ContactsHomePage(),
+                                myScreenType.isDesktop
+                                    ? const Align(
+                                        alignment: Alignment.topRight,
+                                        child: QRCode())
+                                    : myScreenType.isTablet
+                                        ? const Align(
+                                            alignment: Alignment.topRight,
+                                            child: QRCode())
+                                        : const SizedBox(),
                               ])))),
 //SQUARE DOWN
               Align(

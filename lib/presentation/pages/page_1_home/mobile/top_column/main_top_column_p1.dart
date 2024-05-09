@@ -49,7 +49,7 @@ class _TopColumnState extends State<TopColumn> {
                   width: myScreenSize.screenWidth * 0.4,
                   height: myScreenSize.screenHeight * 0.4,
                   child: const BarButton(
-                    type: 'TECH STACK & \n EDUCATION  ',
+                    type: 'TECH STACK &\n EDUCATION',
                   )),
             ),
             //Career

@@ -26,7 +26,7 @@ class DrawerIndexState extends State<DrawerIndex> {
         MyDrawerButton(page: 3, pagename: 'PROJECTS'),
         Padding(
             padding: EdgeInsets.only(left: 10),
-            child: MyDrawerButton(page: 5, pagename: 'LETS CONNECT')),
+            child: MyDrawerButton(page: 4, pagename: 'LETS CONNECT')),
       ]),
     );
   }
