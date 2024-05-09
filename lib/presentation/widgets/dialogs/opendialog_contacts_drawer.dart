@@ -29,14 +29,12 @@ class OpenDialogContactsDrawer {
             title: buildTitleConctactsDialog(screenWidth, screenHeight),
             content: const Padding(
                 padding: EdgeInsets.only(top: 15), child: ContactsDrawer()),
-            actions: <Widget>[
+            actions: const <Widget>[
               FittedBox(
                   fit: BoxFit.contain,
                   child: SizedBox(
-                      width: screenWidth * 0.5,
-                      height: screenHeight * 0.4,
-                      child: const DownloadButton())),
-              const CloseButtonOpenDialog(type: ''),
+                      width: 150, height: 80, child: DownloadButton())),
+              CloseButtonOpenDialog(type: ''),
             ],
           );
         });

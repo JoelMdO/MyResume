@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:resume/presentation/widgets/contacts/contacts_text_style.dart';
 import 'package:resume/presentation/widgets/buttons/contacts_button.dart';
+import 'package:resume/presentation/widgets/contacts/qr_code.dart';
 import 'package:resume/utils/constants/screen_size.dart';
 
 ///CONTACTS HOME PAGE TRIANGLES, BOTTOM OR RIGHT COLUMN //
@@ -24,6 +25,7 @@ class ContactsHomePageState extends State<ContactsHomePage> {
             alignment: AlignmentDirectional.topStart,
             fit: StackFit.loose,
             children: [
+//-- PHONE /
                 Padding(
                   padding: const EdgeInsets.only(left: 35),
                   child: FittedBox(
@@ -44,14 +46,20 @@ class ContactsHomePageState extends State<ContactsHomePage> {
                     child: ContactsButton(
                       type: 'email',
                     )),
+//-- CALENDLY//
+                const Padding(
+                    padding: EdgeInsets.only(left: 15, top: 45),
+                    child: ContactsButton(
+                      type: 'calendly',
+                    )),
 //-- LINKEDIN//
                 const Padding(
-                    padding: EdgeInsets.only(left: 20, top: 50),
+                    padding: EdgeInsets.only(left: 25, top: 75),
                     child: ContactsButton(type: 'linkedin')),
 //-- GITHUB//
                 const Padding(
-                    padding: EdgeInsets.only(left: 35, top: 85),
-                    child: ContactsButton(type: 'github'))
+                    padding: EdgeInsets.only(left: 35, top: 105),
+                    child: ContactsButton(type: 'github')),
               ])
 
         ///CONTACTS TABLET UI ///
@@ -68,32 +76,20 @@ class ContactsHomePageState extends State<ContactsHomePage> {
                             .contactsTextTitleStylesWhite(),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15, top: 25),
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
+                    const Padding(
+                        padding: EdgeInsets.only(left: 15, top: 25),
+                        //-- QR CODE -TABLET //
+                        child: QRCode()),
 //-- EMAIL -TABLET /
-                            const ContactsButton(type: 'email'),
+                    const Positioned(
+                        right: 15,
+                        top: 35,
+                        child: ContactsButton(type: 'email')),
 //-- GITHUB -TABLET//
-                            const ContactsButton(type: 'github'),
-//-- LINKEDIN -TABLET //
-                            const ContactsButton(type: 'linkedin'),
-//-- PHONE - TABLET //
-                            FittedBox(
-                                fit: BoxFit.fitWidth,
-                                child: Row(children: [
-                                  const ImageIcon(
-                                    AssetImage('assets/images/Phone.png'),
-                                    color: Colors.white,
-                                  ),
-                                  const Padding(
-                                      padding: EdgeInsets.only(left: 5)),
-                                  const Text('+974-5502-1236')
-                                      .contactsTextStylesWhite(),
-                                ])),
-                          ]),
-                    )
+                    const Positioned(
+                        right: 15,
+                        top: 63,
+                        child: ContactsButton(type: 'calendly')),
                   ])
             :
 
@@ -121,7 +117,7 @@ class ContactsHomePageState extends State<ContactsHomePage> {
                           const Positioned(
                               top: 72,
                               left: 10,
-                              child: ContactsButton(type: 'github')),
+                              child: ContactsButton(type: 'calendly')),
                           //-- LINKEDIN -MOBILE //
                           const Positioned(
                               top: 102,
