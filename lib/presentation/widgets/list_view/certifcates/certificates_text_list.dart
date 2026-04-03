@@ -26,6 +26,12 @@ class CertificatesTextList {
       title: '- Management Models for Decision Making',
       school: '- Universidad IberoAmericana',
     ),
+//FullStackPython
+    const CertificatesText(
+      icon: 'assets/images/EBAC.png',
+      title: '- Full Stack Python Developer',
+      school: '- EBAC 2026.\n',
+    ),
 //Flutter
     const CertificatesText(
       icon: 'assets/images/FlutterBadge.png',
@@ -61,13 +67,6 @@ class CertificatesTextList {
       icon: 'assets/images/marketing.png',
       title: '- Digital Marketing and e-Commerce',
       school: '- Google Career Certificate 2024.\n',
-    ),
-//Aircraft Training
-    const CertificatesText(
-      icon: 'assets/images/airplane.png',
-      title: '- Aircraft Performance Training',
-      school:
-          '- Airbus 320, 340 family, Boeing 748, 767, 757, Gulfstream, Global, Learjet, etc.\n',
     ),
   ];
 }
