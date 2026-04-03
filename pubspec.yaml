@@ -41,6 +41,7 @@ dependencies:
   percent_indicator: ^4.2.3
   flutter_speed_dial: ^7.0.0 # make several items inside of floatbutton
   google_fonts: ^8.0.2
+  http: ^1.0.0
   auto_size_text: ^3.0.0
   flutter_bloc: ^9.1.1
   provider: ^6.0.5
@@ -78,13 +79,19 @@ flutter:
 
   # Custom bundled fonts
   fonts:
-    - family: Montserrat
+    - family: MontserratLocal
       fonts:
         - asset: assets/fonts/Montserrat-Regular.ttf
         - asset: assets/fonts/Montserrat-SemiBold.ttf
           weight: 600
         - asset: assets/fonts/Montserrat-Bold.ttf
           weight: 700
+        - asset: assets/fonts/Montserrat-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+    - family: NotoSansKhojkiLocal
+      fonts:
+        - asset: assets/fonts/NotoSansKhojki-Regular.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
