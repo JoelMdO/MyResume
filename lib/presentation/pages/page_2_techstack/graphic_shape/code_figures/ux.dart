@@ -24,9 +24,9 @@ class UXSquare extends CustomPainter {
     canvas.translate(-pivot_6221551850861.dx, -pivot_6221551850861.dy);
     TextPainter tp_6221551850861 = TextPainter(
       text: TextSpan(
-          text: """UI\nUX""",
+          text: "UI >",
           style: TextStyle(
-            fontSize: size.width * 0.2,
+            fontSize: size.width * 0.4,
             fontWeight: FontWeight.bold,
             color: const Color(0xff075df3),
             fontStyle: FontStyle.normal,
@@ -34,8 +34,13 @@ class UXSquare extends CustomPainter {
           )),
       textDirection: TextDirection.ltr,
       textAlign: TextAlign.center,
-    )..layout(maxWidth: size.width * 0.28, minWidth: size.width * 0.28);
-    tp_6221551850861.paint(canvas, pivot_6221551850861);
+    );
+    // Layout without forcing full width so we can center the text accurately
+    tp_6221551850861.layout(maxWidth: size.width);
+    // Paint the text centered on the pivot point
+    final textOffset = pivot_6221551850861 -
+        Offset(tp_6221551850861.width / 3, tp_6221551850861.height / 3);
+    tp_6221551850861.paint(canvas, textOffset);
     canvas.restore();
   }
 

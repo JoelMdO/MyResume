@@ -21,17 +21,17 @@ class _CodeFigureState extends State<CodeFigure> {
 
   @override
   void initState() {
+    super.initState();
     Future.delayed(const Duration(milliseconds: 3500), () {
+      if (!mounted) return;
       setState(() {
         animationStarted = true;
       });
     });
-    super.initState();
   }
 
   @override
   void dispose() {
-    animationStarted;
     super.dispose();
   }
 

@@ -1,8 +1,8 @@
 // ignore: library_names
-library Text;
+library;
 
-String uxText = ' Flutter\n React JS\n Figma\n Corel Draw\n CSS / HTML';
-String codeText = ' Node JS\n VBA\n Java\n JavaScript\n Python\n';
-String dataText = ' SQLite, MySQL, Excel, R';
+String uxText = ' Flutter\n React JS\n Next JS\n CSS / HTML \n Node JS\n';
+String codeText = ' Python\n JavaScript\n Dart\n SQL\n';
+String dataText = ' MongoDB\n PostgreSQL, SQLite, MySQL, R';
 String othersText =
-    ' Jira, Asana, Ms Office, G Suite, Maya\n LIDO, Amadeus W&B, JetPlan, FL3XX\n FOS, GCP';
+    ' Jira, Asana, Blender, Maya\n Illustrator, PhotoShop, InDesign, Figma\n Docker, Git, AI Integration (Agents, RAG, Ollama, etc.)\n';
