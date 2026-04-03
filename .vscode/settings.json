@@ -6,5 +6,6 @@
         "cSpell.words": [
             "Bienvenido",
             "Colores"
-        ]
+        ],
+        "dart.flutterHotReloadOnSave": true
     }

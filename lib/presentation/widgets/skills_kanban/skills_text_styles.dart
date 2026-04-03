@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:resume/utils/safe_fonts.dart';
 
 ///SKILLTEXT Bold TextStle
 extension SkillTextBoldStyle on AutoSizeText {
@@ -12,7 +12,7 @@ extension SkillTextBoldStyle on AutoSizeText {
       softWrap: true,
       maxLines: 3,
       textAlign: TextAlign.center,
-      style: GoogleFonts.montserrat(
+        style: montserrat(
           fontWeight: FontWeight.bold, color: Colors.black),
     );
   }
@@ -23,7 +23,7 @@ extension SkillTextNormalStyle on Text {
   Text skillTextNormalStyle() {
     return Text(
       data!,
-      style: GoogleFonts.montserrat(
+        style: montserrat(
           fontSize: 17, fontWeight: FontWeight.normal, color: Colors.black),
     );
   }

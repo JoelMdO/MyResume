@@ -40,7 +40,7 @@ extension EducationButtonTitleTextStyle on Text {
   }
 }
 
-floatButtonTitleTextStyle() {
+TextStyle floatButtonTitleTextStyle() {
   return GoogleFonts.montserrat(
     fontWeight: FontWeight.bold,
     color: Colores.darkblue,
