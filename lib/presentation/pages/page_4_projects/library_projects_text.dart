@@ -1,4 +1,4 @@
-library text;
+library;
 
 //Flutter-Library
 String flutterLibraryTitle = 'Litera';
@@ -158,7 +158,7 @@ String figmaWebsiteSolution =
 //Aviaton-Charter
 String aviationCharterTitle = 'Charter Tool';
 String aviationCharterDescription =
-    'Tool to evaluate by Sales department on Charter flight requests.';
+    'Automated solution that reduced sales quotation response time by 50%,';
 String aviationCharterLearned =
     '\n - VBA code to update and deploy accurate data';
 String aviationCharterChallenges =
@@ -186,6 +186,21 @@ String aviationManualSummary =
     '\n A interactive manual to provide the knowledge of flight clearances specifications and improve the sales reply time.';
 String aviationManualSolution =
     ' Following the tools available, get as much as possible an interactive document to facilitate the retrive of information.';
+
+//React-DECAV
+String reactDecavTitle = 'Aviation Blog (DECAV)';
+String reactDecavDescription =
+    'Aviation community blog for sharing knowledge from aviation professionals expertise.';
+String reactDecavLearned =
+    '\n - Use of NextJS\n\n - SEO optimization\n\n - SSR, ISR, SSG rendering';
+String reactDecavChallenges =
+    '\n - IOS shift layouts issues\n\n - Performance bottlenecks\n\n';
+String reactDecavRepo = 'Not available due to client non disclose policy';
+String reactDecavImage = 'assets/images/Decav.png';
+String reactDecavSummary =
+    '\n Community blog current on second stage of development to integrate new features as Editor, Translator (RAG) and more.';
+String reactDecavSolution =
+    ' AI Assistance for performance optimization and layout issues, code refactor and optimization for better performance.';
 
 //React-Permits
 String reactPermitsTitle = 'Permits';
@@ -291,3 +306,19 @@ String inProgressPermits2Summary =
     '\n The second phase of an existing web app for flight clearances, emphasizing scalability, cybersecurity, and testing.';
 String inProgressPermits2Solution =
     '- Integrate a robust forum solution with user authentication and moderation tools.\n\n - Implement features for post creation,commenting, search, and notifications.\n\n - Consider gamification elements to encourage participation and reward active users.\n\n - Conduct user research to identify valuable features for paid accounts, aligning with user needs and business goals.\n\n - Implement tiered pricing models or subscription options to cater to different user segments.';
+
+//InProgress-Python
+String inProgressAPITranslationTitle = 'API Translation';
+String inProgressAPITranslationDescription =
+    'Blog articles translator, using LLM and RAG.';
+String inProgressAPITranslationLearned =
+    '\n - RAG\n\n - Docker\n\n - Ollama LLM deployment';
+String inProgressAPITranslationChallenges =
+    '\n - Use of aviation technical terms.\n\n - Avoid costs for API calls to commercial services.';
+String inProgressAPITranslationRepo =
+    'https://github.com/JoelMdO/AI-Translation-API.git';
+String inProgressAPITranslationImage = 'assets/images/translator.png';
+String inProgressAPITranslationSummary =
+    '\n A blog articles translator, leveraging LLM and RAG technologies.';
+String inProgressAPITranslationSolution =
+    '- Support english writters to translate english articles to other languages.\n\n - Use of aviation technical terms.';

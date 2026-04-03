@@ -130,6 +130,16 @@ class MapProjects {
     },
     'react': {
       0: {
+        'title': reactDecavTitle,
+        'description': reactDecavDescription,
+        'learned': reactDecavLearned,
+        'challenges': reactDecavChallenges,
+        'repository': reactDecavRepo,
+        'image': reactDecavImage,
+        'solution': reactDecavSolution,
+        'summary': reactDecavSummary
+      },
+      1: {
         'title': reactPermitsTitle,
         'description': reactPermitsDescription,
         'learned': reactPermitsLearned,
@@ -214,6 +224,16 @@ class MapProjects {
         'image': inProgressPermits2Image,
         'solution': inProgressPermits2Solution,
         'summary': inProgressPermits2Summary
+      },
+      3: {
+        'title': inProgressAPITranslationTitle,
+        'description': inProgressAPITranslationDescription,
+        'learned': inProgressAPITranslationLearned,
+        'challenges': inProgressAPITranslationChallenges,
+        'repository': inProgressAPITranslationRepo,
+        'image': inProgressAPITranslationImage,
+        'solution': inProgressAPITranslationSolution,
+        'summary': inProgressAPITranslationSummary
       },
     }
   };
