@@ -2,20 +2,20 @@ import 'package:resume/presentation/widgets/list_view/education/education_text.d
 
 class EducationTextList {
   static List<EducationText> educationInfo = [
-//Aeronautic Engineer
+//Master
     const EducationText(
-      title: '- Aeronautical Engineering',
-      date: '- Graduted 2003.\n\n',
+      title: '- Master in 3D Animation and Visual Effects',
+      date: '- Expected graduation 2027.\n\n',
     ),
 //Computer Science
     const EducationText(
-      title: '- Computer Science Engineering',
-      date: '- Expected graduation date June 2024\n\n',
+      title: '- Computer Systems Engineering',
+      date: '- Graduated 2025.\n\n',
     ),
-//Flight Dispatch
+//Aeronautic Engineer
     const EducationText(
-      title: '- Flight Dispatcher',
-      date: '- Experienced career since 2003.\n',
+      title: '- Aeronautical Engineering',
+      date: '- Graduated 2003.\n\n',
     ),
   ];
 }
