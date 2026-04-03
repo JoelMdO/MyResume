@@ -73,7 +73,7 @@ mixin ButtonsMixin {
         return 'github.com/JoelMdO';
 
       case 'linkedin':
-        return 'joel-montesdeoca-lopez';
+        return 'joel-montes-de-oca-lopez';
       case 'calendly':
         return 'Book an appointment';
     }
@@ -85,9 +85,9 @@ mixin ButtonsMixin {
       case 'github':
         return 'https://github.com/JoelMdO';
       case 'linkedin':
-        return 'https://www.linkedin.com/in/joel-montesdeoca-lopez';
+        return 'https://www.linkedin.com/in/joel-montes-de-oca-lopez';
       case 'download':
-        return 'https://drive.google.com/file/d/1W0SyAzGU0eUD6IOc2e3_cvOR6XMXTz60/view?usp=sharing';
+        return 'https://docs.google.com/document/d/1zyYJzLeoe4c_yvXtiGzv05h2sEIARW3rMPhKo5kDXU8/edit?usp=sharing';
       case 'calendly':
         return 'https://calendly.com/joel-montesdeocalopez/30min';
     }
