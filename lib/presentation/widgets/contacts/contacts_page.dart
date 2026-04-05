@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:resume/presentation/widgets/contacts/contacts_text_style.dart';
 import 'package:resume/presentation/widgets/buttons/contacts_button.dart';
 import 'package:resume/presentation/widgets/contacts/qr_code.dart';
+import 'package:resume/presentation/widgets/drawer/library_contact_details.dart';
 import 'package:resume/utils/constants/screen_size.dart';
 
 ///CONTACTS HOME PAGE TRIANGLES, BOTTOM OR RIGHT COLUMN //
@@ -36,8 +37,7 @@ class ContactsHomePageState extends State<ContactsHomePage> {
                           color: Colors.black,
                         ),
                         const Padding(padding: EdgeInsets.only(left: 5)),
-                        const Text('+974-5502-1236')
-                            .contactsPhoneTextStylesDesktop(),
+                        Text(phoneNumber).contactsPhoneTextStylesDesktop(),
                       ])),
                 ),
 //-- EMAIL /

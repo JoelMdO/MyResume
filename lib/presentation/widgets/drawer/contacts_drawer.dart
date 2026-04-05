@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:resume/presentation/widgets/drawer/text_styles_drawer.dart';
 import 'package:resume/utils/constants/screen_size.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:resume/presentation/widgets/drawer/library_contact_details.dart';
 
 //CONTACTOS DRAWER //
 class ContactsDrawer extends StatelessWidget {
@@ -32,15 +33,14 @@ class ContactsDrawer extends StatelessWidget {
                   AssetImage('assets/images/Phone.png'),
                 ),
                 const Padding(padding: EdgeInsets.only(left: 5)),
-                const Text('+974-5502-1236').drawerPhoneTextStyle(),
+                Text(phoneNumber).drawerPhoneTextStyle(),
               ])),
           //-- EMAIL /
           MouseRegion(
               cursor: SystemMouseCursors.click,
               child: TextButton(
                 onPressed: () async {
-                  final url =
-                      Uri(scheme: 'mailto', path: 'joelmontesdeoca@proton.me');
+                  final url = Uri(scheme: 'mailto', path: email);
                   if (await canLaunchUrl(url)) {
                     launchUrl(url);
                   } else {
@@ -57,8 +57,7 @@ class ContactsDrawer extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 5),
-                        child: const Text(' joelmontesdeoca@proton.me')
-                            .drawerEmailTextStyle(),
+                        child: Text(email).drawerEmailTextStyle(),
                       ),
                     ])),
               )),
@@ -67,8 +66,7 @@ class ContactsDrawer extends StatelessWidget {
               cursor: SystemMouseCursors.click,
               child: TextButton(
                   onPressed: () {
-                    launchUrl(Uri.parse(
-                        'https://calendly.com/joel-montesdeocalopez/30min'));
+                    launchUrl(Uri.parse(calendyUrl));
                   },
                   child: FittedBox(
                       fit: BoxFit.fitWidth,
@@ -78,16 +76,14 @@ class ContactsDrawer extends StatelessWidget {
                           color: Colors.black,
                         ),
                         const Padding(padding: EdgeInsets.only(left: 5)),
-                        const Text('Book an appointment')
-                            .drawerLinksTextStyle(),
+                        Text(bookAppointment).drawerLinksTextStyle(),
                       ])))),
           //-- LINKEDIN//
           MouseRegion(
               cursor: SystemMouseCursors.click,
               child: TextButton(
                   onPressed: () {
-                    launchUrl(Uri.parse(
-                        'https://www.linkedin.com/in/joel-montesdeoca-lopez'));
+                    launchUrl(Uri.parse(linkedinUrl));
                   },
                   child: FittedBox(
                       fit: BoxFit.fitWidth,
@@ -97,8 +93,7 @@ class ContactsDrawer extends StatelessWidget {
                           color: Colors.black,
                         ),
                         const Padding(padding: EdgeInsets.only(left: 5)),
-                        const Text('joel-montesdeoca-lopez')
-                            .drawerLinksTextStyle(),
+                        Text(linkedin).drawerLinksTextStyle(),
                       ])))),
           //-- GITHUB//
 
@@ -106,7 +101,7 @@ class ContactsDrawer extends StatelessWidget {
               cursor: SystemMouseCursors.click,
               child: TextButton(
                   onPressed: () {
-                    launchUrl(Uri.parse('https://github.com/JoelMdO'));
+                    launchUrl(Uri.parse(githubUrl));
                   },
                   child: FittedBox(
                       fit: BoxFit.fitWidth,
@@ -116,7 +111,7 @@ class ContactsDrawer extends StatelessWidget {
                           color: Colors.black,
                         ),
                         const Padding(padding: EdgeInsets.only(left: 5)),
-                        const Text('github.com/JoelMdO').drawerLinksTextStyle(),
+                        Text(giitHub).drawerLinksTextStyle(),
                       ])))),
         ],
       ),

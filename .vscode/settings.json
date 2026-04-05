@@ -1,11 +1,8 @@
-    {
-        "git.ignoreLimitWarning": true,
-        "editor.codeActionsOnSave": {
-            "source.fixAll": "explicit"
-        },
-        "cSpell.words": [
-            "Bienvenido",
-            "Colores"
-        ],
-        "dart.flutterHotReloadOnSave": true
-    }
+{
+  "git.ignoreLimitWarning": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "cSpell.words": ["Bienvenido", "Colores"],
+  "dart.flutterHotReloadOnSave": true
+}

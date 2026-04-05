@@ -5,6 +5,7 @@ import 'package:resume/cubit/routes_cubit.dart';
 import 'package:resume/presentation/widgets/buttons/styles_text_buttons.dart';
 import 'package:resume/utils/constants/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:resume/presentation/widgets/drawer/library_contact_details.dart';
 
 // ignore: mustView_be_immutable
 class FloatButton extends StatelessWidget {
@@ -52,7 +53,7 @@ class FloatButton extends StatelessWidget {
 }
 
 void _launchEmail() async {
-  final url = Uri(scheme: 'mailto', path: 'joelmontesdeoca@proton.me');
+  final url = Uri(scheme: 'mailto', path: email);
   if (await canLaunchUrl(url)) {
     launchUrl(url);
   } else {

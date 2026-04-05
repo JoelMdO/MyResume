@@ -5,6 +5,7 @@ import 'package:resume/cubit/routes_cubit.dart';
 import 'package:resume/presentation/widgets/dialogs/opendialog_cess.dart';
 import 'package:resume/presentation/widgets/dialogs/opendialog_contacts_drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:resume/presentation/widgets/drawer/library_contact_details.dart';
 
 mixin ButtonsMixin {
   ///BAR BUTTONS
@@ -68,14 +69,14 @@ mixin ButtonsMixin {
   String name(String type) {
     switch (type) {
       case 'email':
-        return ' joelmontesdeoca@proton.me';
+        return email;
       case 'github':
-        return 'github.com/JoelMdO';
+        return giitHub;
 
       case 'linkedin':
-        return 'joel-montes-de-oca-lopez';
+        return linkedin;
       case 'calendly':
-        return 'Book an appointment';
+        return bookAppointment;
     }
     return '';
   }
@@ -83,13 +84,13 @@ mixin ButtonsMixin {
   String url(String type) {
     switch (type) {
       case 'github':
-        return 'https://github.com/JoelMdO';
+        return githubUrl;
       case 'linkedin':
-        return 'https://www.linkedin.com/in/joel-montes-de-oca-lopez';
+        return linkedinUrl;
       case 'download':
-        return 'https://docs.google.com/document/d/1zyYJzLeoe4c_yvXtiGzv05h2sEIARW3rMPhKo5kDXU8/edit?usp=sharing';
+        return resumeUrl;
       case 'calendly':
-        return 'https://calendly.com/joel-montesdeocalopez/30min';
+        return calendyUrl;
     }
     return '';
   }
@@ -99,7 +100,7 @@ mixin ButtonsMixin {
     Uri urlFinal = Uri.parse(url(type));
     switch (type) {
       case 'email':
-        urlFinal = Uri(scheme: 'mailto', path: 'joelmontesdeoca@proton.me');
+        urlFinal = Uri(scheme: 'mailto', path: email);
       default:
         urlFinal = Uri.parse(url(type));
     }
