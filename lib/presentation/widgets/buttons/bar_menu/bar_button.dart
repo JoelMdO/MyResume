@@ -18,7 +18,7 @@ class BarButton extends StatefulWidget {
 
 class BarButtonState extends State<BarButton> with ButtonsMixin {
   bool isHovered = false;
-  final scaleUp = Matrix4.identity()..scale(1.1);
+  final scaleUp = Matrix4.identity()..scaleByDouble(1.1, 1.1, 1.1, 1.1);
   final scaleNormal = Matrix4.identity();
 
   @override

@@ -58,7 +58,7 @@ class _ProjectsIndexPageState extends State<ProjectsIndexPage> {
                       width: myScreenSize.screenWidth * 0.5,
                       height: 20,
                       child: Image.asset(
-                        'images/line_blue_yellow.png',
+                        'assets/images/line_blue_yellow.png',
                         fit: BoxFit.fill,
                       ))),
               TitleText(type: 'mobile-index', name: 'projects'),
@@ -67,7 +67,8 @@ class _ProjectsIndexPageState extends State<ProjectsIndexPage> {
                       width: myScreenSize.screenWidth,
                       height: myScreenSize.screenHeight * 0.05,
                       decoration: BoxDecoration(
-                          color: Colores.projectSquareLine.withOpacity(0.4)))),
+                          color: Colores.projectSquareLine
+                              .withValues(alpha: 0.4)))),
               const Center(
                 child: CarouselMenuProjects(
                   page: '',

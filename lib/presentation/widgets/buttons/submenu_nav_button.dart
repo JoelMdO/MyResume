@@ -21,7 +21,7 @@ class SubMenuNavigationButton extends StatefulWidget {
 class _SubMenuNavigationButtonState extends State<SubMenuNavigationButton> {
   bool isHovered = false;
   final scaleNormal = Matrix4.identity();
-  final scaleUp = Matrix4.identity()..scale(1.2);
+  final scaleUp = Matrix4.identity()..scaleByDouble(1.2, 1.2, 1.2, 1.2);
   late String route, title;
   bool isEducation = false;
 

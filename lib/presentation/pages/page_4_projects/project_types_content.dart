@@ -46,7 +46,7 @@ class _ProjectTypesContentState extends State<ProjectTypesContent> {
                   SizedBox(
                     height: myScreenSize.screenHeight * 0.3,
                     child: Image.asset(
-                      'images/left_triangle_projects.png',
+                      'assets/images/left_triangle_projects.png',
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -67,7 +67,7 @@ class _ProjectTypesContentState extends State<ProjectTypesContent> {
                           width: myScreenSize.screenWidth * 0.7,
                           height: 20,
                           child: Image.asset(
-                            'images/line_red_yellow.png',
+                            'assets/images/line_red_yellow.png',
                             fit: BoxFit.contain,
                           ))),
                   Positioned(

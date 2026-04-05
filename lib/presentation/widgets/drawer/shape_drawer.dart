@@ -24,7 +24,7 @@ class DrawerShape extends StatelessWidget {
                     height: 480,
                     decoration: BoxDecoration(boxShadow: [
                       BoxShadow(
-                          color: Colors.black87.withOpacity(0.7),
+                          color: Colors.black87.withValues(alpha: 0.7),
                           spreadRadius: 1,
                           offset: const Offset(0, 10),
                           blurRadius: 15.0)

@@ -11,7 +11,7 @@ class StrengthsChartTitle extends StatelessWidget {
       fit: BoxFit.contain,
       child: Transform(
         transform: Matrix4.identity()
-          ..translate(0.0, 0.0)
+          ..translateByDouble(0.0, 0.0, 0.0, 0.0)
           ..rotateZ(-0.27),
         child: Container(
           width: 156.63,
@@ -25,7 +25,7 @@ class StrengthsChartTitle extends StatelessWidget {
           child: Center(
             child: Transform(
               transform: Matrix4.identity()
-                ..translate(0.0, 0.0)
+                ..translateByDouble(0.0, 0.0, 0.0, 0.0)
                 ..rotateZ(-0.10),
               child: const Text('Strengths').strengthsTitleStyle(),
             ),
