@@ -28,20 +28,90 @@ class MyApp extends StatelessWidget {
     // Ensure local fallback family is used if remote fetching is disabled/unavailable.
     if (!FontManager.remoteAvailable) {
       base = base.copyWith(
-        displayLarge: base.displayLarge?.copyWith(fontFamilyFallback: ['MontserratLocal']),
-        displayMedium: base.displayMedium?.copyWith(fontFamilyFallback: ['MontserratLocal']),
-        displaySmall: base.displaySmall?.copyWith(fontFamilyFallback: ['MontserratLocal']),
-        headlineLarge: base.headlineLarge?.copyWith(fontFamilyFallback: ['MontserratLocal']),
-        headlineMedium: base.headlineMedium?.copyWith(fontFamilyFallback: ['MontserratLocal']),
-        headlineSmall: base.headlineSmall?.copyWith(fontFamilyFallback: ['MontserratLocal']),
-        titleLarge: base.titleLarge?.copyWith(fontFamilyFallback: ['MontserratLocal']),
-        titleMedium: base.titleMedium?.copyWith(fontFamilyFallback: ['MontserratLocal']),
-        titleSmall: base.titleSmall?.copyWith(fontFamilyFallback: ['MontserratLocal']),
-        bodyLarge: base.bodyLarge?.copyWith(fontFamilyFallback: ['MontserratLocal']),
-        bodyMedium: base.bodyMedium?.copyWith(fontFamilyFallback: ['MontserratLocal']),
-        bodySmall: base.bodySmall?.copyWith(fontFamilyFallback: ['MontserratLocal']),
-        labelLarge: base.labelLarge?.copyWith(fontFamilyFallback: ['MontserratLocal']),
-        labelSmall: base.labelSmall?.copyWith(fontFamilyFallback: ['MontserratLocal']),
+        displayLarge: base.displayLarge?.copyWith(fontFamilyFallback: [
+          'MontserratLocal',
+          'McLarenLocal',
+          'InterLocal',
+          'NotoSansKhojkiLocal'
+        ]),
+        displayMedium: base.displayMedium?.copyWith(fontFamilyFallback: [
+          'MontserratLocal',
+          'McLarenLocal',
+          'InterLocal',
+          'NotoSansKhojkiLocal'
+        ]),
+        displaySmall: base.displaySmall?.copyWith(fontFamilyFallback: [
+          'MontserratLocal',
+          'McLarenLocal',
+          'InterLocal',
+          'NotoSansKhojkiLocal'
+        ]),
+        headlineLarge: base.headlineLarge?.copyWith(fontFamilyFallback: [
+          'MontserratLocal',
+          'McLarenLocal',
+          'InterLocal',
+          'NotoSansKhojkiLocal'
+        ]),
+        headlineMedium: base.headlineMedium?.copyWith(fontFamilyFallback: [
+          'MontserratLocal',
+          'McLarenLocal',
+          'InterLocal',
+          'NotoSansKhojkiLocal'
+        ]),
+        headlineSmall: base.headlineSmall?.copyWith(fontFamilyFallback: [
+          'MontserratLocal',
+          'McLarenLocal',
+          'InterLocal',
+          'NotoSansKhojkiLocal'
+        ]),
+        titleLarge: base.titleLarge?.copyWith(fontFamilyFallback: [
+          'MontserratLocal',
+          'McLarenLocal',
+          'InterLocal',
+          'NotoSansKhojkiLocal'
+        ]),
+        titleMedium: base.titleMedium?.copyWith(fontFamilyFallback: [
+          'MontserratLocal',
+          'McLarenLocal',
+          'InterLocal',
+          'NotoSansKhojkiLocal'
+        ]),
+        titleSmall: base.titleSmall?.copyWith(fontFamilyFallback: [
+          'MontserratLocal',
+          'McLarenLocal',
+          'InterLocal',
+          'NotoSansKhojkiLocal'
+        ]),
+        bodyLarge: base.bodyLarge?.copyWith(fontFamilyFallback: [
+          'MontserratLocal',
+          'McLarenLocal',
+          'InterLocal',
+          'NotoSansKhojkiLocal'
+        ]),
+        bodyMedium: base.bodyMedium?.copyWith(fontFamilyFallback: [
+          'MontserratLocal',
+          'McLarenLocal',
+          'InterLocal',
+          'NotoSansKhojkiLocal'
+        ]),
+        bodySmall: base.bodySmall?.copyWith(fontFamilyFallback: [
+          'MontserratLocal',
+          'McLarenLocal',
+          'InterLocal',
+          'NotoSansKhojkiLocal'
+        ]),
+        labelLarge: base.labelLarge?.copyWith(fontFamilyFallback: [
+          'MontserratLocal',
+          'McLarenLocal',
+          'InterLocal',
+          'NotoSansKhojkiLocal'
+        ]),
+        labelSmall: base.labelSmall?.copyWith(fontFamilyFallback: [
+          'MontserratLocal',
+          'McLarenLocal',
+          'InterLocal',
+          'NotoSansKhojkiLocal'
+        ]),
       );
     }
 

@@ -11,7 +11,7 @@ extension StrengthsTitleTextStyle on Text {
         color: Colors.black,
         fontSize: 20,
         fontWeight: FontWeight.w600,
-      ),
+      ).copyWith(fontFamilyFallback: ['McLarenLocal']),
     );
   }
 }
@@ -25,7 +25,7 @@ extension StrengthsSubTextStyle on Text {
         color: Colors.black,
         fontSize: 20,
         fontWeight: FontWeight.w800,
-      ),
+      ).copyWith(fontFamilyFallback: ['InterLocal']),
     );
   }
 }
@@ -39,7 +39,7 @@ extension StrengthsTextStyle on Text {
         color: Colors.black,
         fontSize: 20,
         fontWeight: FontWeight.w600,
-      ),
+      ).copyWith(fontFamilyFallback: ['InterLocal']),
     );
   }
 }

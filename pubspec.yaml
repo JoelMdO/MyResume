@@ -48,7 +48,6 @@ dependencies:
   flutter_svg: ^2.0.7
   flutter_animate: ^4.3.0
   carousel_slider: ^5.1.2
-  flutter_markdown: ^0.7.7+1
   html: ^0.15.4
   # rive: ^0.14.4  # removed — not required
 
@@ -86,12 +85,28 @@ flutter:
           weight: 600
         - asset: assets/fonts/Montserrat-Bold.ttf
           weight: 700
+        - asset: assets/fonts/Montserrat-BoldItalic.ttf
+          weight: 700
+          style: italic
         - asset: assets/fonts/Montserrat-ExtraBoldItalic.ttf
           weight: 800
+          style: italic
+        - asset: assets/fonts/Montserrat-Italic.ttf
           style: italic
     - family: NotoSansKhojkiLocal
       fonts:
         - asset: assets/fonts/NotoSansKhojki-Regular.ttf
+    - family: McLarenLocal
+      fonts:
+        - asset: assets/fonts/McLaren-Regular.ttf
+    - family: InterLocal
+      fonts:
+        - asset: assets/fonts/Inter-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Inter-SemiBold.ttf
+          weight: 600
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

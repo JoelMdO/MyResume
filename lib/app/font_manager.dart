@@ -14,13 +14,15 @@ class FontManager {
     try {
       final cssUri = Uri.parse(
           'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
-      final cssResp = await http.get(cssUri).timeout(const Duration(seconds: 5));
+      final cssResp =
+          await http.get(cssUri).timeout(const Duration(seconds: 5));
       if (cssResp.statusCode == 200) {
         final css = cssResp.body;
         final match = RegExp(r"url\((https:[^)]+)\)").firstMatch(css);
         if (match != null) {
           final fontUrl = Uri.parse(match.group(1)!);
-          final fontResp = await http.head(fontUrl).timeout(const Duration(seconds: 5));
+          final fontResp =
+              await http.head(fontUrl).timeout(const Duration(seconds: 5));
           if (fontResp.statusCode == 200) {
             remoteAvailable = true;
             return;
@@ -39,6 +41,42 @@ class FontManager {
     } catch (_) {
       // asset missing — but we still keep remoteAvailable false so app falls
       // back to system fonts.
+    }
+    try {
+      await rootBundle.load('assets/fonts/Montserrat-Italic.ttf');
+    } catch (_) {
+      // asset missing — but we still keep remoteAvailable false so app falls
+      // back to system fonts.
+    }
+    // Also confirm McLaren local font exists for fallback usage.
+    try {
+      await rootBundle.load('assets/fonts/McLaren-Regular.ttf');
+    } catch (_) {
+      // missing McLaren is acceptable; code will simply not be able to
+      // fallback to it and will use system fonts instead.
+    }
+    // Also confirm Inter local font exists for fallback usage.
+    try {
+      await rootBundle.load('assets/fonts/Inter-ExtraBold.ttf');
+    } catch (_) {
+      // missing Inter is acceptable; code will fallback to other local fonts
+    }
+    // Also confirm Inter local font exists for fallback usage.
+    try {
+      await rootBundle.load('assets/fonts/Inter-SemiBold.ttf');
+    } catch (_) {
+      // missing Inter is acceptable; code will fallback to other local fonts
+    }
+    try {
+      await rootBundle.load('assets/fonts/Inter-Bold.ttf');
+    } catch (_) {
+      // missing Inter is acceptable; code will fallback to other local fonts
+    }
+    // Also confirm NotoSansKhojki local font exists for fallback usage.
+    try {
+      await rootBundle.load('assets/fonts/NotoSansKhojki-Regular.ttf');
+    } catch (_) {
+      // missing NotoSansKhojki is acceptable; code will fallback to other local fonts
     }
   }
 }
