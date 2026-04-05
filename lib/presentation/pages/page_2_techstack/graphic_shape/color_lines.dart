@@ -57,7 +57,7 @@ class _ColorLineState extends State<ColorLine> {
         child: CustomPaint(
           size: Size(myScreenType.isDesktop ? 200 : 150,
               (myScreenType.isDesktop ? 200 : 100).toDouble()),
-          painter: isLineBlue ? ColorLineBlue() : ColorLineOrange(),
+          painter: isLineBlue ? ColorLineBlue() : ColorOrangeNewLine(),
         ),
       ).animate().slide(
           delay: const Duration(milliseconds: 1000),
@@ -88,6 +88,31 @@ class ColorLineBlue extends CustomPainter {
     path0.lineTo(size.width * 0.4000000, size.height * 0.7450000);
 
     canvas.drawPath(path0, paintStroke0);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return true;
+  }
+}
+
+class ColorOrangeNewLine extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint = Paint()
+      ..color = const Color.fromARGB(255, 241, 156, 18)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = size.width * 0.01
+      ..strokeCap = StrokeCap.round
+      ..strokeJoin = StrokeJoin.miter;
+
+    Path path = Path();
+    path.moveTo(size.width * 0.2000000, size.height * 0.2500000);
+    path.lineTo(size.width * 0.5020000, size.height * 0.2500000);
+    path.lineTo(size.width * 0.7000000, size.height * 0.5000000);
+    path.lineTo(size.width * 0.6000000, size.height * 0.7450000);
+
+    canvas.drawPath(path, paint);
   }
 
   @override

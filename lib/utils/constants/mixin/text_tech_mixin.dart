@@ -20,6 +20,9 @@ mixin TextTechMixin {
         text = othersText;
         typeFont = 'other';
     }
-    return Text(text).textStyleSubtitleStyle(typeFont, context);
+    return Text(
+      text,
+      textAlign: TextAlign.justify,
+    ).textStyleSubtitleStyle(typeFont, context);
   }
 }

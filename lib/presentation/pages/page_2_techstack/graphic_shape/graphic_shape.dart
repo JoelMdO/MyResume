@@ -18,88 +18,63 @@ class _GraphicShapeState extends State<GraphicShape> {
     ScreenSize myScreenSize = ScreenSize(context);
     ScreenType myScreenType = ScreenType(context);
     double scaleWidth = myScreenSize.screenWidth / 151;
-    double scaleHeight = myScreenSize.screenHeight / 1304;
     //
     return FittedBox(
         fit: BoxFit.contain,
         child: SizedBox(
-            width: myScreenType.isDesktop
-                ? myScreenSize.screenWidth * 0.8
-                : myScreenSize.screenWidth,
-            height: myScreenSize.screenHeight * 0.8,
-            child: Stack(
-                alignment: AlignmentDirectional.topStart,
-                fit: StackFit.loose,
-                children: [
-                  const Align(
-                      alignment: AlignmentDirectional.topCenter,
-                      child: Hexagon()),
-                  Positioned(
-                      top: myScreenType.isDesktop
-                          ? 330 * scaleHeight
-                          : 250 * scaleHeight,
-                      left: 10 * scaleWidth,
-                      child: const ColorLine(type: 'blue_line')),
-                  Positioned(
-                      top: myScreenType.isDesktop
-                          ? 330 * scaleHeight
-                          : 270 * scaleHeight,
-                      left: myScreenType.isDesktop
-                          ? 10 * scaleWidth * scaleHeight
-                          : 15 * scaleWidth,
-                      child: const CodeFigure(type: 'UX_figure')),
-                  Positioned(
-                      top: myScreenType.isDesktop
-                          ? 420 * scaleHeight
-                          : 395 * scaleHeight,
-                      left: 20 * scaleWidth,
-                      child: TextTech(type: 'UX_text')),
-                  Positioned(
-                      top: myScreenType.isDesktop
-                          ? 320 * scaleHeight
-                          : 250 * scaleHeight,
-                      right: 10 * scaleWidth,
-                      child: const ColorLine(type: 'orange_line')),
-                  Positioned(
-                      top: myScreenType.isDesktop
-                          ? 330 * scaleHeight
-                          : 250 * scaleHeight,
-                      right: 10 * scaleWidth,
-                      child: const CodeFigure(type: 'Code_figure')),
-                  Positioned(
-                      top: myScreenType.isDesktop
-                          ? 420 * scaleHeight
-                          : 395 * scaleHeight,
-                      right: 20 * scaleWidth,
-                      child: TextTech(type: 'Code_text')),
-                  Positioned(
-                      top: myScreenType.isDesktop
-                          ? 520 * scaleHeight
-                          : 600 * scaleHeight,
-                      left: myScreenType.isDesktop
-                          ? 40 * scaleWidth
-                          : myScreenType.isTablet
-                              ? 50 * scaleWidth
-                              : 30 * scaleWidth,
-                      child: Row(children: [
-                        const CodeFigure(type: 'Data_figure'),
-                        TextTech(type: 'Data_text')
-                      ])),
-                  Positioned(
-                      bottom: myScreenType.isDesktop
-                          ? scaleHeight
-                          : 65 * scaleHeight,
-                      left: myScreenType.isDesktop
-                          ? 20 * scaleWidth
-                          : myScreenType.isTablet
-                              ? 30 * scaleWidth
-                              : 2 * scaleWidth,
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const CodeFigure(type: 'Other_figure'),
-                            TextTech(type: 'Other_text'),
-                          ])),
-                ])));
+          width: myScreenType.isDesktop
+              ? myScreenSize.screenWidth * 0.8
+              : myScreenSize.screenWidth,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            spacing: 15,
+            children: [
+              Align(
+                  alignment: AlignmentDirectional.topCenter, child: Hexagon()),
+              // Section 1: a Row that contains the Stack (allows future side widgets)
+              Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    CodeFigure(type: 'UX_figure'),
+                    CodeFigure(type: 'Code_figure'),
+                  ]),
+              Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    ColorLine(type: 'blue_line'),
+                    TextTech(type: 'UX_text'),
+                    TextTech(type: 'Code_text'),
+                    ColorLine(type: 'orange_line'),
+                  ]),
+              // Section 2: grouped rows for DB / Other items
+              Row(
+                  //  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const CodeFigure(type: 'Data_figure'),
+                    SizedBox(
+                      width: 80 * scaleWidth,
+                      child: // Add spacing between the two items
+                          TextTech(type: 'Data_text'),
+                    ),
+                    //)
+                  ]),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const CodeFigure(type: 'Other_figure'),
+                    SizedBox(
+                      width: 80 * scaleWidth,
+                      child: TextTech(type: 'Other_text'),
+                    ),
+                  ])
+            ],
+          ),
+        ));
   }
 }
