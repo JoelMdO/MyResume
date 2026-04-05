@@ -9,6 +9,7 @@ extension EducationTitleextStyle on AutoSizeText {
     return AutoSizeText(data!,
         minFontSize: 12,
         maxFontSize: 17,
+        textAlign: TextAlign.center,
         style: GoogleFonts.montserrat(
             fontWeight: FontWeight.bold, color: Colors.black));
   }
@@ -17,6 +18,17 @@ extension EducationTitleextStyle on AutoSizeText {
 ///EDUCATION BODYTEXT TextStyle
 extension EducationDateTextStyle on AutoSizeText {
   AutoSizeText educationDateTextStyle() {
+    return AutoSizeText(data!,
+        minFontSize: 11,
+        maxFontSize: 15,
+        style: GoogleFonts.montserrat(
+            fontWeight: FontWeight.normal, color: Colors.black));
+  }
+}
+
+///EDUCATION BODYTEXT TextStyle
+extension EducationSchoolTextStyle on AutoSizeText {
+  AutoSizeText educationSchoolTextStyle() {
     return AutoSizeText(data!,
         minFontSize: 12,
         maxFontSize: 17,

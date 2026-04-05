@@ -48,6 +48,7 @@ class EducationAndCertificatesListView extends StatelessWidget {
                     ? EducationText(
                         title: itemText.title,
                         date: itemText.date,
+                        school: itemText.school,
                       )
                     : //CERTIFICATES DIALOG
                     CertificatesText(
