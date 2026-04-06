@@ -4,7 +4,7 @@ import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/presentation/widgets/buttons/styles_text_buttons.dart';
 import 'package:resume/utils/constants/colors.dart';
-import 'package:resume/utils/constants/mixin/buttonS_mixin.dart';
+import 'package:resume/utils/constants/mixin/buttons_mixin.dart';
 
 //--DRAWER BUTTON-- //
 class MyDrawerButton extends StatefulWidget {
