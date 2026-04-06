@@ -74,7 +74,7 @@ String flutterResumeImage = 'assets/images/Resume.png';
 String flutterResumeSummary =
     '\n A responsive portfolio with dynamic navigation, custom widgets, and platform-specific features.';
 String flutterResumeSolution =
-    ' Adapted UI/UX elements for mobile experience, Firebase for easy deployment and Maps for text injection.';
+    ' Adapted UI/UX elements for mobile experience, Library Maps for text injection.';
 
 //Figma-Library
 String figmaLibraryTitle = 'Library';
