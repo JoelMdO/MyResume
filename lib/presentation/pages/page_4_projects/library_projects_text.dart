@@ -200,7 +200,7 @@ String reactDecavImage = 'assets/images/Decav.png';
 String reactDecavSummary =
     '\n Community blog current on second stage of development to integrate new features as Editor, Translator (RAG) and more.';
 String reactDecavSolution =
-    ' AI Assistance for performance optimization and layout issues, code refactor and optimization for better performance.';
+    ' AI Assistance for performance optimization and layout issues, code refactored.';
 
 //React-Permits
 String reactPermitsTitle = 'Permits';
@@ -300,7 +300,8 @@ String inProgressPermits2Learned =
     '\n - Scalable code\n\n - Cybersecurity measures\n\n - Testing';
 String inProgressPermits2Challenges =
     '\n - Create a user forum for interaction and data updates, fostering community engagement and knowledge sharing.\n\n - Enhance non-free account profiles with additional features and benefits, providing value for paid users.';
-String inProgressPermits2Repo = 'Not available due to private repository';
+String inProgressPermits2Repo =
+    'Not available due to client non disclose policy';
 String inProgressPermits2Image = 'assets/images/React2.png';
 String inProgressPermits2Summary =
     '\n The second phase of an existing web app for flight clearances, emphasizing scalability, cybersecurity, and testing.';

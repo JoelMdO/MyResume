@@ -1,8 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:resume/cubit/carousel_index.dart';
 import 'package:resume/presentation/pages/page_4_projects/map_projects.dart';
 import 'package:resume/presentation/pages/page_4_projects/projects_text_styles.dart';
+import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class RepoBox extends StatefulWidget {
@@ -19,7 +22,7 @@ class RepoBox extends StatefulWidget {
 
 class _RepoBoxState extends State<RepoBox> {
   String title = '', repository = '', repositoryName = '';
-  bool isGithubAvail = false, showToolTip = false;
+  bool isGithubAvail = false;
 
   @override
   Widget build(BuildContext context) {
@@ -34,15 +37,16 @@ class _RepoBoxState extends State<RepoBox> {
 
     if (infoProjectMap.containsKey(widget.project) &&
         infoProjectMap[widget.project]!.containsKey(finalIndex)) {
-      repositoryName =
-          infoProjectMap[widget.project]![finalIndex]!['repository']!;
       repository = infoProjectMap[widget.project]![finalIndex]!['repository']!;
     }
 
-    if (repositoryName == 'in-progress' || repositoryName == 'aviation') {
+    if (repository == 'Not available due to QR company non disclose policy' ||
+        repository == 'Not available due to client non disclose policy') {
       isGithubAvail = false;
+      repository = 'Not available due non disclose policy';
     } else {
       isGithubAvail = true;
+      repository = repository;
     }
 
     return Row(mainAxisAlignment: MainAxisAlignment.start, children: [
@@ -50,21 +54,36 @@ class _RepoBoxState extends State<RepoBox> {
       const Padding(padding: EdgeInsets.only(left: 10)),
       isGithubAvail
           ? InkWell(
-              onTap: () {
-                launchUrl(Uri.parse(repository));
-              },
-              onHover: (value) {
-                setState(() {
-                  showToolTip = value;
-                });
-                Future.delayed(const Duration(milliseconds: 500), () {
-                  setState(() {
-                    showToolTip = false;
-                  });
-                });
+              onTap: () async {
+                // Unfocus any focused node to avoid stuck keyboard state
+                FocusManager.instance.primaryFocus?.unfocus();
+
+                final uri = Uri.tryParse(repository);
+                if (uri == null) return;
+
+                // If modifier keys (e.g., Meta/Command) are still pressed the
+                // platform may send duplicate key events when the app loses focus.
+                // Wait briefly for Meta keys to be released before launching.
+                final maxWait = const Duration(milliseconds: 700);
+                final start = DateTime.now();
+                while ((HardwareKeyboard.instance.logicalKeysPressed
+                            .contains(LogicalKeyboardKey.metaLeft) ||
+                        HardwareKeyboard.instance.logicalKeysPressed
+                            .contains(LogicalKeyboardKey.metaRight)) &&
+                    DateTime.now().difference(start) < maxWait) {
+                  await Future.delayed(const Duration(milliseconds: 50));
+                }
+
+                try {
+                  await launchUrl(uri, mode: LaunchMode.externalApplication);
+                } catch (e, st) {
+                  log('Could not launch $repository: $e\n$st');
+                }
               },
               child: Tooltip(
-                message: showToolTip ? 'Click to visit the repo' : '',
+                message: 'Click to visit the repo',
+                waitDuration: Duration(milliseconds: 150),
+                showDuration: Duration(milliseconds: 1500),
                 child: Image.asset(
                   'assets/images/github-logo.png',
                   width: 30,
